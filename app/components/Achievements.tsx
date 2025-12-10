@@ -28,42 +28,36 @@ export default function Achievements() {
     },
   ];
 
-  return (
-    <section className="bg-black py-20 md:py-24 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-gray-500 uppercase tracking-widest text-sm mb-4">
-            Recognition
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tight mb-6">
-            Our Achievements
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Milestones that mark our journey of excellence and innovation.
-          </p>
-        </div>
+  const indicators = [0, 1, 2, 3, 4];
 
-        {/* Achievements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievements.map((achievement, index) => (
-            <div
-              key={index}
-              className="p-6 border border-white/10 hover:border-white/30 transition-colors group"
-            >
-              <achievement.icon 
-                className="text-white mb-4 group-hover:scale-110 transition-transform" 
-                size={36} 
+  return (
+    <section className="bg-gradient-to-b from-[#f0f0f0] via-[#dcdcdc] to-[#f0f0f0] py-24">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Section Title */}
+        <h2 className="text-center text-xl tracking-[0.35em] text-gray-700 uppercase">
+          Achievements
+        </h2>
+
+        {/* Main Card */}
+        <div className="mt-12 rounded-[40px] bg-white/60 p-10 shadow-[0_0_60px_rgba(0,0,0,0.25)]">
+          {/* Placeholder Cards Grid */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="h-40 rounded-[32px] bg-gray-200/60" />
+            <div className="h-40 rounded-[32px] bg-gray-200/60" />
+            <div className="h-40 rounded-[32px] bg-gray-200/60" />
+          </div>
+
+          {/* Slider Indicators */}
+          <div className="mt-10 flex justify-center gap-3">
+            {indicators.map((index) => (
+              <span
+                key={index}
+                className={`h-2 w-6 rounded-full ${
+                  index === 0 ? "bg-gray-700" : "bg-gray-400/70"
+                }`}
               />
-              <p className="text-gray-500 text-sm mb-2">{achievement.year}</p>
-              <h3 className="text-lg font-bold text-white uppercase mb-2">
-                {achievement.title}
-              </h3>
-              <p className="text-gray-400 text-sm">
-                {achievement.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

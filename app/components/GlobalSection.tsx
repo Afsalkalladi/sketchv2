@@ -1,52 +1,40 @@
-import { Globe, Users, Building } from "lucide-react";
+import Image from "next/image";
 
 export default function GlobalSection() {
-  const stats = [
-    { icon: Globe, value: "10+", label: "Countries Reached" },
-    { icon: Users, value: "50+", label: "Team Members" },
-    { icon: Building, value: "100+", label: "Projects Delivered" },
-  ];
-
   return (
-    <section className="bg-black py-20 md:py-24 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-gray-500 uppercase tracking-widest text-sm mb-4">
-            Our Reach
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tight mb-6">
-            Global Impact
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            From our roots at CUSAT to serving clients worldwide, we&apos;re making 
-            India proud on the global stage.
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="text-center p-8 border border-white/10 hover:border-white/30 transition-colors"
-            >
-              <stat.icon className="text-white mx-auto mb-6" size={40} />
-              <p className="text-5xl md:text-6xl font-bold text-white mb-2">
-                {stat.value}
-              </p>
-              <p className="text-gray-400 uppercase tracking-wider text-sm">
-                {stat.label}
-              </p>
+    <section className="bg-black border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-6 py-24">
+        <div className="flex flex-col gap-10 md:flex-row md:items-center">
+          {/* Left Column - Text */}
+          <div className="md:w-1/2">
+            <div className="text-xs uppercase tracking-[0.35em] text-gray-400 space-y-1">
+              <p>SHAPING ROBOTICS ACROSS</p>
+              <p>THE CONTINENTS</p>
             </div>
-          ))}
-        </div>
 
-        {/* Make in India Badge */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-500 text-sm uppercase tracking-widest">
-            Proudly Made in India 🇮🇳
-          </p>
+            <h2 className="mt-6 text-2xl font-semibold uppercase tracking-[0.25em] text-white">
+              <span className="block">From India to</span>
+              <span className="block">the World</span>
+            </h2>
+
+            <p className="mt-4 max-w-md text-sm text-gray-200">
+              Expanding India&apos;s engineering excellence to the global
+              robotics ecosystem.
+            </p>
+          </div>
+
+          {/* Right Column - World Map Card */}
+          <div className="relative flex-1 md:w-1/2">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-tr from-white/5 via-white/10 to-transparent p-4">
+              <Image
+                src="/images/world-map.png"
+                alt="World map showing global reach"
+                width={640}
+                height={256}
+                className="mx-auto h-64 w-auto object-contain opacity-90"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
