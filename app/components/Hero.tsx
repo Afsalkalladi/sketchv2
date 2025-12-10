@@ -4,60 +4,61 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-black overflow-hidden"
+      className="relative h-screen min-h-[640px] w-full overflow-hidden bg-black"
     >
-      {/* Background gradient - Linear from black to transparent */}
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-robots.png"
+          alt="Sketch Robotics workspace"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Dark overlay – stronger on left, subtle on right */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 92%)",
+            "linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 30%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0.1) 100%)",
         }}
       />
 
-      {/* Sketch Robotics watermark text in background */}
-      <div className="absolute top-20 right-8 text-[100px] md:text-[140px] font-extralight text-white/[0.02] tracking-[0.1em] leading-none hidden lg:block">
-        <div>Sketch</div>
-        <div className="ml-16">Robotics</div>
-      </div>
-
-      {/* Robotic factory image placeholder - right side */}
-      <div className="absolute right-0 top-0 w-full md:w-2/3 h-full">
-        {/* IMAGE PLACEHOLDER: Replace with isometric robot factory scene */}
-        <div className="relative w-full h-full flex items-center justify-center">
-          <Image
-            src="/images/hero-robots.png"
-            alt="Robotic factory illustration"
-            fill
-            priority
-            className="object-contain object-right-top opacity-70"
-          />
-        </div>
-      </div>
+      {/* Slight top fade so navbar sits cleanly */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-40"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0))",
+        }}
+      />
 
       {/* Content */}
-      <div className="relative z-10 w-full">
-        <div className="mx-auto flex max-w-6xl items-center px-6 pt-24">
-          <div className="max-w-xl">
-            {/* Main Heading - Unbounded Light, 49.2px, line-height 59, letter-spacing 4px */}
+      <div className="relative z-10 flex h-full w-full items-center">
+        <div className="mx-auto flex w-full max-w-7xl px-6 md:px-10 lg:px-16">
+          <div className="max-w-xl pt-10 pb-20 flex flex-col justify-center">
+            {/* Main Heading – matches layout in screenshot */}
             <h1
-              className="text-[32px] md:text-[42px] lg:text-[49px] font-light text-white"
+              className="font-light text-white text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px]"
               style={{
-                lineHeight: "59px",
-                letterSpacing: "4px",
+                lineHeight: "1.15",
+                letterSpacing: "0.16em",
+                fontFamily: "'Unbounded', system-ui, -apple-system, sans-serif",
               }}
             >
               <span className="block">Everything</span>
-              <span className="block">Starts</span>
-              <span className="block">From a Sketch</span>
+              <span className="block mt-1">Starts</span>
+              <span className="block mt-1">From a Sketch</span>
             </h1>
 
-            {/* Subtext - 14.67px, 80% opacity, line-height 25, letter-spacing 2px */}
+            {/* Subtext */}
             <p
-              className="mt-8 max-w-md text-[14px] md:text-[15px] font-light text-white/80"
+              className="mt-8 text-white/80 text-[14px] sm:text-[15px] md:text-[16px] font-light max-w-md"
               style={{
-                lineHeight: "25px",
-                letterSpacing: "2px",
+                lineHeight: "1.7",
+                letterSpacing: "0.12em",
               }}
             >
               Transforming ideas into reality through
