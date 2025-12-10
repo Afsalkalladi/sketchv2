@@ -2,61 +2,34 @@ import Image from "next/image";
 
 export default function GlobalSection() {
   return (
-    <section className="bg-[#fafafa] py-16 md:py-24 relative overflow-hidden">
-      {/* Top Decorative Wave Lines */}
-      <div className="absolute top-0 left-0 w-full pointer-events-none opacity-30">
-        <svg
-          className="w-full h-24"
-          viewBox="0 0 1200 80"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {[...Array(6)].map((_, i) => (
-            <path
-              key={i}
-              d={`M0 ${10 + i * 10} Q 300 ${40 + i * 5}, 600 ${10 + i * 10} T 1200 ${10 + i * 10}`}
-              stroke="#9ca3af"
-              strokeWidth="1"
-              fill="none"
-            />
-          ))}
-        </svg>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* World Map - Dotted Style */}
-        <div className="relative w-full flex justify-center py-8">
-          <div className="relative w-full max-w-4xl h-56 md:h-80">
-            <Image
-              src="/images/world-map-dots.svg"
-              alt="World map showing global presence"
-              fill
-              className="object-contain"
-            />
-          </div>
+    <section className="bg-black py-20 md:py-28 relative overflow-hidden min-h-[600px]">
+      {/* World Map Background - IMAGE PLACEHOLDER */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-full max-w-5xl h-[500px] opacity-60">
+          <Image
+            src="/images/world-map-dots.svg"
+            alt="World map showing global presence"
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
 
-      {/* Bottom Decorative Wave Lines */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-30">
-        <svg
-          className="w-full h-24"
-          viewBox="0 0 1200 80"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {[...Array(6)].map((_, i) => (
-            <path
-              key={i}
-              d={`M0 ${10 + i * 10} Q 300 ${40 + i * 5}, 600 ${10 + i * 10} T 1200 ${10 + i * 10}`}
-              stroke="#9ca3af"
-              strokeWidth="1"
-              fill="none"
-            />
-          ))}
-        </svg>
+      {/* Content overlay */}
+      <div className="max-w-6xl mx-auto px-6 relative z-10 h-full flex items-end pb-16">
+        <div className="max-w-md">
+          {/* Main Heading */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight tracking-tight uppercase">
+            From <span className="text-white/50">India</span> To<br />
+            The <span className="text-white/50">World</span>
+          </h2>
+
+          {/* Subtitle */}
+          <p className="mt-4 text-sm text-white/50 font-light">
+            Shaping Robotics Across<br />
+            The Continents
+          </p>
+        </div>
       </div>
     </section>
   );
