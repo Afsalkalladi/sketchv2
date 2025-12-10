@@ -1,0 +1,140 @@
+<svg width="900" height="700" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot Arm 1 - Main central workstation -->
+  <g transform="translate(400, 250)">
+    <!-- Base platform -->
+    <rect x="-80" y="180" width="160" height="25" rx="3" fill="#d9d9d9" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="-60" y="165" width="120" height="18" rx="2" fill="#c4c4c4" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Vertical column -->
+    <rect x="-15" y="20" width="30" height="145" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+    <rect x="-20" y="40" width="40" height="20" rx="2" fill="#d4d4d4" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="-20" y="100" width="40" height="20" rx="2" fill="#d4d4d4" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Main arm segment -->
+    <g transform="rotate(-35)">
+      <rect x="10" y="-12" width="140" height="24" rx="3" fill="#c9c9c9" stroke="#8a8a8a" stroke-width="1"/>
+      <circle cx="10" cy="0" r="16" fill="#d9d9d9" stroke="#8a8a8a" stroke-width="1.5"/>
+      <circle cx="10" cy="0" r="8" fill="#a1a1a1"/>
+      
+      <!-- Joint detail -->
+      <rect x="70" y="-8" width="16" height="16" rx="2" fill="#b3b3b3" stroke="#8a8a8a" stroke-width="1"/>
+      
+      <!-- End effector arm -->
+      <g transform="translate(140, 0) rotate(50)">
+        <rect x="0" y="-10" width="90" height="20" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+        <circle cx="0" cy="0" r="12" fill="#c9c9c9" stroke="#8a8a8a" stroke-width="1"/>
+        <circle cx="0" cy="0" r="5" fill="#8a8a8a"/>
+        
+        <!-- Gripper -->
+        <g transform="translate(90, 0)">
+          <rect x="0" y="-8" width="30" height="6" rx="1" fill="#a6a6a6" stroke="#7a7a7a" stroke-width="1"/>
+          <rect x="0" y="2" width="30" height="6" rx="1" fill="#a6a6a6" stroke="#7a7a7a" stroke-width="1"/>
+          <rect x="25" y="-12" width="15" height="8" rx="1" fill="#999" stroke="#7a7a7a" stroke-width="1"/>
+          <rect x="25" y="4" width="15" height="8" rx="1" fill="#999" stroke="#7a7a7a" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    
+    <!-- Control panel -->
+    <rect x="50" y="140" width="40" height="30" rx="3" fill="#e0e0e0" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="55" y="145" width="30" height="12" rx="1" fill="#4a4a4a"/>
+    <circle cx="60" cy="163" r="3" fill="#5a5a5a"/>
+    <circle cx="70" cy="163" r="3" fill="#5a5a5a"/>
+  </g>
+  
+  <!-- Robot Arm 2 - Left side workstation -->
+  <g transform="translate(150, 320)">
+    <!-- Base -->
+    <rect x="-50" y="120" width="100" height="20" rx="3" fill="#d4d4d4" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="-35" y="105" width="70" height="18" rx="2" fill="#c4c4c4" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Vertical segment -->
+    <rect x="-12" y="15" width="24" height="90" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+    <rect x="-16" y="30" width="32" height="15" rx="1" fill="#d0d0d0" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Arm -->
+    <g transform="rotate(-20)">
+      <rect x="8" y="-10" width="100" height="20" rx="2" fill="#c4c4c4" stroke="#8a8a8a" stroke-width="1"/>
+      <circle cx="8" cy="0" r="14" fill="#d4d4d4" stroke="#8a8a8a" stroke-width="1.5"/>
+      <circle cx="8" cy="0" r="6" fill="#909090"/>
+      
+      <!-- Second segment -->
+      <g transform="translate(100, 0) rotate(60)">
+        <rect x="0" y="-8" width="70" height="16" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+        <circle cx="0" cy="0" r="10" fill="#c9c9c9" stroke="#8a8a8a" stroke-width="1"/>
+        
+        <!-- Tool head -->
+        <g transform="translate(70, 0)">
+          <rect x="0" y="-6" width="25" height="12" rx="1" fill="#a6a6a6" stroke="#7a7a7a" stroke-width="1"/>
+          <circle cx="25" cy="0" r="8" fill="#999" stroke="#7a7a7a" stroke-width="1"/>
+          <circle cx="25" cy="0" r="3" fill="#666"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Robot Arm 3 - Right side -->
+  <g transform="translate(700, 280)">
+    <!-- Base platform -->
+    <rect x="-60" y="150" width="120" height="22" rx="3" fill="#d9d9d9" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="-45" y="135" width="90" height="18" rx="2" fill="#c9c9c9" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Column -->
+    <rect x="-14" y="10" width="28" height="125" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+    <rect x="-18" y="50" width="36" height="18" rx="2" fill="#d0d0d0" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Main arm -->
+    <g transform="rotate(-50)">
+      <rect x="8" y="-11" width="120" height="22" rx="2" fill="#c4c4c4" stroke="#8a8a8a" stroke-width="1"/>
+      <circle cx="8" cy="0" r="15" fill="#d4d4d4" stroke="#8a8a8a" stroke-width="1.5"/>
+      <circle cx="8" cy="0" r="7" fill="#909090"/>
+      
+      <!-- Second arm segment -->
+      <g transform="translate(115, 0) rotate(70)">
+        <rect x="0" y="-9" width="80" height="18" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="1"/>
+        <circle cx="0" cy="0" r="11" fill="#c9c9c9" stroke="#8a8a8a" stroke-width="1"/>
+        
+        <!-- Welding/tool head -->
+        <g transform="translate(80, 0)">
+          <polygon points="0,-10 20,-5 20,5 0,10" fill="#a6a6a6" stroke="#7a7a7a" stroke-width="1"/>
+          <rect x="15" y="-3" width="12" height="6" rx="1" fill="#8a8a8a"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Conveyor/Work surface elements -->
+  <g transform="translate(300, 550)">
+    <!-- Long work surface -->
+    <rect x="0" y="0" width="350" height="15" rx="2" fill="#e0e0e0" stroke="#b3b3b3" stroke-width="1"/>
+    <rect x="0" y="12" width="350" height="25" rx="2" fill="#d4d4d4" stroke="#a1a1a1" stroke-width="1"/>
+    
+    <!-- Support legs -->
+    <rect x="30" y="35" width="20" height="60" rx="2" fill="#c4c4c4" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="160" y="35" width="20" height="60" rx="2" fill="#c4c4c4" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="300" y="35" width="20" height="60" rx="2" fill="#c4c4c4" stroke="#a1a1a1" stroke-width="1"/>
+  </g>
+  
+  <!-- Small workpieces/objects on surfaces -->
+  <g transform="translate(350, 540)">
+    <rect x="0" y="0" width="25" height="15" rx="2" fill="#9ca3af" stroke="#6b7280" stroke-width="1"/>
+    <rect x="60" y="2" width="20" height="12" rx="1" fill="#a1a1aa" stroke="#71717a" stroke-width="1"/>
+    <rect x="120" y="0" width="30" height="15" rx="2" fill="#9ca3af" stroke="#6b7280" stroke-width="1"/>
+  </g>
+  
+  <!-- Additional equipment - control box -->
+  <g transform="translate(100, 500)">
+    <rect x="0" y="0" width="60" height="80" rx="4" fill="#d9d9d9" stroke="#a1a1a1" stroke-width="1"/>
+    <rect x="5" y="10" width="50" height="25" rx="2" fill="#3a3a3a"/>
+    <rect x="8" y="45" width="20" height="8" rx="1" fill="#6b7280"/>
+    <rect x="32" y="45" width="20" height="8" rx="1" fill="#6b7280"/>
+    <circle cx="15" cy="65" r="5" fill="#4b5563"/>
+    <circle cx="30" cy="65" r="5" fill="#4b5563"/>
+    <circle cx="45" cy="65" r="5" fill="#4b5563"/>
+  </g>
+  
+  <!-- Cable/wire details -->
+  <path d="M180 400 Q 200 420, 200 450 Q 200 480, 220 500" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M460 400 Q 450 430, 440 470 Q 430 510, 450 550" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M680 430 Q 700 460, 700 500 Q 700 540, 680 570" stroke="#888" stroke-width="2" fill="none"/>
+</svg>

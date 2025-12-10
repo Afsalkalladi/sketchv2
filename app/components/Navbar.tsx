@@ -6,73 +6,59 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <nav className="fixed inset-x-0 top-0 z-50 bg-transparent">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         {/* Brand */}
-        <div className="flex flex-col leading-tight text-white">
-          <span className="text-xs tracking-[0.35em] uppercase">
+        <div className="flex flex-col leading-none text-gray-900">
+          <span className="text-[10px] font-medium tracking-[0.25em] uppercase">
             Sketch
           </span>
-          <span className="text-lg font-semibold tracking-[0.35em] uppercase">
+          <span className="text-sm font-bold tracking-[0.2em] uppercase">
             Robotics
           </span>
         </div>
 
         {/* Center Nav (Desktop) */}
-        <div className="hidden md:flex items-center gap-10 text-sm text-white">
-          <a
-            href="#home"
-            className="transition-colors hover:text-gray-300"
-          >
+        <div className="hidden md:flex items-center gap-10 text-sm text-gray-700">
+          <a href="#home" className="transition-colors hover:text-gray-900">
             Home
           </a>
-          <a
-            href="#solution"
-            className="transition-colors hover:text-gray-300"
-          >
+          <a href="#solution" className="transition-colors hover:text-gray-900">
             Solution
           </a>
-          <a
-            href="#team"
-            className="transition-colors hover:text-gray-300"
-          >
+          <a href="#team" className="transition-colors hover:text-gray-900">
             Team
           </a>
-          <a
-            href="#careers"
-            className="transition-colors hover:text-gray-300"
-          >
+          <a href="#careers" className="transition-colors hover:text-gray-900">
             careers
           </a>
         </div>
 
         {/* Right CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <button
-            className="rounded-full border border-white/40 px-4 py-2 text-xs font-medium tracking-[0.18em] uppercase text-white transition-colors hover:bg-white hover:text-black"
-          >
+          <button className="rounded-full bg-gray-900 px-5 py-2 text-xs font-medium tracking-[0.12em] uppercase text-white transition-colors hover:bg-gray-700">
             CONNECT US
           </button>
 
           {/* Hamburger (Mobile) */}
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 md:hidden"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle navigation"
           >
             <span className="flex flex-col items-center justify-center space-y-1">
               <span
-                className={`h-[2px] w-4 bg-white transition-transform ${
+                className={`h-[2px] w-4 bg-gray-900 transition-transform ${
                   open ? "translate-y-[3px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`h-[2px] w-4 bg-white transition-opacity ${
+                className={`h-[2px] w-4 bg-gray-900 transition-opacity ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`h-[2px] w-4 bg-white transition-transform ${
+                className={`h-[2px] w-4 bg-gray-900 transition-transform ${
                   open ? "-translate-y-[3px] -rotate-45" : ""
                 }`}
               />
@@ -83,32 +69,32 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {open && (
-        <div className="md:hidden bg-black/90">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pb-4 pt-2 text-sm text-white">
+        <div className="md:hidden bg-white/95 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pb-4 pt-2 text-sm text-gray-700">
             <a
               href="#home"
-              className="transition-colors hover:text-gray-300"
+              className="transition-colors hover:text-gray-900"
               onClick={() => setOpen(false)}
             >
               Home
             </a>
             <a
               href="#solution"
-              className="transition-colors hover:text-gray-300"
+              className="transition-colors hover:text-gray-900"
               onClick={() => setOpen(false)}
             >
               Solution
             </a>
             <a
               href="#team"
-              className="transition-colors hover:text-gray-300"
+              className="transition-colors hover:text-gray-900"
               onClick={() => setOpen(false)}
             >
               Team
             </a>
             <a
               href="#careers"
-              className="transition-colors hover:text-gray-300"
+              className="transition-colors hover:text-gray-900"
               onClick={() => setOpen(false)}
             >
               careers

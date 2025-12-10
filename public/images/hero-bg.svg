@@ -1,0 +1,56 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#e8e8e8"/>
+  
+  <!-- Grid pattern for tech/lab feel -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#d0d0d0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  
+  <!-- Robotics equipment shapes (right side) -->
+  <g transform="translate(1000, 200)">
+    <!-- Main robotic arm base -->
+    <rect x="200" y="400" width="300" height="80" rx="10" fill="#c0c0c0" stroke="#a0a0a0" stroke-width="2"/>
+    <rect x="250" y="350" width="200" height="60" rx="8" fill="#d0d0d0" stroke="#b0b0b0" stroke-width="2"/>
+    
+    <!-- Arm segments -->
+    <rect x="300" y="200" width="100" height="160" rx="10" fill="#b8b8b8" stroke="#909090" stroke-width="2"/>
+    <rect x="320" y="100" width="60" height="110" rx="8" fill="#c8c8c8" stroke="#a8a8a8" stroke-width="2"/>
+    <rect x="330" y="40" width="40" height="70" rx="6" fill="#d8d8d8" stroke="#b8b8b8" stroke-width="2"/>
+    
+    <!-- Gripper -->
+    <rect x="325" y="10" width="20" height="40" rx="4" fill="#e0e0e0" stroke="#c0c0c0" stroke-width="1"/>
+    <rect x="355" y="10" width="20" height="40" rx="4" fill="#e0e0e0" stroke="#c0c0c0" stroke-width="1"/>
+    
+    <!-- Second robot unit -->
+    <rect x="500" y="380" width="250" height="100" rx="10" fill="#c5c5c5" stroke="#a5a5a5" stroke-width="2"/>
+    <rect x="550" y="280" width="150" height="110" rx="8" fill="#d5d5d5" stroke="#b5b5b5" stroke-width="2"/>
+    <rect x="580" y="180" width="90" height="110" rx="6" fill="#e0e0e0" stroke="#c0c0c0" stroke-width="2"/>
+    
+    <!-- Third robot/workstation -->
+    <rect x="0" y="420" width="180" height="60" rx="8" fill="#d0d0d0" stroke="#b0b0b0" stroke-width="2"/>
+    <rect x="30" y="360" width="120" height="70" rx="6" fill="#e0e0e0" stroke="#c0c0c0" stroke-width="2"/>
+    <rect x="50" y="300" width="80" height="70" rx="6" fill="#ebebeb" stroke="#d0d0d0" stroke-width="2"/>
+  </g>
+  
+  <!-- Conveyor/track lines -->
+  <line x1="1000" y1="700" x2="1920" y2="700" stroke="#b0b0b0" stroke-width="3"/>
+  <line x1="1000" y1="720" x2="1920" y2="720" stroke="#c0c0c0" stroke-width="2"/>
+  
+  <!-- Some tech detail circles -->
+  <circle cx="1300" cy="350" r="30" fill="none" stroke="#a0a0a0" stroke-width="2"/>
+  <circle cx="1300" cy="350" r="20" fill="#d0d0d0"/>
+  <circle cx="1600" cy="300" r="25" fill="none" stroke="#b0b0b0" stroke-width="2"/>
+  <circle cx="1600" cy="300" r="15" fill="#e0e0e0"/>
+  
+  <!-- Shadow/depth effect -->
+  <rect x="0" y="750" width="1920" height="330" fill="url(#shadow)"/>
+  <defs>
+    <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#d8d8d8" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+</svg>
