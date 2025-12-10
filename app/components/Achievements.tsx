@@ -20,42 +20,48 @@ export default function Achievements() {
       year: "2023",
       description: "Honored for technological innovation and impact.",
     },
-    {
-      icon: Medal,
-      title: "Industry Leader",
-      year: "2022",
-      description: "Acknowledged as a pioneer in Indian robotics.",
-    },
   ];
 
-  const indicators = [0, 1, 2, 3, 4];
-
   return (
-    <section className="bg-gradient-to-b from-[#f0f0f0] via-[#dcdcdc] to-[#f0f0f0] py-24">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="bg-black py-32 border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section Title */}
-        <h2 className="text-center text-xl tracking-[0.35em] text-gray-700 uppercase">
-          Achievements
-        </h2>
+        <div className="mb-16 text-center">
+          <span className="text-xs font-medium uppercase tracking-[0.35em] text-gray-500">
+            Our Milestone
+          </span>
+          <h2 className="mt-4 text-3xl font-bold uppercase tracking-widest text-white md:text-4xl">
+            Achievements
+          </h2>
+        </div>
 
-        {/* Main Card */}
-        <div className="mt-12 rounded-[40px] bg-white/60 p-10 shadow-[0_0_60px_rgba(0,0,0,0.25)]">
-          {/* Placeholder Cards Grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="h-40 rounded-[32px] bg-gray-200/60" />
-            <div className="h-40 rounded-[32px] bg-gray-200/60" />
-            <div className="h-40 rounded-[32px] bg-gray-200/60" />
-          </div>
+        {/* Main Glass Card Container */}
+        <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 p-8 md:p-12 backdrop-blur-sm">
+          {/* Background Gradient Effect */}
+          <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/5 blur-3xl"></div>
 
-          {/* Slider Indicators */}
-          <div className="mt-10 flex justify-center gap-3">
-            {indicators.map((index) => (
-              <span
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {achievements.map((item, index) => (
+              <div
                 key={index}
-                className={`h-2 w-6 rounded-full ${
-                  index === 0 ? "bg-gray-700" : "bg-gray-400/70"
-                }`}
-              />
+                className="group relative flex flex-col justify-between rounded-3xl border border-white/5 bg-black/40 p-8 transition-colors hover:border-white/20 hover:bg-black/60"
+              >
+                <div>
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
+                    <item.icon size={24} />
+                  </div>
+                  <h3 className="mb-2 text-xl font-semibold text-white uppercase tracking-wide">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-400">{item.description}</p>
+                </div>
+                <div className="mt-8 border-t border-white/10 pt-4">
+                  <span className="text-2xl font-bold text-white/20 group-hover:text-white/40 transition-colors">
+                    {item.year}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
