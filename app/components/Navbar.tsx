@@ -10,16 +10,25 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         {/* Brand */}
         <div className="flex flex-col leading-none text-white">
-          <span className="text-[10px] font-light tracking-[0.25em] uppercase">
+          <span 
+            className="text-[10px] font-light uppercase"
+            style={{ letterSpacing: '2px' }}
+          >
             Sketch
           </span>
-          <span className="text-sm font-medium tracking-[0.2em] uppercase">
+          <span 
+            className="text-[14px] font-normal uppercase"
+            style={{ letterSpacing: '2px' }}
+          >
             Robotics
           </span>
         </div>
 
         {/* Center Nav (Desktop) */}
-        <div className="hidden md:flex items-center gap-10 text-sm font-light text-white/80">
+        <div 
+          className="hidden md:flex items-center gap-10 text-[14px] font-light text-white/80"
+          style={{ letterSpacing: '1px' }}
+        >
           <a href="#home" className="transition-colors hover:text-white">
             Home
           </a>
@@ -36,7 +45,10 @@ export default function Navbar() {
 
         {/* Right CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <button className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-light tracking-[0.12em] uppercase text-white transition-colors hover:bg-white/20">
+          <button 
+            className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[12px] font-light uppercase text-white transition-colors hover:bg-white/20"
+            style={{ letterSpacing: '2px' }}
+          >
             CONNECT US
           </button>
 
