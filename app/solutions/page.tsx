@@ -9,11 +9,9 @@ export default function SolutionsPage() {
 
       {/* Main Content */}
       <div className="bg-black relative min-h-screen w-full overflow-x-hidden pt-[63px]">
-        {/* Mobile Wrapper: Flex col for mobile, block for desktop */}
+        {/* Mobile Wrapper */}
         <div className="flex flex-col lg:block h-full">
           {/* Large Background Text */}
-          {/* Mobile: Smaller, centered, different opacity
-                Desktop (lg): Exact original positioning and size */}
           <div className="relative mt-10 lg:mt-0 flex justify-center lg:block lg:absolute lg:left-4 lg:top-[193.5px] lg:-translate-y-1/2 opacity-5 pointer-events-none">
             <h1 className="font-unbounded font-normal whitespace-nowrap text-[60px] lg:text-[343.745px] lg:leading-[282.047px] tracking-tighter lg:tracking-[-3.5256px]">
               SOLUTION
@@ -59,8 +57,9 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          {/* Robot Image */}
-          <div className="relative w-full flex justify-center mt-10 lg:mt-0 lg:absolute lg:right-0 lg:top-[359px] z-0">
+          {/* Robot Image - FIX APPLIED HERE */}
+          {/* Added lg:w-auto and lg:block to cancel out the mobile centering */}
+          <div className="relative w-full flex justify-center mt-10 lg:mt-0 lg:absolute lg:right-0 lg:top-[359px] lg:w-auto lg:block z-0">
             <div className="w-[300px] h-auto lg:w-[516px] lg:h-[600px]">
               <Image
                 src="/images/robot-image.png"
@@ -155,7 +154,7 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          {/* Extra spacing for content - preserved for desktop */}
+          {/* Extra spacing for content */}
           <div className="hidden lg:block lg:h-[2200px]" />
         </div>
       </div>
