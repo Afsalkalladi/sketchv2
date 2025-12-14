@@ -21,9 +21,9 @@ export default function GlobalSection() {
 
       {/* World Map Background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2">
-        <div className="relative w-[765px] h-[489px] opacity-60">
+        <div className="relative w-[765px] h-[489px] opacity-70">
           <Image
-            src="/images/world-map-dots.svg"
+            src="/images/world-map-gray.png"
             alt="World map showing global presence"
             fill
             className="object-contain"

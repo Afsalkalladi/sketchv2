@@ -16,11 +16,12 @@ export default function Navbar() {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* Brand / Logo */}
         <div className="flex items-center">
-          {/* Logo placeholder - replace with actual logo */}
-          <div className="h-9 w-28 bg-white/20 rounded flex items-center justify-center">
-            <span className="text-white text-xs font-light tracking-wider">
-              SKETCH
-            </span>
+          <div className="h-9 w-28 relative">
+            <img 
+              src="/images/colored-logo.png" 
+              alt="Sketch Robotics" 
+              className="h-full w-full object-contain"
+            />
           </div>
         </div>
 

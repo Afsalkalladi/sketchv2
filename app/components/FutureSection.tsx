@@ -61,13 +61,23 @@ export default function FutureSection() {
           {/* Right Column - Robotic Arm Image */}
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <div className="relative w-[400px] h-[500px] md:w-[585px] md:h-[732px]">
+              {/* Dot pattern background as half-ellipse */}
+              <div
+                className="absolute inset-0 opacity-40 pointer-events-none"
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #ffffff 2px, transparent 2.5px)',
+                  backgroundSize: '20px 20px',
+                  maskImage: 'radial-gradient(ellipse 60% 100% at 100% 50%, white 100%, transparent 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 60% 100% at 100% 50%, white 100%, transparent 100%)',
+                }}
+              />
               {/* Decorative circle behind */}
               <div className="absolute -top-14 -left-10 w-[668px] h-[668px] opacity-20 rounded-full border border-white/10" />
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"
                 fill
-                className="object-contain"
+                className="object-contain relative z-10"
               />
             </div>
           </div>
