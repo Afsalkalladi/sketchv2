@@ -6,39 +6,44 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-transparent">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        {/* Brand */}
-        <div className="flex flex-col leading-none text-white">
-          <span 
-            className="text-[10px] font-light uppercase"
-            style={{ letterSpacing: '2px' }}
-          >
-            Sketch
-          </span>
-          <span 
-            className="text-[14px] font-normal uppercase"
-            style={{ letterSpacing: '2px' }}
-          >
-            Robotics
-          </span>
+    <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-gradient-to-l from-white/0 to-black/10 backdrop-blur-[10px]">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
+        {/* Brand / Logo */}
+        <div className="flex items-center">
+          {/* Logo placeholder - replace with actual logo */}
+          <div className="h-9 w-28 bg-white/20 rounded flex items-center justify-center">
+            <span className="text-white text-xs font-light tracking-wider">SKETCH</span>
+          </div>
         </div>
 
         {/* Center Nav (Desktop) */}
-        <div 
-          className="hidden md:flex items-center gap-10 text-[14px] font-light text-white/80"
-          style={{ letterSpacing: '1px' }}
-        >
-          <a href="#home" className="transition-colors hover:text-white">
+        <div className="hidden md:flex items-center gap-8">
+          <a 
+            href="#home" 
+            className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
             Home
           </a>
-          <a href="#solution" className="transition-colors hover:text-white">
+          <a 
+            href="#solution" 
+            className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
             Solution
           </a>
-          <a href="#team" className="transition-colors hover:text-white">
+          <a 
+            href="#team" 
+            className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
             Team
           </a>
-          <a href="#careers" className="transition-colors hover:text-white">
+          <a 
+            href="#careers" 
+            className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
             careers
           </a>
         </div>
@@ -46,8 +51,8 @@ export default function Navbar() {
         {/* Right CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
           <button 
-            className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[12px] font-light uppercase text-white transition-colors hover:bg-white/20"
-            style={{ letterSpacing: '2px' }}
+            className="h-7 w-28 rounded-full bg-gray-800/80 text-center text-stone-300 text-[9.78px] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             CONNECT US
           </button>
@@ -81,32 +86,35 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {open && (
-        <div className="md:hidden bg-black/95 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pb-4 pt-2 text-sm font-light text-white/80">
+        <div className="md:hidden bg-black/95 backdrop-blur-[10px]">
+          <div 
+            className="mx-auto flex max-w-7xl flex-col gap-4 px-4 pb-6 pt-4"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
             <a
               href="#home"
-              className="transition-colors hover:text-white"
+              className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               Home
             </a>
             <a
               href="#solution"
-              className="transition-colors hover:text-white"
+              className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               Solution
             </a>
             <a
               href="#team"
-              className="transition-colors hover:text-white"
+              className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               Team
             </a>
             <a
               href="#careers"
-              className="transition-colors hover:text-white"
+              className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               careers

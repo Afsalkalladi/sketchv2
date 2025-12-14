@@ -17,48 +17,41 @@ export default function Hero() {
         />
       </div>
 
-      {/* Dark overlay – stronger on left, subtle on right */}
+      {/* Dark overlay – stronger on left, subtle on right (from Figma) */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-95"
         style={{
           background:
-            "linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 30%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0.1) 100%)",
+            "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
         }}
       />
 
-      {/* Slight top fade so navbar sits cleanly */}
+      {/* Top gradient bar for navbar blending */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-40"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0))",
-        }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-black"
       />
 
       {/* Content */}
       <div className="relative z-10 flex h-full w-full items-center">
-        <div className="mx-auto flex w-full max-w-7xl px-6 md:px-10 lg:px-16">
+        <div className="mx-auto flex w-full max-w-7xl px-6 md:px-10 lg:px-20">
           <div className="max-w-xl pt-10 pb-20 flex flex-col justify-center">
-            {/* Main Heading – matches layout in screenshot */}
+            {/* Main Heading – Figma: text-5xl, font-light, tracking-[4px], leading-[59.04px] */}
             <h1
-              className="font-light text-white text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px]"
+              className="font-light text-white text-[36px] sm:text-[42px] md:text-[48px] leading-[59.04px] tracking-[4px]"
               style={{
-                lineHeight: "1.15",
-                letterSpacing: "0.16em",
-                fontFamily: "'Unbounded', system-ui, -apple-system, sans-serif",
+                fontFamily: "'Unbounded', sans-serif",
               }}
             >
               <span className="block">Everything</span>
-              <span className="block mt-1">Starts</span>
-              <span className="block mt-1">From a Sketch</span>
+              <span className="block">Starts</span>
+              <span className="block">From a Sketch</span>
             </h1>
 
-            {/* Subtext */}
+            {/* Subtext – Figma: text-sm, font-light, leading-6, tracking-widest, opacity-80 */}
             <p
-              className="mt-8 text-white/80 text-[14px] sm:text-[15px] md:text-[16px] font-light max-w-md"
+              className="mt-8 text-white text-sm font-light leading-6 tracking-widest opacity-80 max-w-96"
               style={{
-                lineHeight: "1.7",
-                letterSpacing: "0.12em",
+                fontFamily: "'Unbounded', sans-serif",
               }}
             >
               Transforming ideas into reality through
