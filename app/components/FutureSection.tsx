@@ -73,7 +73,7 @@ export default function FutureSection() {
             />
             {/* --------------------------- */}
 
-            <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10">
+            <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 animate-slide-up">
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"
