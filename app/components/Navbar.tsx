@@ -28,21 +28,21 @@ export default function Navbar() {
         {/* Center Nav (Desktop) */}
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#home"
+            href="/"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             Home
           </a>
           <a
-            href="#solution"
+            href="/solutions"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             Solution
           </a>
           <a
-            href="#team"
+            href="/team"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
@@ -101,21 +101,21 @@ export default function Navbar() {
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             <a
-              href="#home"
+              href="/"
               className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               Home
             </a>
             <a
-              href="#solution"
+              href="/solutions"
               className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
               Solution
             </a>
             <a
-              href="#team"
+              href="/team"
               className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
