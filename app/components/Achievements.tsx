@@ -44,17 +44,17 @@ export default function Achievements() {
           {/* Slides */}
           <div className="flex gap-6 justify-center items-center">
             {/* Left placeholder card */}
-            <div className="hidden lg:block w-[670px] h-[500px] bg-zinc-400/50 rounded-[20px] flex-shrink-0 -ml-[500px]">
+            <div className="hidden lg:block w-[670px] h-[500px] bg-zinc-400/50 rounded-[20px] shrink-0 -ml-[500px]">
               {/* IMAGE PLACEHOLDER: Achievement image */}
             </div>
 
             {/* Center card - main focus */}
-            <div className="w-[320px] md:w-[670px] h-[400px] md:h-[500px] bg-zinc-300/30 rounded-[20px] shadow-[0px_0px_90px_80px_rgba(32,32,32,0.10)] flex-shrink-0">
+            <div className="w-[320px] md:w-[670px] h-[400px] md:h-[500px] bg-zinc-300/30 rounded-[20px] shadow-[0px_0px_90px_80px_rgba(32,32,32,0.10)] shrink-0">
               {/* IMAGE PLACEHOLDER: Main achievement image */}
             </div>
 
             {/* Right placeholder card */}
-            <div className="hidden lg:block w-[670px] h-[500px] bg-zinc-400/30 rounded-[20px] flex-shrink-0 -mr-[500px]">
+            <div className="hidden lg:block w-[670px] h-[500px] bg-zinc-400/30 rounded-[20px] shrink-0 -mr-[500px]">
               {/* IMAGE PLACEHOLDER: Achievement image */}
             </div>
           </div>

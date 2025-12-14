@@ -6,7 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-gradient-to-l from-white/0 to-black/10 backdrop-blur-[10px]">
+    <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-linear-to-l from-white/0 to-black/10 backdrop-blur-[10px]">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* Brand / Logo */}
         <div className="flex items-center">
@@ -65,17 +65,17 @@ export default function Navbar() {
           >
             <span className="flex flex-col items-center justify-center space-y-1">
               <span
-                className={`h-[2px] w-4 bg-white transition-transform ${
+                className={`h-0.5 w-4 bg-white transition-transform ${
                   open ? "translate-y-[3px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`h-[2px] w-4 bg-white transition-opacity ${
+                className={`h-0.5 w-4 bg-white transition-opacity ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`h-[2px] w-4 bg-white transition-transform ${
+                className={`h-0.5 w-4 bg-white transition-transform ${
                   open ? "-translate-y-[3px] -rotate-45" : ""
                 }`}
               />
