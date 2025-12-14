@@ -1,20 +1,21 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section
       id="home"
       className="relative h-screen min-h-[640px] w-full overflow-hidden bg-black"
     >
-      {/* Background image */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-robots.png"
-          alt="Sketch Robotics workspace"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover object-center"
+        >
+          <source src="/videos/output.webm" type="video/webm" />
+          <source src="/videos/output.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Dark overlay – stronger on left, subtle on right (from Figma) */}
