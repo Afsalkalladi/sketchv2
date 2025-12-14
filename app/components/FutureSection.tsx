@@ -5,18 +5,18 @@ export default function FutureSection() {
     <section
       id="solution"
       // Kept bg-black, removed overlays that were washing it out
-      className="bg-black py-24 md:py-32 relative overflow-hidden min-h-[867px]"
+      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px]"
     >
       {/* REMOVED: The top dark gradient and the light ambiance gradient 
          were deleted here to ensure the background remains pure solid black.
       */}
 
-      <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10">
+        <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 md:flex-row md:items-start md:justify-between">
           {/* Left Column - Text */}
-          <div className="md:w-1/2 pt-8">
+          <div className="md:w-1/2 pt-4 sm:pt-6 md:pt-8">
             <h2
-              className="text-4xl md:text-5xl font-light text-white leading-[59.04px] tracking-[4px]"
+              className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.2] sm:leading-[1.3] md:leading-[59.04px] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               FUTURE
@@ -25,7 +25,7 @@ export default function FutureSection() {
             </h2>
 
             <div
-              className="mt-10 text-neutral-400 text-sm font-light leading-6 tracking-widest max-w-[610px]"
+              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-xs sm:text-sm font-light leading-5 sm:leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <p>
@@ -44,7 +44,7 @@ export default function FutureSection() {
             </div>
 
             <button
-              className="mt-10 h-9 px-6 rounded-full bg-gray-600/80 opacity-70 text-white text-sm font-light leading-6 tracking-widest transition-all hover:opacity-90"
+              className="mt-6 sm:mt-8 md:mt-10 h-8 sm:h-9 px-4 sm:px-6 rounded-full bg-gray-600/80 opacity-70 text-white text-xs sm:text-sm font-light leading-6 tracking-wide sm:tracking-widest transition-all hover:opacity-90"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Get started
@@ -52,10 +52,10 @@ export default function FutureSection() {
           </div>
 
           {/* Right Column - Robotic Arm Image & Dots */}
-          <div className="md:w-1/2 flex justify-center md:justify-end relative">
+          <div className="md:w-1/2 flex justify-center md:justify-end relative mt-8 md:mt-0">
             {/* --- THE DOT PATTERN --- */}
             <div
-              className="absolute pointer-events-none"
+              className="absolute pointer-events-none hidden sm:block"
               style={{
                 width: "600px",
                 height: "600px",
@@ -73,7 +73,7 @@ export default function FutureSection() {
             />
             {/* --------------------------- */}
 
-            <div className="relative w-[400px] h-[500px] md:w-[585px] md:h-[732px] z-10">
+            <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10">
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"

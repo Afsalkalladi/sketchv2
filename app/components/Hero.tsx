@@ -32,12 +32,12 @@ export default function Hero() {
 
       {/* Content Container */}
       {/* UPDATED: Changed 'items-center' to 'items-end' and added 'pb' to position text at bottom-left */}
-      <div className="relative z-10 flex h-full w-full items-end pb-24 md:pb-32 lg:pb-40">
-        <div className="mx-auto flex w-full max-w-7xl px-6 md:px-10 lg:px-20">
+      <div className="relative z-10 flex h-full w-full items-end pb-16 sm:pb-20 md:pb-32 lg:pb-40">
+        <div className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="max-w-xl flex flex-col justify-end">
             {/* Main Heading */}
             <h1
-              className="font-light text-white text-[36px] sm:text-[42px] md:text-[48px] leading-[1.2] tracking-[4px]"
+              className="font-light text-white text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
               style={{
                 fontFamily: "'Unbounded', sans-serif",
               }}
@@ -49,13 +49,14 @@ export default function Hero() {
 
             {/* Subtext */}
             <p
-              className="mt-8 text-white text-sm font-light leading-6 tracking-widest opacity-80 max-w-96"
+              className="mt-6 sm:mt-8 text-white text-xs sm:text-sm font-light leading-5 sm:leading-6 tracking-wide sm:tracking-widest opacity-80 max-w-96"
               style={{
                 fontFamily: "'Unbounded', sans-serif",
               }}
             >
               Transforming ideas into reality through
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               cutting-edge robotics and AI solutions.
             </p>
           </div>
