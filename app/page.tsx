@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FutureSection from "./components/FutureSection";
 import GlobalSection from "./components/GlobalSection";
+import Team from "./components/Team";
 import Achievements from "./components/Achievements";
 import Footer from "./components/Footer";
 
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Hero />
       <FutureSection />
       <GlobalSection />
+      <Team />
       <Achievements />
       <Footer />
     </main>
