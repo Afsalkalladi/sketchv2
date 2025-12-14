@@ -62,16 +62,34 @@ const team: TeamMember[] = [
     image: "/images/team-ashind.png",
     linkedin: "#",
   },
+  {
+    name: "MUHAMMED FAISAL",
+    role: "FOUNDER & CEO",
+    image: "/images/team-faisal.png",
+    linkedin: "#",
+  },
+  {
+    name: "ROMAL JOSBIN",
+    role: "ROBOTICS ENGINEER",
+    image: "/images/team-romal.png",
+    linkedin: "#",
+  },
+  {
+    name: "ASHIND V T",
+    role: "ROBOTICS ENGINEER",
+    image: "/images/team-ashind.png",
+    linkedin: "#",
+  },
 ];
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative group">
       {/* Card with gradient overlay */}
-      <div className="relative w-[240px] sm:w-[268px] h-[350px] sm:h-[393px] rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)]">
+      <div className="relative w-[240px] sm:w-[268px] h-[350px] sm:h-[393px] rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[10px]" />
-        
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[10px] z-10 pointer-events-none" />
+
         {/* Team member image */}
         <div className="relative w-full h-[280px] sm:h-[315px]">
           <Image
@@ -83,7 +101,7 @@ function TeamCard({ member }: { member: TeamMember }) {
         </div>
 
         {/* Member info */}
-        <div className="absolute bottom-8 sm:bottom-10 left-3 sm:left-4 z-10">
+        <div className="absolute bottom-8 sm:bottom-10 left-3 sm:left-4 z-20">
           <p
             className="text-white text-xs sm:text-[13px] font-normal leading-[10.667px] mb-2"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -103,7 +121,7 @@ function TeamCard({ member }: { member: TeamMember }) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-8 sm:bottom-10 right-3 sm:right-4 z-10 opacity-60 hover:opacity-100 transition-opacity"
+          className="absolute bottom-8 sm:bottom-10 right-3 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
         >
           <div className="w-[38px] sm:w-[43px] h-[38px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[4px] flex items-center justify-center">
             <Image
@@ -121,15 +139,41 @@ function TeamCard({ member }: { member: TeamMember }) {
 }
 
 export default function Team() {
+  // Define the dot pattern style here to keep inline CSS clean
+  // We use white dots (rgba(255,255,255,0.15)) so they show on the black background
+  const dotPatternStyle = {
+    backgroundImage:
+      "radial-gradient(circle, rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px)",
+    backgroundSize: "24px 24px", // Adjust spacing between dots
+  };
+
   return (
-    <section id="team" className="bg-black py-16 sm:py-20 md:py-24 relative overflow-hidden min-h-screen">
-      {/* Background decorative elements */}
+    <section
+      id="team"
+      className="bg-black py-16 sm:py-20 md:py-24 relative overflow-hidden min-h-screen"
+    >
+      {/* ================= BACKGROUND ELEMENTS ================= */}
+
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Geometric shapes in background */}
+        {/* 1. TOP RIGHT DOTS */}
+        <div
+          className="absolute top-0 right-0 w-[200px] sm:w-[300px] h-[400px] sm:h-[600px] z-0 opacity-80"
+          style={dotPatternStyle}
+        />
+
+        {/* 2. BOTTOM LEFT DOTS (Rotated slightly for visual interest) */}
+        <div
+          className="absolute bottom-[-50px] left-[-50px] w-[300px] sm:w-[500px] h-[300px] sm:h-[400px] z-0 opacity-60 rotate-12"
+          style={dotPatternStyle}
+        />
+
+        {/* 3. Gradient Glow (Existing) */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] opacity-20">
           <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl" />
         </div>
       </div>
+
+      {/* ================= MAIN CONTENT ================= */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10">
         {/* Hero Title with gradient */}
@@ -193,10 +237,10 @@ export default function Team() {
 
       {/* Large background text */}
       <div
-        className="absolute top-32 left-0 opacity-5 pointer-events-none whitespace-nowrap overflow-hidden"
+        className="absolute top-32 left-0 opacity-5 pointer-events-none whitespace-nowrap overflow-hidden z-0"
         style={{ fontFamily: "'Unbounded', sans-serif" }}
       >
-        <p className="text-[150px] sm:text-[200px] md:text-[312.164px] font-normal leading-[256.135px] tracking-[-3.2017px]">
+        <p className="text-[150px] sm:text-[200px] md:text-[312.164px] font-normal leading-[256.135px] tracking-[-3.2017px] text-white">
           TEAM
         </p>
       </div>
