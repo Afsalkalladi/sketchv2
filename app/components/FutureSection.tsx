@@ -1,6 +1,34 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function FutureSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, []);
   return (
     <section
       id="solution"
@@ -73,7 +101,12 @@ export default function FutureSection() {
             />
             {/* --------------------------- */}
 
-            <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 animate-slide-up">
+            <div 
+              ref={imageRef}
+              className={`relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 transition-all duration-1000 ${
+                isVisible ? "animate-slide-up" : "opacity-0 translate-y-[100px]"
+              }`}
+            >
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"

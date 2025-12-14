@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 interface TeamMember {
   name: string;
@@ -130,7 +132,7 @@ function TeamCard({ member }: { member: TeamMember }) {
   );
 }
 
-export default function Team() {
+function TeamSection() {
   // This is the style extracted exactly from your FutureSection
   const dotPatternStyle = {
     backgroundImage:
@@ -248,5 +250,15 @@ export default function Team() {
         </p>
       </div>
     </section>
+  );
+}
+
+export default function TeamPage() {
+  return (
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <TeamSection />
+      <Footer />
+    </div>
   );
 }

@@ -74,10 +74,10 @@ export default function SolutionsPage() {
         </div>
 
         {/* Solution Cards Grid */}
-        <div className="absolute left-[76px] top-[1206px] grid grid-cols-2 gap-[36px] w-[1119px]">
+        <div className="absolute left-[76px] top-[1206px] grid grid-cols-2 gap-[36px] w-[936px]">
           {/* Card 1: ROBOTICS & AUTOMATION */}
           <div 
-            className="h-[301px] rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative"
+            className="h-[250px] rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative"
             style={{
               background: "linear-gradient(248.77deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
             }}
@@ -95,7 +95,7 @@ export default function SolutionsPage() {
 
           {/* Card 2: AI & INTELLIGENT SYSTEM */}
           <div 
-            className="h-[301px] rounded-[30px] relative"
+            className="h-[250px] rounded-[30px] relative"
             style={{
               background: "linear-gradient(248.8deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
             }}
@@ -113,7 +113,7 @@ export default function SolutionsPage() {
 
           {/* Card 3: SYSTEM INTEGRATION */}
           <div 
-            className="h-[301px] rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative"
+            className="h-[250px] rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative"
             style={{
               background: "linear-gradient(248.77deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
             }}
@@ -131,7 +131,7 @@ export default function SolutionsPage() {
 
           {/* Card 4: SAFETY, COMPLIANCE & SUPPORT */}
           <div 
-            className="h-[301px] rounded-[30px] relative"
+            className="h-[250px] rounded-[30px] relative"
             style={{
               background: "linear-gradient(248.8deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
             }}
