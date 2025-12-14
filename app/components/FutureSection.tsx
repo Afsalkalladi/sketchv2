@@ -6,9 +6,9 @@ export default function FutureSection() {
       id="solution"
       className="bg-black py-24 md:py-32 relative overflow-hidden min-h-[867px]"
     >
-      {/* Gradient overlays from Figma */}
+      {/* Background Gradient overlays (General Ambiance) */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           background:
             "linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -19,7 +19,6 @@ export default function FutureSection() {
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           {/* Left Column - Text */}
           <div className="md:w-1/2 pt-8">
-            {/* Heading – Figma: text-5xl, font-light, tracking-[4px], leading-[59.04px] */}
             <h2
               className="text-4xl md:text-5xl font-light text-white leading-[59.04px] tracking-[4px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -29,7 +28,6 @@ export default function FutureSection() {
               BY DESIGN
             </h2>
 
-            {/* Description – Figma: text-neutral-400, text-sm, font-light, leading-6, tracking-widest */}
             <div
               className="mt-10 text-neutral-400 text-sm font-light leading-6 tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -49,7 +47,6 @@ export default function FutureSection() {
               </p>
             </div>
 
-            {/* Get Started Button – Figma: bg-gray-600/80, rounded-[130.43px], text-sm, tracking-widest */}
             <button
               className="mt-10 h-9 px-6 rounded-full bg-gray-600/80 opacity-70 text-white text-sm font-light leading-6 tracking-widest transition-all hover:opacity-90"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -58,26 +55,39 @@ export default function FutureSection() {
             </button>
           </div>
 
-          {/* Right Column - Robotic Arm Image */}
-          <div className="md:w-1/2 flex justify-center md:justify-end">
-            <div className="relative w-[400px] h-[500px] md:w-[585px] md:h-[732px]">
-              {/* Dot pattern background as half-ellipse */}
-              <div
-                className="absolute inset-0 opacity-40 pointer-events-none"
-                style={{
-                  backgroundImage: 'radial-gradient(circle, #ffffff 2px, transparent 2.5px)',
-                  backgroundSize: '20px 20px',
-                  maskImage: 'radial-gradient(ellipse 60% 100% at 100% 50%, white 100%, transparent 100%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 60% 100% at 100% 50%, white 100%, transparent 100%)',
-                }}
-              />
-              {/* Decorative circle behind */}
-              <div className="absolute -top-14 -left-10 w-[668px] h-[668px] opacity-20 rounded-full border border-white/10" />
+          {/* Right Column - Robotic Arm Image & Dots */}
+          <div className="md:w-1/2 flex justify-center md:justify-end relative">
+            {/* --- THE DOT PATTERN FIX --- */}
+            {/* This div creates the circular cluster of dots behind the robot */}
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                // Size of the dot cluster
+                width: "600px",
+                height: "600px",
+                // Position it behind the robot head (adjust right/top to move the cluster)
+                right: "-50px",
+                top: "-50px",
+                // The Dot Pattern
+                backgroundImage:
+                  "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
+                backgroundSize: "24px 24px", // Spacing between dots
+                // The Fade Out Effect (Mask)
+                maskImage:
+                  "radial-gradient(circle, black 40%, transparent 70%)",
+                WebkitMaskImage:
+                  "radial-gradient(circle, black 40%, transparent 70%)",
+                zIndex: 0,
+              }}
+            />
+            {/* --------------------------- */}
+
+            <div className="relative w-[400px] h-[500px] md:w-[585px] md:h-[732px] z-10">
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"
                 fill
-                className="object-contain relative z-10"
+                className="object-contain relative"
               />
             </div>
           </div>

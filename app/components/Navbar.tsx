@@ -17,9 +17,9 @@ export default function Navbar() {
         {/* Brand / Logo */}
         <div className="flex items-center">
           <div className="h-9 w-28 relative">
-            <img 
-              src="/images/colored-logo.png" 
-              alt="Sketch Robotics" 
+            <img
+              src="/images/colored-logo.png"
+              alt="Sketch Robotics"
               className="h-full w-full object-contain"
             />
           </div>
