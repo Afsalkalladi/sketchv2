@@ -6,7 +6,13 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-linear-to-l from-white/0 to-black/10 backdrop-blur-[10px]">
+    <nav
+      className="fixed inset-x-0 top-0 z-50 h-16 backdrop-blur-[10px]"
+      style={{
+        background:
+          "linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.10) 100%)",
+      }}
+    >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* Brand / Logo */}
         <div className="flex items-center">
