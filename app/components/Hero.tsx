@@ -27,9 +27,7 @@ export default function Hero() {
       />
 
       {/* Top gradient bar for navbar blending */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-black"
-      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-black" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full w-full items-center">

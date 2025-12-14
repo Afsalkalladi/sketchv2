@@ -9,30 +9,32 @@ export default function Achievements() {
   return (
     <section className="bg-white py-20 md:py-28 relative overflow-hidden min-h-[878px]">
       {/* Background gradient from Figma */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(217,217,217,0.10) 0%, rgba(115,115,115,0.10) 100%)"
+          background:
+            "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(217,217,217,0.10) 0%, rgba(115,115,115,0.10) 100%)",
         }}
       />
       {/* Top gradient line */}
-      <div 
+      <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.30) 100%)"
+          background:
+            "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.30) 100%)",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Title – Figma: text-white/90, text-5xl, font-light, tracking-[4px], leading-[59.04px] */}
         <div className="text-center mb-16 pt-8">
-          <h2 
+          <h2
             className="text-4xl md:text-5xl font-light uppercase tracking-[4px] leading-[59.04px] text-white/90"
-            style={{ 
+            style={{
               fontFamily: "'Unbounded', sans-serif",
               color: "rgba(255,255,255,0.9)",
               WebkitTextStroke: "1px rgba(0,0,0,0.1)",
-              textShadow: "0 0 60px rgba(0,0,0,0.3)"
+              textShadow: "0 0 60px rgba(0,0,0,0.3)",
             }}
           >
             ACHIEVMENTS

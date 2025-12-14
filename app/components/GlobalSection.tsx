@@ -4,16 +4,18 @@ export default function GlobalSection() {
   return (
     <section className="bg-black py-20 md:py-28 relative overflow-hidden min-h-[882px]">
       {/* Gradient overlays from Figma */}
-      <div 
+      <div
         className="absolute inset-0 opacity-10"
         style={{
-          background: "linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)"
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
         }}
       />
-      <div 
+      <div
         className="absolute right-0 top-0 bottom-0 w-full opacity-70"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"
+          background:
+            "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
         }}
       />
 
@@ -33,7 +35,7 @@ export default function GlobalSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10 h-full flex flex-col justify-center py-20">
         <div className="max-w-[520px]">
           {/* Main Heading – Figma: text-4xl, tracking-[3.30px], leading-[48.75px] */}
-          <h2 
+          <h2
             className="text-3xl md:text-4xl leading-[48.75px] tracking-[3.30px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
@@ -44,7 +46,7 @@ export default function GlobalSection() {
           </h2>
 
           {/* Subtitle – Figma: text-neutral-400, text-lg, font-light, leading-6, tracking-widest */}
-          <p 
+          <p
             className="mt-6 text-neutral-400 text-lg font-light leading-6 tracking-widest max-w-80"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >

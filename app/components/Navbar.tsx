@@ -12,35 +12,37 @@ export default function Navbar() {
         <div className="flex items-center">
           {/* Logo placeholder - replace with actual logo */}
           <div className="h-9 w-28 bg-white/20 rounded flex items-center justify-center">
-            <span className="text-white text-xs font-light tracking-wider">SKETCH</span>
+            <span className="text-white text-xs font-light tracking-wider">
+              SKETCH
+            </span>
           </div>
         </div>
 
         {/* Center Nav (Desktop) */}
         <div className="hidden md:flex items-center gap-8">
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             Home
           </a>
-          <a 
-            href="#solution" 
+          <a
+            href="#solution"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             Solution
           </a>
-          <a 
-            href="#team" 
+          <a
+            href="#team"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             Team
           </a>
-          <a 
-            href="#careers" 
+          <a
+            href="#careers"
             className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
@@ -50,7 +52,7 @@ export default function Navbar() {
 
         {/* Right CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <button 
+          <button
             className="h-7 w-28 rounded-full bg-gray-800/80 text-center text-stone-300 text-[9.78px] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
@@ -87,7 +89,7 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {open && (
         <div className="md:hidden bg-black/95 backdrop-blur-[10px]">
-          <div 
+          <div
             className="mx-auto flex max-w-7xl flex-col gap-4 px-4 pb-6 pt-4"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
