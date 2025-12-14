@@ -131,14 +131,6 @@ export default function Navbar() {
             >
               careers
             </a>
-            <a
-              href="mailto:sketchrobotics@gmail.com"
-              className="h-7 w-28 flex items-center justify-center rounded-full bg-gray-800/80 text-center text-stone-300 text-[9.78px] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80 mt-2"
-              style={{ fontFamily: "'Unbounded', sans-serif" }}
-              onClick={() => setOpen(false)}
-            >
-              CONNECT US
-            </a>
           </div>
         </div>
       )}
