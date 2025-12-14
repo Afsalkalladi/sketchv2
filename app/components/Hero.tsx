@@ -12,7 +12,6 @@ export default function Hero() {
           loop
           muted
           playsInline
-          // Added a poster for better UX if video loads slowly
           poster="/images/hero-poster.jpg"
           className="h-full w-full object-cover object-center"
         >
@@ -21,10 +20,7 @@ export default function Hero() {
         </video>
       </div>
 
-      {/* Responsive Dark Overlay 
-        Mobile: Dark at the bottom (to see text), clear at top.
-        Desktop: Dark at the left (to see text), clear at right.
-      */}
+      {/* Responsive Dark Overlay */}
       <div
         className="absolute inset-0 z-10 
         bg-gradient-to-t from-black via-black/80 to-transparent
@@ -34,7 +30,12 @@ export default function Hero() {
 
       {/* Content Container */}
       <div className="relative z-20 flex h-full w-full items-end pb-24 sm:pb-20 md:pb-32 lg:pb-40">
-        <div className="mx-auto flex w-full max-w-7xl px-6 sm:px-6 md:px-10 lg:px-20">
+        {/* MATCHING LOGIC:
+           1. Kept 'mx-auto' and 'max-w-7xl' to match Navbar width.
+           2. CHANGED padding to 'px-4' to strictly match Navbar padding.
+           3. REMOVED 'sm:px-6 md:px-10 lg:px-20' so text doesn't drift right.
+        */}
+        <div className="mx-auto flex w-full max-w-7xl px-4">
           <div className="max-w-xl flex flex-col justify-end">
             {/* Main Heading */}
             <h1

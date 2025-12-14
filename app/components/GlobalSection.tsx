@@ -32,17 +32,15 @@ export default function GlobalSection() {
       </div>
 
       {/* Content overlay */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10 h-full flex flex-col justify-center py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 relative z-10 h-full flex flex-col justify-center py-16 sm:py-20">
         <div className="max-w-[520px]">
           {/* Main Heading – Figma: text-4xl, tracking-[3.30px], leading-[48.75px] */}
           <h2
             className="text-2xl sm:text-3xl md:text-4xl leading-[1.2] sm:leading-[1.3] md:leading-[48.75px] tracking-[2px] sm:tracking-[2.5px] md:tracking-[3.30px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
-            <span className="text-white font-light">FROM </span>
-            <span className="text-white font-normal">INDIA</span>
-            <span className="text-white font-light"> TO THE </span>
-            <span className="text-white font-normal">WORLD</span>
+            <span className="block text-white font-light">FROM <span className="font-normal">INDIA</span></span>
+            <span className="block text-white font-light">TO THE <span className="font-normal">WORLD</span></span>
           </h2>
 
           {/* Subtitle – Figma: text-neutral-400, text-lg, font-light, leading-6, tracking-widest */}

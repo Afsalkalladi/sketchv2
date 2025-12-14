@@ -3,19 +3,19 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 sm:py-16 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-20">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Main Content Section: Split into 2 Columns */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-12">
           {/* Left Column: Logo & Tagline */}
           <div className="md:w-1/2 max-w-lg">
             <div className="mb-6">
-              {/* Assuming you have a white version of the logo for dark mode */}
               <Image
                 src="/images/colored-logo.png"
                 alt="Sketch Robotics"
                 width={200}
                 height={65}
-                className="w-[180px] h-auto object-contain"
+                className="w-[180px] h-auto object-contain mx-0"
+                priority
               />
             </div>
             <p

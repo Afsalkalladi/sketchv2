@@ -39,7 +39,7 @@ export default function FutureSection() {
          were deleted here to ensure the background remains pure solid black.
       */}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 md:flex-row md:items-start md:justify-between">
           {/* Left Column - Text */}
           <div className="md:w-1/2 pt-4 sm:pt-6 md:pt-8">
@@ -47,9 +47,8 @@ export default function FutureSection() {
               className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.2] sm:leading-[1.3] md:leading-[59.04px] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
-              FUTURE
-              <br />
-              BY DESIGN
+              <span className="block">FUTURE</span>
+              <span className="block">BY DESIGN</span>
             </h2>
 
             <div
