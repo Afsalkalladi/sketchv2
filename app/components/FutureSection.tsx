@@ -4,16 +4,12 @@ export default function FutureSection() {
   return (
     <section
       id="solution"
+      // Kept bg-black, removed overlays that were washing it out
       className="bg-black py-24 md:py-32 relative overflow-hidden min-h-[867px]"
     >
-      {/* Background Gradient overlays (General Ambiance) */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
-        }}
-      />
+      {/* REMOVED: The top dark gradient and the light ambiance gradient 
+         were deleted here to ensure the background remains pure solid black.
+      */}
 
       <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
@@ -57,22 +53,17 @@ export default function FutureSection() {
 
           {/* Right Column - Robotic Arm Image & Dots */}
           <div className="md:w-1/2 flex justify-center md:justify-end relative">
-            {/* --- THE DOT PATTERN FIX --- */}
-            {/* This div creates the circular cluster of dots behind the robot */}
+            {/* --- THE DOT PATTERN --- */}
             <div
               className="absolute pointer-events-none"
               style={{
-                // Size of the dot cluster
                 width: "600px",
                 height: "600px",
-                // Position it behind the robot head (adjust right/top to move the cluster)
                 right: "-50px",
                 top: "-50px",
-                // The Dot Pattern
                 backgroundImage:
                   "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
-                backgroundSize: "24px 24px", // Spacing between dots
-                // The Fade Out Effect (Mask)
+                backgroundSize: "24px 24px",
                 maskImage:
                   "radial-gradient(circle, black 40%, transparent 70%)",
                 WebkitMaskImage:
