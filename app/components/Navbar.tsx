@@ -16,13 +16,15 @@ export default function Navbar() {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* Brand / Logo */}
         <div className="flex items-center">
-          <div className="h-9 w-28 relative">
-            <img
-              src="/images/colored-logo.png"
-              alt="Sketch Robotics"
-              className="h-full w-full object-contain"
-            />
-          </div>
+          <a href="/" aria-label="Go to homepage">
+            <div className="h-9 w-28 relative">
+              <img
+                src="/images/colored-logo.png"
+                alt="Sketch Robotics"
+                className="h-full w-full object-contain"
+              />
+            </div>
+          </a>
         </div>
 
         {/* Center Nav (Desktop) */}
