@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 
 interface Achievement {
@@ -72,19 +72,22 @@ const achievements: Achievement[] = [
   },
 ];
 
+const AUTO_SCROLL_INTERVAL = 4000; // Auto-scroll every 4 seconds
+const SWIPE_THRESHOLD = 50; // Minimum swipe distance in pixels
+
 export default function Achievements() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setActiveSlide((prev) => (prev + 1) % achievements.length);
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setActiveSlide((prev) => (prev - 1 + achievements.length) % achievements.length);
-  };
+  }, []);
 
   const goToSlide = (index: number) => {
     setActiveSlide(index);
@@ -94,16 +97,20 @@ export default function Achievements() {
     return (activeSlide + offset + achievements.length) % achievements.length;
   };
 
+  const getAltText = (description: string) => {
+    return description.substring(0, 50);
+  };
+
   // Auto-scroll functionality
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
         nextSlide();
-      }, 4000); // Auto-scroll every 4 seconds
+      }, AUTO_SCROLL_INTERVAL);
 
       return () => clearInterval(interval);
     }
-  }, [isPaused]);
+  }, [isPaused, nextSlide]);
 
   // Touch/swipe handlers
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -115,12 +122,12 @@ export default function Achievements() {
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
+    if (touchStartX.current - touchEndX.current > SWIPE_THRESHOLD) {
       // Swipe left - next slide
       nextSlide();
     }
 
-    if (touchStartX.current - touchEndX.current < -50) {
+    if (touchStartX.current - touchEndX.current < -SWIPE_THRESHOLD) {
       // Swipe right - previous slide
       prevSlide();
     }
@@ -176,7 +183,7 @@ export default function Achievements() {
             <div className="hidden lg:block w-[350px] h-[280px] bg-zinc-800/40 rounded-[20px] shrink-0 opacity-50 overflow-hidden relative">
               <Image
                 src={achievements[getSlideIndex(-1)].image}
-                alt={achievements[getSlideIndex(-1)].description.substring(0, 50)}
+                alt={getAltText(achievements[getSlideIndex(-1)].description)}
                 fill
                 className="object-cover"
               />
@@ -186,7 +193,7 @@ export default function Achievements() {
             <div className="w-[280px] sm:w-[350px] md:w-[450px] h-[320px] sm:h-[380px] md:h-[450px] bg-zinc-800/30 rounded-[20px] shadow-[0px_0px_60px_40px_rgba(255,255,255,0.05)] sm:shadow-[0px_0px_90px_80px_rgba(255,255,255,0.05)] shrink-0 overflow-hidden relative group">
               <Image
                 src={achievements[activeSlide].image}
-                alt={achievements[activeSlide].description.substring(0, 50)}
+                alt={getAltText(achievements[activeSlide].description)}
                 fill
                 className="object-cover"
               />
@@ -203,7 +210,7 @@ export default function Achievements() {
             <div className="hidden lg:block w-[350px] h-[280px] bg-zinc-800/40 rounded-[20px] shrink-0 opacity-50 overflow-hidden relative">
               <Image
                 src={achievements[getSlideIndex(1)].image}
-                alt={achievements[getSlideIndex(1)].description.substring(0, 50)}
+                alt={getAltText(achievements[getSlideIndex(1)].description)}
                 fill
                 className="object-cover"
               />
