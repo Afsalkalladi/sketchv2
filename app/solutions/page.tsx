@@ -108,8 +108,9 @@ export default function SolutionsPage() {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={`rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative transition-all duration-300 ${
-                  expandedCard === index ? "h-auto" : "h-[200px] lg:h-[250px]"
+                id={`solution-card-${index}`}
+                className={`rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative transition-all duration-300 overflow-hidden ${
+                  expandedCard === index ? "max-h-[600px]" : "h-[200px] lg:h-[250px] max-h-[250px]"
                 }`}
                 style={{
                   background:
@@ -130,6 +131,8 @@ export default function SolutionsPage() {
                   onClick={() =>
                     setExpandedCard(expandedCard === index ? null : index)
                   }
+                  aria-expanded={expandedCard === index}
+                  aria-controls={`solution-card-${index}`}
                   className="absolute bottom-[22px] right-[34px] h-[40px] w-[120px] lg:h-[56px] lg:w-[171px] rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center font-unbounded text-[12px] lg:text-[14px] text-white/70 hover:text-white transition-colors"
                   style={{
                     background:
