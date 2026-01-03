@@ -7,80 +7,63 @@ interface TeamMember {
   role: string;
   image: string;
   linkedin: string;
+  details: string[];
 }
 
 const founders: TeamMember[] = [
   {
-    name: "MUHAMMED FAISAL",
-    role: "FOUNDER & CEO",
+    name: "MUHAMMED FAISAL P K",
+    role: "CEO",
     image: "/images/team-faisal.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/muhammed-faisal-p-k-183376259/",
+    details: [
+      "5+ years in robotics & automation",
+      "1st place, IndiaSkills 2022 | 4th place, WorldSkills (Mobile Robotics)",
+      "Experience with Samsung Electronics",
+      "Driving hardware integration at Sketch Robotics",
+    ],
   },
   {
     name: "ROMAL JOSBIN",
-    role: "ROBOTICS ENGINEER",
+    role: "COO",
     image: "/images/team-romal.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/romal-josbin/",
+    details: [
+      "Project management & team leadership",
+      "Led Team Tarusa CUSAT (All India Rank 1, HBAJA)",
+      "Managed Team Horizon (ERC 2024, World Rank 18)",
+      "Flipkart Grid 6.0 finalist & Convenor, Vibhava Innovation Summit",
+    ],
   },
   {
-    name: "ASHIND V T",
-    role: "ROBOTICS ENGINEER",
+    name: "MUHAMMED SIYAD P",
+    role: "ROBOTICS CONSULTANT",
     image: "/images/team-ashind.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/muhammedsiyadp/",
+    details: [
+      "Robotics Software Engineer",
+      "Expertise in control systems & autonomous navigation",
+      "4th place, WorldSkills 2022 (Mobile Robotics)",
+      "Led software integration, ERC 2024 (World Rank 18)",
+      "Research at IISc Bangalore | Robotics Engineer at Airbus",
+    ],
   },
 ];
 
 const mentors: TeamMember[] = [
   {
-    name: "MUHAMMED FAISAL",
-    role: "FOUNDER & CEO",
+    name: "DR. ASHA ELIZABETH DANIEL",
+    role: "MENTOR",
     image: "/images/team-faisal.png",
     linkedin: "#",
+    details: ["Retired Professor, CUSAT"],
   },
   {
-    name: "ROMAL JOSBIN",
-    role: "ROBOTICS ENGINEER",
+    name: "PROF. SHEENA K.M",
+    role: "MENTOR",
     image: "/images/team-romal.png",
     linkedin: "#",
-  },
-];
-
-const team: TeamMember[] = [
-  {
-    name: "MUHAMMED FAISAL",
-    role: "FOUNDER & CEO",
-    image: "/images/team-faisal.png",
-    linkedin: "#",
-  },
-  {
-    name: "ROMAL JOSBIN",
-    role: "ROBOTICS ENGINEER",
-    image: "/images/team-romal.png",
-    linkedin: "#",
-  },
-  {
-    name: "ASHIND V T",
-    role: "ROBOTICS ENGINEER",
-    image: "/images/team-ashind.png",
-    linkedin: "#",
-  },
-  {
-    name: "MUHAMMED FAISAL",
-    role: "FOUNDER & CEO",
-    image: "/images/team-faisal.png",
-    linkedin: "#",
-  },
-  {
-    name: "ROMAL JOSBIN",
-    role: "ROBOTICS ENGINEER",
-    image: "/images/team-romal.png",
-    linkedin: "#",
-  },
-  {
-    name: "ASHIND V T",
-    role: "ROBOTICS ENGINEER",
-    image: "/images/team-ashind.png",
-    linkedin: "#",
+    details: ["Faculty, CUSAT"],
   },
 ];
 
@@ -133,7 +116,6 @@ function TeamCard({ member }: { member: TeamMember }) {
 }
 
 function TeamSection() {
-  // This is the style extracted exactly from your FutureSection
   const dotPatternStyle = {
     backgroundImage:
       "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
@@ -147,21 +129,18 @@ function TeamSection() {
       id="team"
       className="bg-black py-16 sm:py-20 md:py-24 relative overflow-hidden min-h-screen"
     >
-      {/* ================= BACKGROUND ELEMENTS ================= */}
+      {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* 1. TOP RIGHT DOTS (From Robotic Arm Section) */}
         <div
           className="absolute top-0 right-0 z-0 opacity-80"
           style={{
             ...dotPatternStyle,
             width: "600px",
             height: "600px",
-            right: "-100px", // Slight offset to bleed off screen
+            right: "-100px",
             top: "-50px",
           }}
         />
-
-        {/* 2. BOTTOM LEFT DOTS (Balanced placement) */}
         <div
           className="absolute bottom-0 left-0 z-0 opacity-60"
           style={{
@@ -172,14 +151,11 @@ function TeamSection() {
             bottom: "-100px",
           }}
         />
-
-        {/* 3. Gradient Glow (Keep existing for ambiance) */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] opacity-20 z-0">
           <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl" />
         </div>
       </div>
 
-      {/* ================= CONTENT ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10">
         {/* Hero Title */}
         <div className="mb-12 sm:mb-16 md:mb-20">
@@ -220,21 +196,6 @@ function TeamSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
             {mentors.map((member, index) => (
               <TeamCard key={`mentor-${index}`} member={member} />
-            ))}
-          </div>
-        </div>
-
-        {/* Team */}
-        <div className="mb-16 sm:mb-20">
-          <h2
-            className="text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12 leading-[10.667px]"
-            style={{ fontFamily: "'Unbounded', sans-serif" }}
-          >
-            TEAM
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
-            {team.map((member, index) => (
-              <TeamCard key={`team-${index}`} member={member} />
             ))}
           </div>
         </div>
