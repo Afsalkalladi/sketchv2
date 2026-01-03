@@ -67,7 +67,7 @@ const achievements: Achievement[] = [
   },
   {
     id: 12,
-    description: "Our CEO Faisal and Co-Founder Siyad receiving the cash award from, for securing World Rank 4 in Mobile Robotics at WorldSkills 2022.",
+    description: "Our CEO Faisal and Co-Founder Siyad receiving the cash award for securing World Rank 4 in Mobile Robotics at WorldSkills 2022.",
     image: "/images/achievements/achievement-12.jpg",
   },
 ];
@@ -103,7 +103,7 @@ export default function Achievements() {
 
       return () => clearInterval(interval);
     }
-  }, [activeSlide, isPaused]);
+  }, [isPaused]);
 
   // Touch/swipe handlers
   const handleTouchStart = (e: React.TouchEvent) => {
