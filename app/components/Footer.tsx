@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </div>
             <p
-              className="text-base sm:text-lg font-light leading-relaxed text-gray-200"
+              className="text-sm sm:text-base font-light leading-relaxed text-gray-200"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Empowering innovation with sustainable robotics solutions, crafted
@@ -30,14 +30,14 @@ export default function Footer() {
           {/* Right Column: Contact Info */}
           <div className="md:w-auto flex flex-col items-start md:items-start">
             <h3
-              className="text-lg font-bold uppercase tracking-wider mb-6"
+              className="text-base font-bold uppercase tracking-wider mb-6"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Contact Info
             </h3>
 
             <div
-              className="space-y-2 mb-6 text-base font-light text-gray-200"
+              className="space-y-2 mb-6 text-sm font-light text-gray-200"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <a
@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
           <p
-            className="text-white font-light text-sm"
+            className="text-white font-light text-xs"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             © 2025 Sketch Robotics | All Rights Reserved
