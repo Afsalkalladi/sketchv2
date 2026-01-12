@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface Achievement {
   id: number;
@@ -33,13 +34,13 @@ const achievements: Achievement[] = [
     id: 4,
     title: "SAE India HBAJA - All India Rank 1",
     description: "Our COO Romal Josbin, along with Team Tarusa Motorsport CUSAT, on the SAE India HBAJA podium after leading the team to secure All India Rank 1.",
-    image: "/images/achievements/achievement-4.jpg",
+    image: "/images/achievements/achievement-4.jpeg",
   },
   {
     id: 5,
     title: "ISRO Chairman Appreciation",
     description: "Our Co-Founder Siyad receiving appreciation from Dr. S. Somanath, former Chairman of ISRO, on behalf of CUSAT's Mars Rover Team, Team Horizon.",
-    image: "/images/achievements/achievement-5.jpg",
+    image: "/images/achievements/achievement-5.jpeg",
   },
   {
     id: 6,
@@ -51,7 +52,7 @@ const achievements: Achievement[] = [
     id: 7,
     title: "Flipkart Grid 6.0 Finalist",
     description: "Our COO, Romal Josbin, as a finalist at Flipkart Grid 6.0, one of India's leading innovation challenges.",
-    image: "/images/achievements/achievement-7.jpg",
+    image: "/images/achievements/achievement-7.jpeg",
   },
   {
     id: 8,
@@ -63,13 +64,13 @@ const achievements: Achievement[] = [
     id: 9,
     title: "ISRO Scientist Appreciation",
     description: "Our COO, Romal Josbin, with Team Horizon, appreciated by Dr. T. N. Suresh Kumar, Retired Senior Space Scientist, ISRO, for leading the team at the European Rover Challenge.",
-    image: "/images/achievements/achievement-9.jpg",
+    image: "/images/achievements/achievement-9.jpeg",
   },
   {
     id: 10,
     title: "Times of India Feature - HBAJA",
     description: "Our COO, Romal Josbin, featured in The Times of India along with Team Tarusa Motorsport CUSAT, after leading the team to All India Rank 1 at SAE India HBAJA.",
-    image: "/images/achievements/achievement-10.jpg",
+    image: "/images/achievements/achievement-10.png",
   },
   {
     id: 11,
@@ -81,12 +82,28 @@ const achievements: Achievement[] = [
     id: 12,
     title: "Cash Award Recognition",
     description: "Our CEO Faisal and Co-Founder Siyad receiving the cash award for securing World Rank 4 in Mobile Robotics at WorldSkills 2022.",
-    image: "/images/achievements/achievement-12.jpg",
+    image: "/images/achievements/achievement-12.jpeg",
   },
 ];
 
 export default function Achievements() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const id = window.setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % achievements.length);
+    }, 6000);
+
+    return () => window.clearInterval(id);
+  }, [isPaused]);
+
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [activeSlide]);
 
   const nextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % achievements.length);
@@ -104,35 +121,47 @@ export default function Achievements() {
     return (activeSlide + offset + achievements.length) % achievements.length;
   };
 
+  const handleToggleExpand = () => setIsExpanded((prev) => !prev);
+
+  // Helper to render the side cards (ghost cards)
+  const SideCard = ({ index, onClick }: { index: number; onClick: () => void }) => (
+    <div 
+      onClick={onClick}
+      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90"
+    >
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+      <Image
+        src={achievements[index].image}
+        alt={achievements[index].title}
+        fill
+        className="object-cover"
+        sizes="300px"
+      />
+    </div>
+  );
+
   return (
-    <section className="bg-white py-16 sm:py-20 md:py-28 relative overflow-hidden min-h-[600px] sm:min-h-[750px] md:min-h-[878px]">
-      {/* Background gradient */}
+    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px]">
+      {/* Background Effects */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(217,217,217,0.10) 0%, rgba(115,115,115,0.10) 100%)",
+            "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.4) 100%)",
         }}
       />
-      {/* Top gradient line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.30) 100%)",
-        }}
-      />
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)" }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Title */}
-        <div className="text-center mb-10 sm:mb-12 md:mb-16 pt-4 sm:pt-6 md:pt-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-16 pt-4">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[2px] sm:tracking-[3px] md:tracking-[4px] leading-[1.2] sm:leading-[1.3] md:leading-[59.04px] text-white/90"
+            className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] sm:tracking-[0.24em] leading-[1.2] text-white"
             style={{
               fontFamily: "'Unbounded', sans-serif",
-              color: "rgba(255,255,255,0.9)",
-              WebkitTextStroke: "0.5px rgba(0,0,0,0.1)",
-              textShadow: "0 0 40px rgba(0,0,0,0.3)",
+              WebkitTextStroke: "0.5px rgba(255,255,255,0.12)",
+              textShadow: "0 0 32px rgba(255,255,255,0.18)",
             }}
           >
             ACHIEVEMENTS
@@ -140,106 +169,90 @@ export default function Achievements() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative mt-12 sm:mt-16 md:mt-20">
-          {/* Slides */}
-          <div className="flex gap-3 sm:gap-4 md:gap-6 justify-center items-center">
-            {/* Left card */}
-            <div className="hidden lg:block w-[350px] h-[280px] bg-zinc-400/50 rounded-[20px] shrink-0 opacity-50 overflow-hidden relative">
-              <Image
-                src={achievements[getSlideIndex(-1)].image}
-                alt={achievements[getSlideIndex(-1)].title}
-                fill
-                className="object-cover"
-              />
-            </div>
+        <div
+          className="relative mt-8 flex justify-center items-center gap-4 lg:gap-8"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          
+          {/* Previous Card (Left Ghost) */}
+          <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
-            {/* Center card - main focus */}
-            <div className="w-[280px] sm:w-[350px] md:w-[450px] h-[320px] sm:h-[380px] md:h-[450px] bg-zinc-300/30 rounded-[20px] shadow-[0px_0px_60px_40px_rgba(32,32,32,0.10)] sm:shadow-[0px_0px_90px_80px_rgba(32,32,32,0.10)] shrink-0 overflow-hidden relative group">
-              <Image
-                src={achievements[activeSlide].image}
-                alt={achievements[activeSlide].title}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-unbounded text-sm md:text-base font-semibold mb-2">
+          {/* Main Active Card */}
+          <div className="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[400px] sm:h-[450px] md:h-[500px] rounded-[30px] border border-white/10 bg-white/5 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+            <Image
+              src={achievements[activeSlide].image}
+              alt={achievements[activeSlide].title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 600px"
+              priority
+            />
+
+            {/* Content Overlay */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/90 to-transparent pt-20">
+              <button
+                type="button"
+                onClick={handleToggleExpand}
+                className="w-full text-left p-6 space-y-3 text-white/90"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="font-unbounded text-lg sm:text-xl font-semibold tracking-wide uppercase line-clamp-1">
                     {achievements[activeSlide].title}
                   </h3>
-                  <p className="font-unbounded text-xs md:text-sm font-light">
-                    {achievements[activeSlide].description}
-                  </p>
+                  <span className="text-xs font-medium tracking-[0.24em] text-white/70 whitespace-nowrap">
+                    {isExpanded ? "LESS" : "MORE"}
+                  </span>
                 </div>
-              </div>
-            </div>
-
-            {/* Right card */}
-            <div className="hidden lg:block w-[350px] h-[280px] bg-zinc-400/30 rounded-[20px] shrink-0 opacity-50 overflow-hidden relative">
-              <Image
-                src={achievements[getSlideIndex(1)].image}
-                alt={achievements[getSlideIndex(1)].title}
-                fill
-                className="object-cover"
-              />
+                <p
+                  className={`text-sm sm:text-base leading-relaxed transition-[max-height] duration-500 ease-in-out ${
+                    isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
+                  } overflow-hidden text-white/80`}
+                >
+                  {achievements[activeSlide].description}
+                </p>
+              </button>
             </div>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Next Card (Right Ghost) */}
+          <SideCard index={getSlideIndex(1)} onClick={nextSlide} />
+
+          {/* Navigation Arrows (Floating) */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
+            className="absolute left-2 md:left-10 lg:left-20 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30"
             aria-label="Previous slide"
           >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
+            className="absolute right-2 md:right-10 lg:right-20 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30"
             aria-label="Next slide"
           >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
+        </div>
 
-          {/* Carousel indicators */}
-          <div className="mt-10 sm:mt-12 md:mt-16 flex justify-center">
-            <div className="h-6 sm:h-7 bg-neutral-400/90 rounded-[20px] px-3 sm:px-4 flex items-center gap-2 sm:gap-3">
-              {achievements.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goToSlide(i)}
-                  className={`w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full transition-all ${
-                    i === activeSlide ? "bg-zinc-800/50" : "bg-white/50"
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
+        {/* Pagination Dots */}
+        <div className="mt-12 sm:mt-16 flex justify-center">
+          <div className="h-8 md:h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 flex items-center gap-3">
+            {achievements.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === activeSlide 
+                    ? "bg-white h-2 w-2 sm:h-3 sm:w-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]" 
+                    : "bg-white/20 h-1.5 w-1.5 sm:h-2 sm:w-2 hover:bg-white/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
