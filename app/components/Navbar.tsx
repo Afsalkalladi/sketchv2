@@ -13,7 +13,7 @@ export default function Navbar() {
           "linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.10) 100%)",
       }}
     >
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
+      <div className="flex h-full w-full items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand / Logo */}
         <div className="flex items-center">
           <a href="/" aria-label="Go to homepage">
@@ -21,7 +21,7 @@ export default function Navbar() {
               <img
                 src="/images/colored-logo.png"
                 alt="Sketch Robotics"
-                className="h-full w-full object-contain"
+                className="h-full w-full object-contain object-left"
               />
             </div>
           </a>
@@ -100,7 +100,7 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-black/95 backdrop-blur-[10px]">
           <div
-            className="mx-auto flex max-w-7xl flex-col gap-4 px-4 pb-6 pt-4"
+            className="flex w-full flex-col gap-4 px-4 pb-6 pt-4 sm:px-6"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             <a

@@ -36,7 +36,7 @@ export default function Hero() {
            3. REMOVED 'sm:px-6 md:px-10 lg:px-20' so text doesn't drift right.
         */}
         <div className="mx-auto flex w-full max-w-7xl px-4">
-          <div className="max-w-xl flex flex-col justify-end">
+          <div className="max-w-xl flex flex-col justify-end transform translate-y-10 sm:translate-y-12 md:translate-y-16">
             {/* Main Heading */}
             <h1
               className="font-light text-white 
