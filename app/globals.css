@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-unbounded);
   --font-mono: var(--font-geist-mono);
-  
+
   /* Custom dot pattern background */
   --background-dot-pattern: radial-gradient(circle, #000000 2px, transparent 2.5px);
   --background-size-dot-spacing: 20px 20px;
@@ -34,6 +34,7 @@ body {
     opacity: 0;
     transform: translateY(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -42,4 +43,49 @@ body {
 
 .animate-slide-up {
   animation: slide-up 1s ease-out;
+}
+
+/* Magnetic/Snap Scrolling */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Snap section - apply to each full-page section */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100dvh;
+}
+
+/* Fluid Full-Width Container */
+.fluid-container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* CSS Grid Layout */
+.grid-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .fluid-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fluid-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }

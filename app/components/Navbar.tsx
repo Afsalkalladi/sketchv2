@@ -13,7 +13,7 @@ export default function Navbar() {
           "linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.10) 100%)",
       }}
     >
-      <div className="flex h-full w-full items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="flex h-full w-full items-center justify-between px-5 md:px-10 lg:px-[60px]">
         {/* Brand / Logo */}
         <div className="flex items-center">
           <a href="/" aria-label="Go to homepage">
@@ -77,19 +77,16 @@ export default function Navbar() {
           >
             <span className="flex flex-col items-center justify-center space-y-1">
               <span
-                className={`h-0.5 w-4 bg-white transition-transform ${
-                  open ? "translate-y-[3px] rotate-45" : ""
-                }`}
+                className={`h-0.5 w-4 bg-white transition-transform ${open ? "translate-y-[3px] rotate-45" : ""
+                  }`}
               />
               <span
-                className={`h-0.5 w-4 bg-white transition-opacity ${
-                  open ? "opacity-0" : "opacity-100"
-                }`}
+                className={`h-0.5 w-4 bg-white transition-opacity ${open ? "opacity-0" : "opacity-100"
+                  }`}
               />
               <span
-                className={`h-0.5 w-4 bg-white transition-transform ${
-                  open ? "-translate-y-[3px] -rotate-45" : ""
-                }`}
+                className={`h-0.5 w-4 bg-white transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""
+                  }`}
               />
             </span>
           </button>

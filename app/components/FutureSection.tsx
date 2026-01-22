@@ -33,18 +33,18 @@ export default function FutureSection() {
     <section
       id="solution"
       // Kept bg-black, removed overlays that were washing it out
-      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px]"
+      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen snap-start"
     >
       {/* REMOVED: The top dark gradient and the light ambiance gradient 
          were deleted here to ensure the background remains pure solid black.
       */}
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 md:flex-row md:items-start md:justify-between">
+      <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">
           {/* Left Column - Text */}
-          <div className="md:w-1/2 pt-4 sm:pt-6 md:pt-8">
+          <div className="pt-4 sm:pt-6 md:pt-8 self-center">
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.2] sm:leading-[1.3] md:leading-[59.04px] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
+              className="text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] font-light text-white leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <span className="block">FUTURE</span>
@@ -52,7 +52,7 @@ export default function FutureSection() {
             </h2>
 
             <div
-              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-xs sm:text-sm font-light leading-5 sm:leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
+              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <p>
@@ -79,13 +79,13 @@ export default function FutureSection() {
           </div>
 
           {/* Right Column - Robotic Arm Image & Dots */}
-          <div className="md:w-1/2 flex justify-center md:justify-end relative mt-8 md:mt-0">
+          <div className="flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0">
             {/* --- THE DOT PATTERN --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
               style={{
-                width: "600px",
-                height: "600px",
+                width: "800px",
+                height: "800px",
                 right: "-50px",
                 top: "-50px",
                 backgroundImage:
@@ -100,17 +100,31 @@ export default function FutureSection() {
             />
             {/* --------------------------- */}
 
-            <div 
+            <div
               ref={imageRef}
-              className={`relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 transition-all duration-1000 ${
-                isVisible ? "animate-slide-up" : "opacity-0 translate-y-[100px]"
-              }`}
+              className={`relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-[100px]"
+                }`}
             >
               <Image
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"
                 fill
-                className="object-contain relative"
+                className="object-contain relative z-10"
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-20%",
+                  left: "-20%",
+                  width: "140%",
+                  height: "100%",
+                  transform: "rotate(90deg)",
+                  transformOrigin: "center",
+                  background:
+                    "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%)",
+                  zIndex: 20,
+                  pointerEvents: "none",
+                }}
               />
             </div>
           </div>

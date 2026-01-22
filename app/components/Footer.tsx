@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 sm:py-16 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4">
+    <footer className="bg-black text-white py-12 sm:py-16 border-t border-white/10 snap-start">
+      <div className="w-full px-5 md:px-10 lg:px-[60px]">
         {/* Main Content Section: Split into 2 Columns */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 mb-12 items-start">
           {/* Left Column: Logo & Tagline */}
-          <div className="md:w-1/2 max-w-lg">
+          <div className="max-w-lg">
             <div className="mb-6">
               <Image
                 src="/images/colored-logo.png"
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column: Contact Info */}
-          <div className="md:w-auto flex flex-col items-start md:items-start">
+          <div className="flex flex-col items-start md:items-end md:justify-self-end">
             <h3
               className="text-base font-bold uppercase tracking-wider mb-6"
               style={{ fontFamily: "'Unbounded', sans-serif" }}

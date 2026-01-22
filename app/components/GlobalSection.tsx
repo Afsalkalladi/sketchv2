@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function GlobalSection() {
   return (
-    <section className="bg-black relative overflow-hidden h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col">
-      
+    <section className="bg-black relative overflow-hidden h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
+
       {/* Background Gradients & Map (Unchanged) */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
@@ -33,11 +33,11 @@ export default function GlobalSection() {
       </div>
 
       {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto px-4 relative z-10 w-full flex-grow flex flex-col py-12 sm:py-16 md:py-20">
-        
+      <div className="w-full px-5 md:px-10 lg:px-[60px] relative z-10 flex-grow flex flex-col py-12 sm:py-16 md:py-20">
+
         {/* --- TOP: LOGOS --- */}
         {/* Kept at the top naturally as the first flex child */}
-        <div className="w-full flex items-center justify-between opacity-80 mb-10 shrink-0">
+        <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-4 items-center opacity-80 mb-10 shrink-0">
           <Image
             src="/images/trusted/keralastartupmission.svg"
             alt="Trusted Partner 1"
@@ -62,7 +62,7 @@ export default function GlobalSection() {
             className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
             priority
           />
-          <div className="hidden sm:block">
+          <div>
             <Image
               src="/images/trusted/makervillage.svg"
               alt="Trusted Partner 4"
@@ -72,7 +72,7 @@ export default function GlobalSection() {
               priority
             />
           </div>
-           <div className="hidden sm:block">
+          <div className="hidden md:block">
             <Image
               src="/images/trusted/cusat.svg"
               alt="Trusted Partner 4"
@@ -89,7 +89,7 @@ export default function GlobalSection() {
             'justify-center' aligns the inner text block to the vertical middle. */}
         <div className="flex-grow flex flex-col justify-center">
           <div className="max-w-[520px] animate-slide-up">
-            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl leading-[1.2] sm:leading-[1.3] md:leading-[48.75px] tracking-[2px] sm:tracking-[2.5px] md:tracking-[3.30px]">
+            <h2 className="font-sans text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]">
               <span className="block text-white font-light">
                 FROM <span className="font-normal">INDIA</span>
               </span>
@@ -98,7 +98,7 @@ export default function GlobalSection() {
               </span>
             </h2>
 
-            <p className="font-sans mt-4 sm:mt-6 text-neutral-400 text-sm sm:text-base md:text-lg font-light leading-5 sm:leading-6 tracking-wide sm:tracking-widest max-w-80">
+            <p className="font-sans mt-4 sm:mt-6 text-neutral-400 text-sm sm:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-80">
               Shaping Robotics Across The Continents
             </p>
           </div>

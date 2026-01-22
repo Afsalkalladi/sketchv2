@@ -125,7 +125,7 @@ export default function Achievements() {
 
   // Helper to render the side cards (ghost cards)
   const SideCard = ({ index, onClick }: { index: number; onClick: () => void }) => (
-    <div 
+    <div
       onClick={onClick}
       className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90"
     >
@@ -141,7 +141,7 @@ export default function Achievements() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px]">
+    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px] h-screen snap-start">
       {/* Background Effects */}
       <div
         className="absolute inset-0"
@@ -152,12 +152,12 @@ export default function Achievements() {
       />
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)" }} />
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
-        
+      <div className="w-full px-5 md:px-10 lg:px-[60px] relative z-10">
+
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 pt-4">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] sm:tracking-[0.24em] leading-[1.2] text-white"
+            className="text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.2em] sm:tracking-[0.24em] leading-[1.1] sm:leading-[1.2] text-white"
             style={{
               fontFamily: "'Unbounded', sans-serif",
               WebkitTextStroke: "0.5px rgba(255,255,255,0.12)",
@@ -174,7 +174,7 @@ export default function Achievements() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          
+
           {/* Previous Card (Left Ghost) */}
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
@@ -205,9 +205,8 @@ export default function Achievements() {
                   </span>
                 </div>
                 <p
-                  className={`text-sm sm:text-base leading-relaxed transition-[max-height] duration-500 ease-in-out ${
-                    isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
-                  } overflow-hidden text-white/80`}
+                  className={`text-sm sm:text-base leading-relaxed transition-[max-height] duration-500 ease-in-out ${isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
+                    } overflow-hidden text-white/80`}
                 >
                   {achievements[activeSlide].description}
                 </p>
@@ -242,11 +241,10 @@ export default function Achievements() {
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === activeSlide 
-                    ? "bg-white h-2 w-2 sm:h-3 sm:w-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]" 
-                    : "bg-white/20 h-1.5 w-1.5 sm:h-2 sm:w-2 hover:bg-white/40"
-                }`}
+                className={`rounded-full transition-all duration-300 ${i === activeSlide
+                  ? "bg-white h-2 w-2 sm:h-3 sm:w-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                  : "bg-white/20 h-1.5 w-1.5 sm:h-2 sm:w-2 hover:bg-white/40"
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}

@@ -3,7 +3,7 @@ export default function Hero() {
     <section
       id="home"
       // h-dvh fixes the "jumping" address bar issue on mobile browsers
-      className="relative h-dvh min-h-[640px] w-full overflow-hidden bg-black"
+      className="relative h-dvh min-h-[640px] w-full overflow-hidden bg-black snap-start"
     >
       {/* Background video */}
       <div className="absolute inset-0 z-0">
@@ -35,7 +35,7 @@ export default function Hero() {
            2. CHANGED padding to 'px-4' to strictly match Navbar padding.
            3. REMOVED 'sm:px-6 md:px-10 lg:px-20' so text doesn't drift right.
         */}
-        <div className="mx-auto flex w-full max-w-7xl px-4">
+        <div className="flex w-full px-5 md:px-10 lg:px-[60px]">
           <div className="max-w-xl flex flex-col justify-end transform translate-y-10 sm:translate-y-12 md:translate-y-16">
             {/* Main Heading */}
             <h1
@@ -43,7 +43,7 @@ export default function Hero() {
               text-[32px] leading-[1.1] tracking-[2px] 
               sm:text-[36px] sm:leading-[1.2] sm:tracking-[3px] 
               md:text-[42px] md:tracking-[4px] 
-              lg:text-[48px]"
+              lg:text-[54px]"
               style={{
                 fontFamily: "'Unbounded', sans-serif",
               }}
