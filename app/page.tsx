@@ -7,13 +7,15 @@ import Footer from "./components/Footer";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <>
       <Navbar />
-      <Hero />
-      <FutureSection />
-      <GlobalSection />
-      <Achievements />
-      <Footer />
-    </main>
+      <main className="min-h-screen bg-black text-white">
+        <Hero />
+        <FutureSection />
+        <GlobalSection />
+        <Achievements />
+        <Footer />
+      </main>
+    </>
   );
 }

@@ -49,12 +49,14 @@ body {
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  overscroll-behavior: none;
 }
 
 /* Snap section - apply to each full-page section */
 .snap-section {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
   min-height: 100dvh;
 }
 
