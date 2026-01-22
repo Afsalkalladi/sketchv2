@@ -154,7 +154,7 @@ export default function Achievements() {
 
       <div className="w-full px-4 sm:px-10 lg:px-[60px] relative z-10">
 
-        {/* Header - Fixed Mobile Sizing */}
+        {/* Header */}
         <div className="text-center mb-8 sm:mb-16 pt-4 px-2">
           <h2
             className="text-2xl sm:text-4xl md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.15em] sm:tracking-[0.24em] leading-tight text-white break-words"
@@ -196,17 +196,21 @@ export default function Achievements() {
                 onClick={handleToggleExpand}
                 className="w-full text-left p-5 sm:p-6 space-y-2 sm:space-y-3 text-white/90 outline-none focus:outline-none"
               >
-                <div className="flex items-center justify-between gap-3 sm:gap-4">
-                  <h3 className="font-unbounded text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase line-clamp-1">
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
+                  {/* UPDATED: line-clamp-1 only applies if NOT expanded */}
+                  <h3 className={`font-unbounded text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase ${
+                    isExpanded ? "" : "line-clamp-1"
+                  }`}>
                     {achievements[activeSlide].title}
                   </h3>
-                  <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] text-white/70 whitespace-nowrap pt-1">
+                  <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] text-white/70 whitespace-nowrap pt-1 shrink-0">
                     {isExpanded ? "LESS" : "MORE"}
                   </span>
                 </div>
                 <p
-                  className={`text-xs sm:text-sm leading-relaxed transition-[max-height] duration-500 ease-in-out ${isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
-                    } overflow-hidden text-white/80 pr-2`}
+                  className={`text-xs sm:text-sm leading-relaxed transition-[max-height] duration-500 ease-in-out ${
+                    isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
+                  } overflow-hidden text-white/80 pr-2`}
                 >
                   {achievements[activeSlide].description}
                 </p>
@@ -217,7 +221,7 @@ export default function Achievements() {
           {/* Next Card (Right Ghost) */}
           <SideCard index={getSlideIndex(1)} onClick={nextSlide} />
 
-          {/* Navigation Arrows (Floating) - Improved Mobile Size/Pos */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-0 sm:left-2 md:left-10 lg:left-20 top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30 touch-manipulation active:scale-95"
@@ -241,10 +245,11 @@ export default function Achievements() {
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`rounded-full transition-all duration-300 ${i === activeSlide
-                  ? "bg-white h-2 w-2 sm:h-3 sm:w-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-                  : "bg-white/20 h-1.5 w-1.5 sm:h-2 sm:w-2 hover:bg-white/40"
-                  }`}
+                className={`rounded-full transition-all duration-300 ${
+                  i === activeSlide
+                    ? "bg-white h-2 w-2 sm:h-3 sm:w-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                    : "bg-white/20 h-1.5 w-1.5 sm:h-2 sm:w-2 hover:bg-white/40"
+                }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
