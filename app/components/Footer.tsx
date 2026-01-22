@@ -2,24 +2,26 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 sm:py-16 border-t border-white/10 snap-start">
+    <footer className="bg-black text-white py-8 md:py-16 border-t border-white/10 snap-start">
       <div className="w-full px-5 md:px-10 lg:px-[60px]">
-        {/* Main Content Section: Split into 2 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 mb-12 items-start">
+        {/* Main Content Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 md:mb-12 items-start">
           {/* Left Column: Logo & Tagline */}
           <div className="max-w-lg">
             <div className="mb-6">
-              <Image
-                src="/images/colored-logo.png"
-                alt="Sketch Robotics"
-                width={200}
-                height={65}
-                className="w-[180px] h-auto object-contain mx-0"
-                priority
-              />
+              {/* Updated Logo: Matches Navbar size (w-28 h-9) strictly */}
+              <div className="relative h-9 w-28">
+                <Image
+                  src="/images/colored-logo.png"
+                  alt="Sketch Robotics"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </div>
             <p
-              className="text-xs sm:text-sm font-light leading-relaxed text-gray-200"
+              className="text-sm font-light leading-relaxed text-gray-200"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Empowering innovation with sustainable robotics solutions, crafted
@@ -30,7 +32,7 @@ export default function Footer() {
           {/* Right Column: Contact Info */}
           <div className="flex flex-col items-start md:items-end md:justify-self-end">
             <h3
-              className="text-base font-bold uppercase tracking-wider mb-6"
+              className="text-base font-bold uppercase tracking-wider mb-4 md:mb-6"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Contact Info
@@ -106,12 +108,12 @@ export default function Footer() {
         </div>
 
         {/* Divider Line */}
-        <div className="w-full h-px bg-white/20 mb-8" />
+        <div className="w-full h-px bg-white/20 mb-6 md:mb-8" />
 
         {/* Bottom Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 md:gap-0">
           <p
-            className="text-white font-light text-sm"
+            className="text-white font-light text-xs md:text-sm text-center md:text-left"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             © 2025 Sketch Robotics | All Rights Reserved
