@@ -86,7 +86,7 @@ export default function GlobalSection() {
         <div className="flex-grow flex flex-col justify-center">
           {/* Removed strict max-w constraint that was forcing wrapping */}
           <div className="w-full max-w-3xl animate-slide-up">
-            <h2 className="font-sans text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white font-light">
+            <h2 className="font-sans text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white font-light">
 
               {/* === LAYOUT 1: MOBILE (< md) === */}
               {/* Forces: 

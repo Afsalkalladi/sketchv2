@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </div>
             <p
-              className="text-sm sm:text-base font-light leading-relaxed text-gray-200"
+              className="text-xs sm:text-sm font-light leading-relaxed text-gray-200"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Empowering innovation with sustainable robotics solutions, crafted

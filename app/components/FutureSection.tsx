@@ -29,16 +29,12 @@ export default function FutureSection() {
       }
     };
   }, []);
+
   return (
     <section
       id="solution"
-      // Kept bg-black, removed overlays that were washing it out
       className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen snap-start"
     >
-      {/* REMOVED: The top dark gradient and the light ambiance gradient 
-         were deleted here to ensure the background remains pure solid black.
-      */}
-
       <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">
           {/* Left Column - Text */}
@@ -52,7 +48,8 @@ export default function FutureSection() {
             </h2>
 
             <div
-              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
+              // UPDATED: 'xl:text-sm' ensures text is smaller on 1366x768 screens
+              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base xl:text-sm 2xl:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <p>
@@ -102,7 +99,17 @@ export default function FutureSection() {
 
             <div
               ref={imageRef}
-              className={`relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] md:w-[585px] md:h-[732px] z-10 transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-[100px]"
+              // UPDATED: Added 'xl:w-[440px] xl:h-[550px]' to shrink image on laptops
+              // while '2xl:w-[585px] 2xl:h-[732px]' restores it for large monitors.
+              className={`relative 
+                w-[280px] h-[350px] 
+                sm:w-[400px] sm:h-[500px] 
+                md:w-[585px] md:h-[732px] 
+                xl:w-[440px] xl:h-[550px] 
+                2xl:w-[585px] 2xl:h-[732px] 
+                z-10 transition-all duration-1000 ${isVisible
+                  ? "animate-slide-up"
+                  : "opacity-0 translate-y-[100px]"
                 }`}
             >
               <Image

@@ -205,7 +205,7 @@ export default function Achievements() {
                   </span>
                 </div>
                 <p
-                  className={`text-sm sm:text-base leading-relaxed transition-[max-height] duration-500 ease-in-out ${isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
+                  className={`text-xs sm:text-sm leading-relaxed transition-[max-height] duration-500 ease-in-out ${isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
                     } overflow-hidden text-white/80`}
                 >
                   {achievements[activeSlide].description}
