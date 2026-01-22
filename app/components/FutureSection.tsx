@@ -48,7 +48,6 @@ export default function FutureSection() {
             </h2>
 
             <div
-              // UPDATED: 'xl:text-sm' ensures text is smaller on 1366x768 screens
               className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base xl:text-sm 2xl:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
@@ -75,8 +74,8 @@ export default function FutureSection() {
             </button>
           </div>
 
-          {/* Right Column - Robotic Arm Image & Dots */}
-          <div className="flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0">
+          {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
+          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0">
             {/* --- THE DOT PATTERN --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
@@ -99,8 +98,6 @@ export default function FutureSection() {
 
             <div
               ref={imageRef}
-              // UPDATED: Added 'xl:w-[440px] xl:h-[550px]' to shrink image on laptops
-              // while '2xl:w-[585px] 2xl:h-[732px]' restores it for large monitors.
               className={`relative 
                 w-[280px] h-[350px] 
                 sm:w-[400px] sm:h-[500px] 
