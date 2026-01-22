@@ -141,7 +141,7 @@ export default function Achievements() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px] h-screen snap-start">
+    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px] h-screen snap-start flex flex-col justify-center">
       {/* Background Effects */}
       <div
         className="absolute inset-0"
@@ -152,12 +152,12 @@ export default function Achievements() {
       />
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)" }} />
 
-      <div className="w-full px-5 md:px-10 lg:px-[60px] relative z-10">
+      <div className="w-full px-4 sm:px-10 lg:px-[60px] relative z-10">
 
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16 pt-4">
+        {/* Header - Fixed Mobile Sizing */}
+        <div className="text-center mb-8 sm:mb-16 pt-4 px-2">
           <h2
-            className="text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.2em] sm:tracking-[0.24em] leading-[1.1] sm:leading-[1.2] text-white"
+            className="text-2xl sm:text-4xl md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.15em] sm:tracking-[0.24em] leading-tight text-white break-words"
             style={{
               fontFamily: "'Unbounded', sans-serif",
               WebkitTextStroke: "0.5px rgba(255,255,255,0.12)",
@@ -170,7 +170,7 @@ export default function Achievements() {
 
         {/* Carousel Container */}
         <div
-          className="relative mt-8 flex justify-center items-center gap-4 lg:gap-8"
+          className="relative mt-4 sm:mt-8 flex justify-center items-center gap-4 lg:gap-8"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -179,13 +179,13 @@ export default function Achievements() {
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
           {/* Main Active Card */}
-          <div className="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[400px] sm:h-[450px] md:h-[500px] rounded-[30px] border border-white/10 bg-white/5 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-white/5 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
             <Image
               src={achievements[activeSlide].image}
               alt={achievements[activeSlide].title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 600px"
+              sizes="(max-width: 768px) 90vw, 600px"
               priority
             />
 
@@ -194,19 +194,19 @@ export default function Achievements() {
               <button
                 type="button"
                 onClick={handleToggleExpand}
-                className="w-full text-left p-6 space-y-3 text-white/90"
+                className="w-full text-left p-5 sm:p-6 space-y-2 sm:space-y-3 text-white/90 outline-none focus:outline-none"
               >
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-unbounded text-lg sm:text-xl font-semibold tracking-wide uppercase line-clamp-1">
+                <div className="flex items-center justify-between gap-3 sm:gap-4">
+                  <h3 className="font-unbounded text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase line-clamp-1">
                     {achievements[activeSlide].title}
                   </h3>
-                  <span className="text-xs font-medium tracking-[0.24em] text-white/70 whitespace-nowrap">
+                  <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] text-white/70 whitespace-nowrap pt-1">
                     {isExpanded ? "LESS" : "MORE"}
                   </span>
                 </div>
                 <p
                   className={`text-xs sm:text-sm leading-relaxed transition-[max-height] duration-500 ease-in-out ${isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
-                    } overflow-hidden text-white/80`}
+                    } overflow-hidden text-white/80 pr-2`}
                 >
                   {achievements[activeSlide].description}
                 </p>
@@ -217,26 +217,26 @@ export default function Achievements() {
           {/* Next Card (Right Ghost) */}
           <SideCard index={getSlideIndex(1)} onClick={nextSlide} />
 
-          {/* Navigation Arrows (Floating) */}
+          {/* Navigation Arrows (Floating) - Improved Mobile Size/Pos */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 md:left-10 lg:left-20 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30"
+            className="absolute left-0 sm:left-2 md:left-10 lg:left-20 top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30 touch-manipulation active:scale-95"
             aria-label="Previous slide"
           >
-            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
+            <ArrowLeft className="w-4 h-4 md:w-6 md:h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 md:right-10 lg:right-20 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30"
+            className="absolute right-0 sm:right-2 md:right-10 lg:right-20 top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-black/40 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white transition-all backdrop-blur z-30 touch-manipulation active:scale-95"
             aria-label="Next slide"
           >
-            <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+            <ArrowRight className="w-4 h-4 md:w-6 md:h-6" />
           </button>
         </div>
 
         {/* Pagination Dots */}
-        <div className="mt-12 sm:mt-16 flex justify-center">
-          <div className="h-8 md:h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 flex items-center gap-3">
+        <div className="mt-8 sm:mt-16 flex justify-center">
+          <div className="h-8 md:h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 flex items-center gap-2 sm:gap-3">
             {achievements.map((_, i) => (
               <button
                 key={i}
