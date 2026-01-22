@@ -4,12 +4,13 @@ export default function GlobalSection() {
   return (
     <section className="bg-black relative overflow-hidden h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
 
-      {/* Background Gradients & Map (Unchanged) */}
+      {/* --- Background Gradients & Map --- */}
       <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+            "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%)",
+          zIndex: 0,
         }}
       />
       <div
@@ -32,78 +33,96 @@ export default function GlobalSection() {
         </div>
       </div>
 
-      {/* Main Content Container */}
+      {/* --- Main Content Container --- */}
       <div className="w-full px-5 md:px-10 lg:px-[60px] relative z-10 flex-grow flex flex-col py-12 sm:py-16 md:py-20">
 
         {/* --- TOP: LOGOS --- */}
-        {/* Kept at the top naturally as the first flex child */}
-        <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-4 items-center opacity-80 mb-10 shrink-0">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-4 items-center opacity-80 mb-10 shrink-0 justify-items-center md:justify-items-start">
           <Image
             src="/images/trusted/keralastartupmission.svg"
-            alt="Trusted Partner 1"
+            alt="Kerala Startup Mission"
             width={128}
             height={40}
-            className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
             priority
           />
           <Image
             src="/images/trusted/rizins.svg"
-            alt="Trusted Partner 2"
+            alt="Rizins"
             width={128}
             height={40}
-            className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
             priority
           />
           <Image
             src="/images/trusted/dpiit.svg"
-            alt="Trusted Partner 3"
+            alt="DPIIT"
             width={128}
             height={40}
-            className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
             priority
           />
-          <div>
-            <Image
-              src="/images/trusted/makervillage.svg"
-              alt="Trusted Partner 4"
-              width={128}
-              height={40}
-              className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/trusted/makervillage.svg"
+            alt="Maker Village"
+            width={128}
+            height={40}
+            className="h-8 sm:h-10 w-auto object-contain"
+            priority
+          />
           <div className="hidden md:block">
             <Image
               src="/images/trusted/cusat.svg"
-              alt="Trusted Partner 4"
+              alt="CUSAT"
               width={128}
               height={40}
-              className="h-8 sm:h-10 w-24 sm:w-32 object-contain"
+              className="h-8 sm:h-10 w-auto object-contain"
               priority
             />
           </div>
         </div>
 
         {/* --- MIDDLE: TEXT CONTENT --- */}
-        {/* 'flex-grow' fills the remaining vertical space. 
-            'justify-center' aligns the inner text block to the vertical middle. */}
         <div className="flex-grow flex flex-col justify-center">
-          <div className="max-w-[520px] animate-slide-up">
-            <h2 className="font-sans text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]">
-              <span className="block text-white font-light">
-                FROM <span className="font-normal">INDIA</span>
-              </span>
-              <span className="block text-white font-light">
-                TO THE <span className="font-normal">WORLD</span>
-              </span>
+          {/* Removed strict max-w constraint that was forcing wrapping */}
+          <div className="w-full max-w-3xl animate-slide-up">
+            <h2 className="font-sans text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white font-light">
+
+              {/* === LAYOUT 1: MOBILE (< md) === */}
+              {/* Forces: 
+                  Line 1: FROM INDIA 
+                  Line 2: TO THE WORLD 
+              */}
+              <div className="block md:hidden">
+                <span className="block whitespace-nowrap">
+                  FROM <span className="font-normal">INDIA</span>
+                </span>
+                <span className="block whitespace-nowrap">
+                  TO THE <span className="font-normal">WORLD</span>
+                </span>
+              </div>
+
+              {/* === LAYOUT 2: DESKTOP (>= md) === */}
+              {/* Forces: 
+                  Line 1: FROM INDIA TO 
+                  Line 2: THE WORLD 
+              */}
+              <div className="hidden md:block">
+                <span className="block whitespace-nowrap">
+                  FROM <span className="font-normal">INDIA</span> TO
+                </span>
+                <span className="block whitespace-nowrap">
+                  THE <span className="font-normal">WORLD</span>
+                </span>
+              </div>
+
             </h2>
 
             <p className="font-sans mt-4 sm:mt-6 text-neutral-400 text-sm sm:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-80">
-              Shaping Robotics Across The Continents
+              Shaping Robotics Across Three Continents
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );
