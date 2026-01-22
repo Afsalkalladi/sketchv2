@@ -93,11 +93,9 @@ export default function Achievements() {
 
   useEffect(() => {
     if (isPaused) return;
-
     const id = window.setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % achievements.length);
     }, 6000);
-
     return () => window.clearInterval(id);
   }, [isPaused]);
 
@@ -123,11 +121,11 @@ export default function Achievements() {
 
   const handleToggleExpand = () => setIsExpanded((prev) => !prev);
 
-  // Helper to render the side cards (ghost cards)
+  // OPTIMIZED: SideCard now uses priority and better sizes
   const SideCard = ({ index, onClick }: { index: number; onClick: () => void }) => (
     <div
       onClick={onClick}
-      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90"
+      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90 bg-neutral-800"
     >
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
       <Image
@@ -135,7 +133,9 @@ export default function Achievements() {
         alt={achievements[index].title}
         fill
         className="object-cover"
-        sizes="300px"
+        sizes="(max-width: 1024px) 200px, 280px"
+        priority={true} // Load immediately
+        quality={60}    // Lower quality for background cards to speed up load
       />
     </div>
   );
@@ -153,8 +153,6 @@ export default function Achievements() {
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)" }} />
 
       <div className="w-full px-4 sm:px-10 lg:px-[60px] relative z-10">
-
-        {/* Header */}
         <div className="text-center mb-8 sm:mb-16 pt-4 px-2">
           <h2
             className="text-2xl sm:text-4xl md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.15em] sm:tracking-[0.24em] leading-tight text-white break-words"
@@ -174,19 +172,19 @@ export default function Achievements() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-
-          {/* Previous Card (Left Ghost) */}
+          {/* Previous Card */}
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
           {/* Main Active Card */}
-          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-white/5 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
             <Image
               src={achievements[activeSlide].image}
               alt={achievements[activeSlide].title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 90vw, 600px"
-              priority
+              priority={true} // High priority for LCP
+              quality={85}
             />
 
             {/* Content Overlay */}
@@ -197,7 +195,6 @@ export default function Achievements() {
                 className="w-full text-left p-5 sm:p-6 space-y-2 sm:space-y-3 text-white/90 outline-none focus:outline-none"
               >
                 <div className="flex items-start justify-between gap-3 sm:gap-4">
-                  {/* UPDATED: line-clamp-1 only applies if NOT expanded */}
                   <h3 className={`font-unbounded text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase ${
                     isExpanded ? "" : "line-clamp-1"
                   }`}>
@@ -218,7 +215,7 @@ export default function Achievements() {
             </div>
           </div>
 
-          {/* Next Card (Right Ghost) */}
+          {/* Next Card */}
           <SideCard index={getSlideIndex(1)} onClick={nextSlide} />
 
           {/* Navigation Arrows */}
@@ -255,7 +252,6 @@ export default function Achievements() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
