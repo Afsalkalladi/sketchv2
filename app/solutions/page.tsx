@@ -93,10 +93,10 @@ export default function SolutionsPage() {
           <div className="relative z-10 w-full px-5 md:px-10 lg:px-[60px] flex items-start lg:items-center pt-24 lg:pt-[120px] laptop-sm:pt-[180px] xl:pt-[140px] 2xl:pt-[180px]">
 
             {/* Large Background Text */}
-            {/* UPDATED: Changed top-8 to top-14 for mobile to push it further down */}
             <div className="absolute left-4 top-25 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
               <h1
-                className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[140px] laptop-sm:text-[160px] xl:text-[180px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
+                // UPDATED: Increased lg to 180px, laptop-sm to 220px, and xl to 240px for hierarchy
+                className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
                 style={{
                   WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)"
                 }}
@@ -112,7 +112,8 @@ export default function SolutionsPage() {
 
                 {/* Gradient Title */}
                 <h2
-                  className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[40px] laptop-sm:text-[50px] laptop-sm:leading-[1.1] xl:text-[48px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2"
+                  // UPDATED: Increased lg to 55px, laptop-sm to 75px
+                  className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[55px] laptop-sm:text-[75px] laptop-sm:leading-[1.1] xl:text-[60px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
