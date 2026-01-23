@@ -125,7 +125,7 @@ export default function Achievements() {
   const SideCard = ({ index, onClick }: { index: number; onClick: () => void }) => (
     <div
       onClick={onClick}
-      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] md:max-h-[45vh] lg:max-h-[50vh] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90 bg-neutral-800"
+      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] md:max-h-[45vh] laptop-sm:h-[280px] laptop-sm:max-h-[40vh] lg:max-h-[50vh] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90 bg-neutral-800"
     >
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
       <Image
@@ -176,7 +176,7 @@ export default function Achievements() {
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
           {/* Main Active Card */}
-          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] md:max-h-[60vh] lg:max-h-[65vh] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] md:max-h-[60vh] laptop-sm:h-[400px] laptop-sm:max-h-[55vh] lg:max-h-[65vh] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
             <Image
               src={achievements[activeSlide].image}
               alt={achievements[activeSlide].title}

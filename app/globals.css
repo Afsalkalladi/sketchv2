@@ -16,6 +16,40 @@
   --background-size-dot-spacing: 20px 20px;
 }
 
+
+/* Custom breakpoint for 1272px screens only (not larger screens) */
+@media (min-width: 1272px) and (max-width: 1535px) {
+  .laptop-sm\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .laptop-sm\:h-\[375px\] {
+    height: 375px;
+  }
+
+  .laptop-sm\:max-h-\[50vh\] {
+    max-height: 50vh;
+  }
+
+  .laptop-sm\:h-\[400px\] {
+    height: 400px;
+  }
+
+  .laptop-sm\:max-h-\[55vh\] {
+    max-height: 55vh;
+  }
+
+  .laptop-sm\:h-\[280px\] {
+    height: 280px;
+  }
+
+  .laptop-sm\:max-h-\[40vh\] {
+    max-height: 40vh;
+  }
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

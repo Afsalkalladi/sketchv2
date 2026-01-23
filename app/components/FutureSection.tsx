@@ -102,6 +102,7 @@ export default function FutureSection() {
                 w-[280px] h-[350px] 
                 sm:w-[400px] sm:h-[500px] 
                 md:w-[320px] md:h-[400px] md:max-h-[55vh]
+                laptop-sm:w-[400px] laptop-sm:h-[675px] laptop-sm:max-h-[55vh]
                 lg:w-[480px] lg:h-[600px] lg:max-h-[65vh]
                 xl:w-[500px] xl:h-[625px] xl:max-h-[70vh]
                 2xl:w-[585px] 2xl:h-[732px] 2xl:max-h-[75vh]
