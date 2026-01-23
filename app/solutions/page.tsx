@@ -97,14 +97,14 @@ export default function SolutionsPage() {
               pt-[100px] for laptops (to save vertical space), 
               pt-[160px] for large monitors. 
           */}
-          <div className="relative z-10 w-full h-full px-5 md:px-10 lg:px-[60px] flex items-start pt-[100px] xl:pt-[120px] 2xl:pt-[160px]">
+          <div className="relative z-10 w-full h-full px-5 md:px-10 lg:px-[60px] flex items-start pt-[100px] laptop-sm:pt-[200px] xl:pt-[120px] 2xl:pt-[160px]">
 
             {/* Large Background Text */}
-            <div className="absolute left-4 top-20 xl:top-[80px] 2xl:top-[100px] opacity-20 pointer-events-none select-none z-20">
+            <div className="absolute left-4 top-20 laptop-sm:top-[80px] xl:top-[80px] 2xl:top-[100px] opacity-20 pointer-events-none select-none z-20">
               <h1
                 // CHANGED: Added `xl:text` for 1366px screens. 
                 // 1366px gets ~160px font size. 1920px gets ~320px.
-                className="font-unbounded font-normal whitespace-nowrap text-[80px] lg:text-[140px] xl:text-[180px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
+                className="font-unbounded font-normal whitespace-nowrap text-[80px] lg:text-[140px] laptop-sm:text-[160px] xl:text-[180px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
                 style={{
                   WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)"
                 }}
@@ -121,7 +121,7 @@ export default function SolutionsPage() {
                 {/* Gradient Title */}
                 <h2
                   // CHANGED: Scaled down for 1366px (xl), kept large for 1920px (2xl)
-                  className="font-unbounded font-normal text-4xl lg:text-[40px] xl:text-[48px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2 mt-[-9]"
+                  className="font-unbounded font-normal text-4xl lg:text-[40px] laptop-sm:text-[50px] laptop-sm:leading-[1.1] xl:text-[48px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2 mt-[11]"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -135,7 +135,7 @@ export default function SolutionsPage() {
 
                 {/* Description Text */}
                 {/* CHANGED: Reduced `mt` significantly for laptop screens to prevent overflow */}
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-base leading-relaxed lg:text-[15px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-8 xl:mt-12 2xl:mt-30">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-base leading-relaxed lg:text-[15px] laptop-sm:text-[20px] laptop-sm:max-w-[450px] laptop-sm:mt-[80px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-8 xl:mt-12 2xl:mt-30">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">
                     Sketch Robotics
@@ -158,8 +158,8 @@ export default function SolutionsPage() {
 
               {/* Right Column - Robot Image */}
               {/* CHANGED: Adjusted `mt` and dimensions. 1366px usually needs the image slightly smaller or pulled up. */}
-              <div className="hidden lg:flex justify-end items-start mt-[20px] xl:mt-[60px] 2xl:mt-[100px] relative z-10">
-                <div className="relative w-[300px] h-[350px] xl:w-[400px] xl:h-[480px] 2xl:w-[516px] 2xl:h-[600px]">
+              <div className="hidden lg:flex justify-end items-start mt-[20px] laptop-sm:mt-[80px] xl:mt-[60px] 2xl:mt-[100px] relative z-10">
+                <div className="relative w-[300px] h-[350px] laptop-sm:w-[350px] laptop-sm:h-[420px] xl:w-[400px] xl:h-[480px] 2xl:w-[516px] 2xl:h-[600px]">
                   <Image
                     src="/images/robot-image.png"
                     alt="Robot"

@@ -19,6 +19,8 @@
 
 /* Custom breakpoint for 1272px screens only (not larger screens) */
 @media (min-width: 1272px) and (max-width: 1535px) {
+
+  /* Existing classes */
   .laptop-sm\:w-\[300px\] {
     width: 300px;
   }
@@ -46,7 +48,81 @@
   .laptop-sm\:max-h-\[40vh\] {
     max-height: 40vh;
   }
+
+  /* Solutions page - Text sizes */
+  .laptop-sm\:text-\[50px\] {
+    font-size: 50px;
+  }
+
+  .laptop-sm\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .laptop-sm\:text-\[20px\] {
+    font-size: 20px;
+  }
+
+  .laptop-sm\:leading-\[1\.1\] {
+    line-height: 1.1;
+  }
+
+  /* Solutions page - Spacing */
+  .laptop-sm\:pt-\[100px\] {
+    padding-top: 100px;
+  }
+
+  .laptop-sm\:pt-\[120px\] {
+    padding-top: 120px;
+  }
+
+  .laptop-sm\:mt-\[60px\] {
+    margin-top: 60px;
+  }
+
+  .laptop-sm\:mt-\[80px\] {
+    margin-top: 80px;
+  }
+
+  .laptop-sm\:mb-\[20px\] {
+    margin-bottom: 20px;
+  }
+
+  /* Solutions page - Positioning */
+  .laptop-sm\:top-\[80px\] {
+    top: 80px;
+  }
+
+  .laptop-sm\:top-\[90px\] {
+    top: 90px;
+  }
+
+  /* Solutions page - Image sizes */
+  .laptop-sm\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .laptop-sm\:h-\[480px\] {
+    height: 480px;
+  }
+
+  .laptop-sm\:w-\[350px\] {
+    width: 350px;
+  }
+
+  .laptop-sm\:h-\[420px\] {
+    height: 420px;
+  }
+
+  /* Solutions page - Max widths */
+  .laptop-sm\:max-w-\[450px\] {
+    max-width: 450px;
+  }
+
+  .laptop-sm\:max-w-\[400px\] {
+    max-width: 400px;
+  }
 }
+
 
 
 
