@@ -75,7 +75,7 @@ export default function FutureSection() {
           </div>
 
           {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
-          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0">
+          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0 overflow-hidden">
             {/* --- THE DOT PATTERN --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
@@ -115,13 +115,14 @@ export default function FutureSection() {
                 fill
                 className="object-contain relative z-10"
               />
+              {/* Dark gradient overlay - adjusted to prevent bleeding */}
               <div
                 style={{
                   position: "absolute",
-                  bottom: "-20%",
-                  left: "-20%",
-                  width: "140%",
-                  height: "100%",
+                  bottom: "-10%",
+                  left: "-10%",
+                  width: "120%",
+                  height: "80%",
                   transform: "rotate(90deg)",
                   transformOrigin: "center",
                   background:
