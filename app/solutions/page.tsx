@@ -93,7 +93,8 @@ export default function SolutionsPage() {
           <div className="relative z-10 w-full px-5 md:px-10 lg:px-[60px] flex items-start lg:items-center pt-24 lg:pt-[120px] laptop-sm:pt-[180px] xl:pt-[140px] 2xl:pt-[180px]">
 
             {/* Large Background Text */}
-            <div className="absolute left-4 top-0 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
+            {/* UPDATED: Changed top-8 to top-14 for mobile to push it further down */}
+            <div className="absolute left-4 top-25 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
               <h1
                 className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[140px] laptop-sm:text-[160px] xl:text-[180px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
                 style={{
@@ -124,7 +125,6 @@ export default function SolutionsPage() {
                 </h2>
 
                 {/* Description Text */}
-                {/* CHANGED: Increased mobile text size to text-[16px] and made leading looser to fill space */}
                 <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[16px] leading-[1.6] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:max-w-[450px] laptop-sm:mt-[80px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-6 lg:mt-8 xl:mt-12 2xl:mt-30">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">
@@ -175,7 +175,6 @@ export default function SolutionsPage() {
            ========================================
         */}
         <section className="h-dvh w-full snap-start snap-always relative overflow-hidden bg-black">
-          {/* CHANGED: Switched to justify-start and added explicit top padding (pt-24) to ensure Heading isn't cut off */}
           <div className="w-full h-full overflow-y-auto px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32 flex flex-col justify-start">
             <div className="w-full">
               <h3 className="font-unbounded font-normal text-2xl lg:text-[26px] xl:text-[28px] 2xl:text-[32px] text-white mb-8 xl:mb-10 2xl:mb-16">
