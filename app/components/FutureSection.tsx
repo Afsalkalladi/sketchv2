@@ -52,7 +52,7 @@ export default function FutureSection() {
             </h2>
 
             <div
-              className="mt-6 sm:mt-8 md:mt-8 text-neutral-400 text-sm sm:text-base xl:text-sm 2xl:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
+              className="mt-6 sm:mt-8 md:mt-8 text-neutral-400 text-sm sm:text-base xl:text-lg 2xl:text-xl font-light leading-6 xl:leading-7 2xl:leading-8 tracking-wide sm:tracking-widest max-w-[610px]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <p>
