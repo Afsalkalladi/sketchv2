@@ -84,29 +84,27 @@ export default function SolutionsPage() {
 
         {/* ========================================
           SECTION 1: HERO & INTRO
-          - Changed: Removed hardcoded pixels (top-[166px]).
-          - Changed: Used Flexbox to vertically center content.
-          - Changed: Made Image responsive to viewport height.
+          Matching homepage layout logic with consistent padding
           ========================================
         */}
-        <section className="h-dvh w-full snap-start snap-always relative flex items-center justify-center overflow-hidden">
+        <section className="h-dvh w-full snap-start snap-always relative overflow-hidden bg-black">
 
-          {/* 1. Large Background Text (Centered & Responsive) */}
-          <div className="absolute inset-0 flex items-center justify-start lg:justify-center overflow-hidden pointer-events-none select-none opacity-5">
-            <h1 className="font-unbounded font-normal whitespace-nowrap text-[18vw] lg:text-[343px] leading-none tracking-tighter pl-4 lg:pl-0">
+          {/* Large Background Text */}
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none select-none">
+            <h1 className="font-unbounded font-normal whitespace-nowrap text-[60px] lg:text-[343.745px] lg:leading-[282.047px] tracking-tighter lg:tracking-[-3.5256px] text-white">
               SOLUTION
             </h1>
           </div>
 
-          {/* 2. Main Content Container (Grid for layout) */}
-          <div className="relative z-10 w-full h-full container mx-auto px-6 lg:px-[76px] flex flex-col justify-center">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">
+          {/* Main Content Container - matches homepage padding */}
+          <div className="relative z-10 w-full h-full px-5 md:px-10 lg:px-[60px] flex items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full items-center">
 
-              {/* Text Column (Spans 7 cols on large screens) */}
-              <div className="lg:col-span-7 flex flex-col justify-center relative z-20 pt-20 lg:pt-0">
+              {/* Left Column - Text Content */}
+              <div className="flex flex-col justify-center">
                 {/* Gradient Title */}
                 <h2
-                  className="font-unbounded font-normal text-4xl lg:text-[65.6px] lg:leading-[1.1] tracking-tight mb-6"
+                  className="font-unbounded font-normal text-4xl lg:text-[65.591px] lg:leading-[53.818px] lg:tracking-[-0.6727px] mb-6"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -119,7 +117,7 @@ export default function SolutionsPage() {
                 </h2>
 
                 {/* Description Text */}
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-base leading-relaxed lg:text-[24px] lg:leading-[1.4] max-w-lg">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-base leading-relaxed lg:text-[24.264px] lg:leading-[33.363px] lg:tracking-[0.5px] max-w-[497.62px]">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">
                     Sketch Robotics
@@ -140,23 +138,22 @@ export default function SolutionsPage() {
                 </p>
               </div>
 
-              {/* Robot Image Column (Spans 5 cols on large screens) */}
-              {/* Absolute on mobile to sit behind text, Relative/Grid on desktop */}
-              <div className="absolute lg:relative right-0 top-0 h-full w-full lg:col-span-5 pointer-events-none lg:pointer-events-auto z-0 lg:z-10 flex items-center justify-end">
-                <div className="relative w-[80%] max-w-[400px] lg:max-w-none lg:w-full h-[60vh] lg:h-[80vh] opacity-30 lg:opacity-100 translate-x-[20%] lg:translate-x-0">
+              {/* Right Column - Robot Image */}
+              <div className="hidden lg:flex justify-end items-center">
+                <div className="relative w-[516px] h-[600px]">
                   <Image
                     src="/images/robot-image.png"
                     alt="Robot"
-                    fill
-                    className="object-contain object-right lg:object-center"
-                    priority
+                    width={516}
+                    height={600}
+                    className="object-contain w-full h-full"
                   />
-                  {/* Gradient Overlay */}
+                  {/* Gradient Overlay to blend the top edge */}
                   <div
                     className="absolute top-0 left-0 w-full h-[50%] pointer-events-none"
                     style={{
                       background:
-                        "linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 100%)",
+                        "linear-gradient(to bottom, #000000 10%, rgba(0,0,0,0) 100%)",
                     }}
                   />
                 </div>
@@ -168,18 +165,21 @@ export default function SolutionsPage() {
 
         {/* ========================================
           SECTION 2: CORE CAPABILITIES
+          Matching homepage padding and layout
           ========================================
         */}
-        <section className="h-dvh w-full snap-start snap-always relative flex items-center justify-center overflow-y-auto bg-black">
-          <div className="w-full px-6 lg:px-[76px] py-20 max-w-[1440px]">
-            <h3 className="font-unbounded font-normal text-[24px] lg:text-[32px] text-white mb-12 lg:mb-16">
-              CORE CAPABILITIES
-            </h3>
+        <section className="h-dvh w-full snap-start snap-always relative overflow-y-auto bg-black">
+          <div className="w-full h-full px-5 md:px-10 lg:px-[60px] py-16 md:py-20 flex items-center">
+            <div className="w-full">
+              <h3 className="font-unbounded font-normal text-2xl lg:text-[32px] text-white mb-10 lg:mb-16">
+                CORE CAPABILITIES
+              </h3>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[36px] w-full lg:w-[936px] mx-auto lg:mx-0">
-              {solutions.map((solution, index) => (
-                <SolutionCard key={index} solution={solution} index={index} />
-              ))}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[36px] max-w-[936px]">
+                {solutions.map((solution, index) => (
+                  <SolutionCard key={index} solution={solution} index={index} />
+                ))}
+              </div>
             </div>
           </div>
         </section>
