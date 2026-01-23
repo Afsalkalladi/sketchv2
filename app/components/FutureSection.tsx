@@ -36,7 +36,7 @@ export default function FutureSection() {
       className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen snap-start"
     >
       <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full max-h-full items-center">
           {/* Left Column - Text */}
           <div className="pt-4 sm:pt-6 md:pt-8 self-center">
             <h2
@@ -75,7 +75,7 @@ export default function FutureSection() {
           </div>
 
           {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
-          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0 overflow-hidden">
+          <div className="hidden md:flex justify-center md:justify-end relative self-center overflow-hidden max-h-[70vh]">
             {/* --- THE DOT PATTERN (More Circular) --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
@@ -101,9 +101,10 @@ export default function FutureSection() {
               className={`relative 
                 w-[280px] h-[350px] 
                 sm:w-[400px] sm:h-[500px] 
-                md:w-[585px] md:h-[732px] 
-                xl:w-[440px] xl:h-[550px] 
-                2xl:w-[585px] 2xl:h-[732px] 
+                md:w-[320px] md:h-[400px] md:max-h-[55vh]
+                lg:w-[480px] lg:h-[600px] lg:max-h-[65vh]
+                xl:w-[500px] xl:h-[625px] xl:max-h-[70vh]
+                2xl:w-[585px] 2xl:h-[732px] 2xl:max-h-[75vh]
                 z-10 transition-all duration-1000 ${isVisible
                   ? "animate-slide-up"
                   : "opacity-0 translate-y-[100px]"
