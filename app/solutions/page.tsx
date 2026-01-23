@@ -95,7 +95,6 @@ export default function SolutionsPage() {
             {/* Large Background Text */}
             <div className="absolute left-4 top-25 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
               <h1
-                // UPDATED: Increased lg to 180px, laptop-sm to 220px, and xl to 240px for hierarchy
                 className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
                 style={{
                   WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)"
@@ -112,7 +111,6 @@ export default function SolutionsPage() {
 
                 {/* Gradient Title */}
                 <h2
-                  // UPDATED: Increased lg to 55px, laptop-sm to 75px
                   className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[55px] laptop-sm:text-[75px] laptop-sm:leading-[1.1] xl:text-[60px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2"
                   style={{
                     background:
@@ -191,7 +189,12 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        <section className="w-full snap-start flex flex-col justify-end bg-black">
+        {/* ========================================
+            SECTION 3: FOOTER
+            UPDATED: Removed "snap-start" from the className
+            ========================================
+        */}
+        <section className="w-full flex flex-col justify-end bg-black">
           <Footer />
         </section>
 
