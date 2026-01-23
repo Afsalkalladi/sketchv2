@@ -33,12 +33,8 @@ export default function HomePage() {
           <Achievements />
         </section>
 
-        {/* The Footer is tricky. 
-           - 'h-dvh' forces it to be a full page (lots of empty space if content is short).
-           - 'min-h-dvh' is safer, or 'h-auto' if you want it to snap to the bottom edge.
-           For a strictly magnetic feel, wrapping it in h-dvh is consistent.
-        */}
-        <section className="h-dvh w-full snap-start snap-always flex flex-col justify-end">
+        {/* Footer without magnetic scroll - scrolls naturally from Achievements */}
+        <section className="w-full flex flex-col justify-end">
           <Footer />
         </section>
 
