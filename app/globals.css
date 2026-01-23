@@ -45,20 +45,19 @@ body {
   animation: slide-up 1s ease-out;
 }
 
-/* Magnetic/Snap Scrolling */
+/* --- UPDATED: Standard Scroll Behavior --- */
 html {
-  scroll-snap-type: y mandatory;
+  /* REMOVED: scroll-snap-type: y mandatory; */
+  /* REMOVED: scroll-padding-top: 0; */
+  /* REMOVED: overscroll-behavior: none; */
+
+  /* Kept strictly for smooth anchor links */
   scroll-behavior: smooth;
-  scroll-padding-top: 0;
-  overscroll-behavior: none;
 }
 
-/* Snap section - apply to each full-page section */
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
-  min-height: 100dvh;
-}
+/* REMOVED: .snap-section class */
+/* Since you are now using Tailwind classes (snap-start) directly in page.tsx, 
+   you do not need this global class anymore. */
 
 /* Fluid Full-Width Container */
 .fluid-container {

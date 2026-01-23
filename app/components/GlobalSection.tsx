@@ -12,7 +12,9 @@ const PARTNERS = [
 
 export default function GlobalSection() {
   return (
-    <section className="bg-black relative overflow-hidden h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
+    // CHANGE 1: Added h-[100dvh] alongside h-screen.
+    // 'dvh' (dynamic viewport height) accounts for mobile browser address bars shrinking/expanding.
+    <section className="bg-black relative overflow-hidden h-screen h-[100dvh] min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
 
       {/* CSS Animation Styles */}
       <style jsx global>{`
@@ -43,7 +45,6 @@ export default function GlobalSection() {
       />
 
       {/* World Map Background */}
-      {/* UPDATED: top-[25%] moves the map down a bit from the top, creating better vertical balance */}
       <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-30 sm:opacity-50 md:opacity-100 mix-blend-screen pointer-events-none">
         <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-70">
           <Image
@@ -56,7 +57,8 @@ export default function GlobalSection() {
       </div>
 
       {/* --- Main Content Container --- */}
-      <div className="w-full relative z-10 flex-grow flex flex-col pb-12 sm:py-16 md:py-20">
+      {/* CHANGE 2: Increased padding-bottom (pb-12 -> pb-20) to push content up from the bottom edge */}
+      <div className="w-full relative z-10 flex-grow flex flex-col pb-20 sm:py-16 md:py-20">
 
         {/* --- TOP: LOGOS (DESKTOP ONLY) --- */}
         <div className="hidden md:grid w-full px-10 lg:px-[60px] grid-cols-5 gap-4 items-center opacity-80 mb-10 justify-items-start">
@@ -104,7 +106,9 @@ export default function GlobalSection() {
             </p>
 
             {/* 3. Mobile Logos (Marquee below text) */}
-            <div className="md:hidden w-full relative mt-10 mb-2 overflow-hidden opacity-80">
+            {/* CHANGE 3: Reduced top margin (mt-10 -> mt-6). 
+                On short screens, a large gap pushes logos off-screen. We keep it tight on mobile, larger on desktop (md:mt-10). */}
+            <div className="md:hidden w-full relative mt-6 md:mt-10 mb-2 overflow-hidden opacity-80">
               <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
 
