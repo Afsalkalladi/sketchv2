@@ -84,27 +84,40 @@ export default function SolutionsPage() {
 
         {/* ========================================
           SECTION 1: HERO & INTRO
-          Matching homepage layout logic with consistent padding
           ========================================
         */}
         <section className="h-dvh w-full snap-start snap-always relative overflow-hidden bg-black">
 
-          {/* Large Background Text */}
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none select-none">
-            <h1 className="font-unbounded font-normal whitespace-nowrap text-[60px] lg:text-[343.745px] lg:leading-[282.047px] tracking-tighter lg:tracking-[-3.5256px] text-white">
+          {/* Large Background Text 
+              CHANGES: 
+              1. Moved to top-20/top-[130px] (removed top-1/2 centering).
+              2. Added WebkitTextStroke and text-transparent for outline effect.
+          */}
+          <div className="absolute left-4 top-24 lg:top-[130px] opacity-20 pointer-events-none select-none z-0">
+            <h1
+              className="font-unbounded font-normal whitespace-nowrap text-[60px] lg:text-[343.745px] lg:leading-[282.047px] tracking-tighter lg:tracking-[-3.5256px] text-transparent"
+              style={{
+                WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)"
+              }}
+            >
               SOLUTION
             </h1>
           </div>
 
-          {/* Main Content Container - matches homepage padding */}
-          <div className="relative z-10 w-full h-full px-5 md:px-10 lg:px-[60px] flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full items-center">
+          {/* Main Content Container 
+              CHANGES: 
+              1. Removed 'items-center'.
+              2. Added 'pt-[140px]' to push content down from very top but keep it high.
+          */}
+          <div className="relative z-10 w-full h-full px-5 md:px-10 lg:px-[60px] flex items-start pt-[140px] lg:pt-[160px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
 
               {/* Left Column - Text Content */}
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-start">
+
                 {/* Gradient Title */}
                 <h2
-                  className="font-unbounded font-normal text-4xl lg:text-[65.591px] lg:leading-[53.818px] lg:tracking-[-0.6727px] mb-6"
+                  className="font-unbounded font-normal text-4xl lg:text-[65.591px] lg:leading-[53.818px] lg:tracking-[-0.6727px] mb-6 mt-4"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -139,7 +152,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column - Robot Image */}
-              <div className="hidden lg:flex justify-end items-center">
+              <div className="hidden lg:flex justify-end items-start mt-[-40px]">
                 <div className="relative w-[516px] h-[600px]">
                   <Image
                     src="/images/robot-image.png"
@@ -165,7 +178,6 @@ export default function SolutionsPage() {
 
         {/* ========================================
           SECTION 2: CORE CAPABILITIES
-          Matching homepage padding and layout
           ========================================
         */}
         <section className="h-dvh w-full snap-start snap-always relative overflow-y-auto bg-black">
