@@ -76,21 +76,21 @@ export default function FutureSection() {
 
           {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
           <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0 overflow-hidden">
-            {/* --- THE DOT PATTERN --- */}
+            {/* --- THE DOT PATTERN (More Circular) --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
               style={{
                 width: "800px",
                 height: "800px",
-                right: "-50px",
-                top: "-50px",
+                right: "-100px",
+                top: "-100px",
                 backgroundImage:
                   "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
                 backgroundSize: "24px 24px",
                 maskImage:
-                  "radial-gradient(circle, black 40%, transparent 70%)",
+                  "radial-gradient(circle at center, black 30%, transparent 65%)",
                 WebkitMaskImage:
-                  "radial-gradient(circle, black 40%, transparent 70%)",
+                  "radial-gradient(circle at center, black 30%, transparent 65%)",
                 zIndex: 0,
               }}
             />
@@ -115,19 +115,28 @@ export default function FutureSection() {
                 fill
                 className="object-contain relative z-10"
               />
-              {/* Dark gradient overlay - adjusted to prevent bleeding */}
+              {/* Radial gradient overlay to blend arm into background */}
               <div
                 style={{
                   position: "absolute",
-                  bottom: "-10%",
-                  left: "-10%",
-                  width: "120%",
-                  height: "80%",
-                  transform: "rotate(90deg)",
-                  transformOrigin: "center",
+                  inset: 0,
                   background:
-                    "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%)",
+                    "radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 75%, black 100%)",
                   zIndex: 20,
+                  pointerEvents: "none",
+                }}
+              />
+              {/* Bottom gradient to blend lower part of arm into black background */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "40%",
+                  background:
+                    "linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.8) 30%, transparent 100%)",
+                  zIndex: 21,
                   pointerEvents: "none",
                 }}
               />
