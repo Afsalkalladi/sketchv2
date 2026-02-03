@@ -67,8 +67,8 @@ export default function FutureSection() {
             </div>
 
             <a
-              href="mailto:sketchrobotics@gmail.com"
-              className="mt-6 sm:mt-8 md:mt-10 h-8 sm:h-9 px-4 sm:px-6 rounded-full bg-gray-600/80 opacity-70 text-white text-xs sm:text-sm font-light leading-6 tracking-wide sm:tracking-widest transition-all hover:opacity-90 flex items-center justify-center"
+              href="mailto:hello@sketchrobotics.com"
+              className="mt-6 sm:mt-8 md:mt-10 h-8 sm:h-9 px-4 sm:px-6 rounded-full bg-gray-600/80 opacity-70 text-white text-xs sm:text-sm font-light leading-6 tracking-wide sm:tracking-widest transition-all hover:opacity-90 inline-flex items-center justify-center"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               Get started
