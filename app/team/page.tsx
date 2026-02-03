@@ -37,7 +37,7 @@ const founders: TeamMember[] = [
   },
   {
     name: "MUHAMMED SIYAD P",
-    role: "ROBOTICS CONSULTANT",
+    role: "CO-FOUNDER",
     image: "/images/team/team-siyad.png",
     linkedin: "https://www.linkedin.com/in/muhammedsiyadp/",
     details: [
@@ -78,23 +78,23 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "AFSAL K",
-    role: "DESIGNER",
+    role: "ROBOTICS ENGINEER",
     image: "/images/team/team-afsal.png", // Replace with actual image path
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/afsalkalladi/",
     details: ["UI/UX Design", "Product Prototyping"],
   },
   {
     name: "ASHIND V T",
-    role: "ENGINEER",
+    role: "ROBOTICS ENGINEER",
     image: "/images/team/team-ashind.png", // Replace with actual image path
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ashind-vt-2a8119261/",
     details: ["Robotics Engineer", "Embedded Systems"],
   },
   {
-    name: "TEAM MEMBER 4",
-    role: "SPECIALIST",
+    name: "MOHSIN NASIR",
+    role: "ROBOTICS ENGINEER",
     image: "/images/team/team-Photo.png", // Replace with actual image path
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/mohsin-nasir/",
     details: ["Technical Specialist", "Innovation Lead"],
   },
 ];
@@ -102,9 +102,9 @@ const teamMembers: TeamMember[] = [
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative group">
-      <div className="relative w-[100px] sm:w-[268px] h-[140px] sm:h-[393px] rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[8px] sm:rounded-[10px] z-10 pointer-events-none" />
-        <div className="relative w-full h-[100px] sm:h-[315px]">
+      <div className="relative w-[240px] sm:w-[268px] h-[350px] sm:h-[393px] rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[10px] z-10 pointer-events-none" />
+        <div className="relative w-full h-[280px] sm:h-[315px]">
           <Image
             src={member.image}
             alt={member.name}
@@ -112,15 +112,15 @@ function TeamCard({ member }: { member: TeamMember }) {
             className="object-cover object-top"
           />
         </div>
-        <div className="absolute bottom-2 sm:bottom-10 left-2 sm:left-4 z-20">
+        <div className="absolute bottom-8 sm:bottom-10 left-3 sm:left-4 z-20">
           <p
-            className="text-white text-[7px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px] mb-1 sm:mb-2"
+            className="text-white text-xs sm:text-[13px] font-normal leading-[10.667px] mb-2"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.name}
           </p>
           <p
-            className="text-[rgba(255,136,0,0.87)] text-[7px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px]"
+            className="text-[rgba(255,136,0,0.87)] text-xs sm:text-[13px] font-normal leading-[10.667px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.role}
@@ -130,15 +130,15 @@ function TeamCard({ member }: { member: TeamMember }) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-2 sm:bottom-10 right-2 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
+          className="absolute bottom-8 sm:bottom-10 right-3 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
         >
-          <div className="w-[16px] sm:w-[43px] h-[16px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[2px] sm:rounded-[4px] flex items-center justify-center">
+          <div className="w-[38px] sm:w-[43px] h-[38px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[4px] flex items-center justify-center">
             <Image
               src="/images/linkedin-icon.png"
               alt="LinkedIn"
               width={43}
               height={43}
-              className="rounded-[2px] sm:rounded-[4px]"
+              className="rounded-[4px]"
             />
           </div>
         </a>
@@ -210,7 +210,7 @@ function TeamSection() {
           >
             FOUNDERS
           </h2>
-          <div className="grid grid-cols-3 gap-3 sm:gap-8 md:gap-10 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
             {founders.map((member, index) => (
               <TeamCard key={`founder-${index}`} member={member} />
             ))}
@@ -225,7 +225,7 @@ function TeamSection() {
           >
             OUR MENTORS
           </h2>
-          <div className="grid grid-cols-2 gap-3 sm:gap-8 md:gap-10 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
             {mentors.map((member, index) => (
               <TeamCard key={`mentor-${index}`} member={member} />
             ))}
@@ -240,7 +240,7 @@ function TeamSection() {
           >
             TEAM
           </h2>
-          <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-8 md:gap-10 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
             {teamMembers.map((member, index) => (
               <TeamCard key={`team-${index}`} member={member} />
             ))}
