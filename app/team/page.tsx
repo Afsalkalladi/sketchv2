@@ -70,21 +70,21 @@ const mentors: TeamMember[] = [
 // --- NEW DATA ARRAY FOR TEAM ---
 const teamMembers: TeamMember[] = [
   {
-    name: "TEAM MEMBER 1",
-    role: "DEVELOPER",
+    name: "MUHAMMED SAJEEM",
+    role: "EMBEDDED ENGINEER",
     image: "/images/team/team-sajeem.png", // Replace with actual image path
     linkedin: "#",
     details: ["Expertise in Full Stack", "React & Node.js specialist"],
   },
   {
-    name: "TEAM MEMBER 2",
+    name: "AFSAL K",
     role: "DESIGNER",
     image: "/images/team/team-afsal.png", // Replace with actual image path
     linkedin: "#",
     details: ["UI/UX Design", "Product Prototyping"],
   },
   {
-    name: "TEAM MEMBER 3",
+    name: "ASHIND V T",
     role: "ENGINEER",
     image: "/images/team/team-ashind.png", // Replace with actual image path
     linkedin: "#",
