@@ -14,7 +14,7 @@ const founders: TeamMember[] = [
   {
     name: "MUHAMMED FAISAL P K",
     role: "CEO",
-    image: "/images/team-faisal.png",
+    image: "/images/team/team-faisal.png",
     linkedin: "https://www.linkedin.com/in/muhammed-faisal-p-k-183376259/",
     details: [
       "5+ years in robotics & automation",
@@ -26,7 +26,7 @@ const founders: TeamMember[] = [
   {
     name: "ROMAL JOSBIN",
     role: "COO",
-    image: "/images/team-romal.png",
+    image: "/images/team/team-romal.png",
     linkedin: "https://www.linkedin.com/in/romal-josbin/",
     details: [
       "Project management & team leadership",
@@ -38,7 +38,7 @@ const founders: TeamMember[] = [
   {
     name: "MUHAMMED SIYAD P",
     role: "ROBOTICS CONSULTANT",
-    image: "/images/team-ashind.png",
+    image: "/images/team/team-siyad.png",
     linkedin: "https://www.linkedin.com/in/muhammedsiyadp/",
     details: [
       "Robotics Software Engineer",
@@ -54,14 +54,14 @@ const mentors: TeamMember[] = [
   {
     name: "DR. ASHA ELIZABETH",
     role: "MENTOR",
-    image: "/images/team-faisal.png",
+    image: "/images/team/team-ashamam.png",
     linkedin: "#",
     details: ["Retired Professor, CUSAT"],
   },
   {
     name: "PROF. SHEENA K.M",
     role: "MENTOR",
-    image: "/images/team-romal.png",
+    image: "/images/team/team-sheenamam.png",
     linkedin: "#",
     details: ["Faculty, CUSAT"],
   },
@@ -72,32 +72,39 @@ const teamMembers: TeamMember[] = [
   {
     name: "TEAM MEMBER 1",
     role: "DEVELOPER",
-    image: "/images/team-placeholder.png", // Replace with actual image path
+    image: "/images/team/team-sajeem.png", // Replace with actual image path
     linkedin: "#",
     details: ["Expertise in Full Stack", "React & Node.js specialist"],
   },
   {
     name: "TEAM MEMBER 2",
     role: "DESIGNER",
-    image: "/images/team-placeholder.png", // Replace with actual image path
+    image: "/images/team/team-afsal.png", // Replace with actual image path
     linkedin: "#",
     details: ["UI/UX Design", "Product Prototyping"],
   },
   {
     name: "TEAM MEMBER 3",
     role: "ENGINEER",
-    image: "/images/team-placeholder.png", // Replace with actual image path
+    image: "/images/team/team-ashind.png", // Replace with actual image path
     linkedin: "#",
     details: ["Robotics Engineer", "Embedded Systems"],
+  },
+  {
+    name: "TEAM MEMBER 4",
+    role: "SPECIALIST",
+    image: "/images/team/team-Photo.png", // Replace with actual image path
+    linkedin: "#",
+    details: ["Technical Specialist", "Innovation Lead"],
   },
 ];
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative group">
-      <div className="relative w-[240px] sm:w-[268px] h-[350px] sm:h-[393px] rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[10px] z-10 pointer-events-none" />
-        <div className="relative w-full h-[280px] sm:h-[315px]">
+      <div className="relative w-[100px] sm:w-[268px] h-[140px] sm:h-[393px] rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[8px] sm:rounded-[10px] z-10 pointer-events-none" />
+        <div className="relative w-full h-[100px] sm:h-[315px]">
           <Image
             src={member.image}
             alt={member.name}
@@ -105,15 +112,15 @@ function TeamCard({ member }: { member: TeamMember }) {
             className="object-cover object-top"
           />
         </div>
-        <div className="absolute bottom-8 sm:bottom-10 left-3 sm:left-4 z-20">
+        <div className="absolute bottom-2 sm:bottom-10 left-2 sm:left-4 z-20">
           <p
-            className="text-white text-xs sm:text-[13px] font-normal leading-[10.667px] mb-2"
+            className="text-white text-[7px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px] mb-1 sm:mb-2"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.name}
           </p>
           <p
-            className="text-[rgba(255,136,0,0.87)] text-xs sm:text-[13px] font-normal leading-[10.667px]"
+            className="text-[rgba(255,136,0,0.87)] text-[7px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.role}
@@ -123,15 +130,15 @@ function TeamCard({ member }: { member: TeamMember }) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-8 sm:bottom-10 right-3 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
+          className="absolute bottom-2 sm:bottom-10 right-2 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
         >
-          <div className="w-[38px] sm:w-[43px] h-[38px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[4px] flex items-center justify-center">
+          <div className="w-[16px] sm:w-[43px] h-[16px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[2px] sm:rounded-[4px] flex items-center justify-center">
             <Image
               src="/images/linkedin-icon.png"
               alt="LinkedIn"
               width={43}
               height={43}
-              className="rounded-[4px]"
+              className="rounded-[2px] sm:rounded-[4px]"
             />
           </div>
         </a>
@@ -203,7 +210,7 @@ function TeamSection() {
           >
             FOUNDERS
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
+          <div className="grid grid-cols-3 gap-3 sm:gap-8 md:gap-10 justify-items-center">
             {founders.map((member, index) => (
               <TeamCard key={`founder-${index}`} member={member} />
             ))}
@@ -218,7 +225,7 @@ function TeamSection() {
           >
             OUR MENTORS
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
+          <div className="grid grid-cols-2 gap-3 sm:gap-8 md:gap-10 justify-items-center">
             {mentors.map((member, index) => (
               <TeamCard key={`mentor-${index}`} member={member} />
             ))}
@@ -233,7 +240,7 @@ function TeamSection() {
           >
             TEAM
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
+          <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-8 md:gap-10 justify-items-center">
             {teamMembers.map((member, index) => (
               <TeamCard key={`team-${index}`} member={member} />
             ))}
