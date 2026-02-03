@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               {/* X (Twitter) */}
               <a
-                href="#"
+                href="https://x.com/sketchrobotics"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
               >
                 <svg
@@ -74,7 +74,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/company/sketch-robotics-pvt-ltd/"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
               >
                 <svg
@@ -88,7 +88,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/sketch.robotics/"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all"
               >
                 <svg
