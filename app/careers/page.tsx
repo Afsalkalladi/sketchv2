@@ -245,40 +245,6 @@ function CareersSection() {
           </div>
         </div>
 
-        {/* How to Apply */}
-        <div className="mb-8">
-          <h2
-            className="text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-6 sm:mb-8"
-            style={{ fontFamily: "'Unbounded', sans-serif" }}
-          >
-            HOW TO APPLY
-          </h2>
-          <div
-            className="p-5 sm:p-6 md:p-8 rounded-[20px] md:rounded-[30px] border border-white/10 bg-white/[0.02]"
-          >
-            <div className="flex items-start gap-4">
-              <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[rgba(255,136,0,0.15)] border border-[rgba(255,136,0,0.3)] flex items-center justify-center">
-                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-[rgba(255,136,0,0.87)]" />
-              </div>
-              <div>
-                <p
-                  className="text-white/70 text-sm sm:text-base leading-relaxed"
-                  style={{ fontFamily: "'Unbounded', sans-serif" }}
-                >
-                  Click the{" "}
-                  <span className="text-[rgba(255,136,0,0.87)]">
-                    apply icon
-                  </span>{" "}
-                  near each job title or the{" "}
-                  <span className="text-[rgba(255,136,0,0.87)]">
-                    &quot;Apply Now&quot;
-                  </span>{" "}
-                  button to submit your application via our Google Form.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Large background text */}
