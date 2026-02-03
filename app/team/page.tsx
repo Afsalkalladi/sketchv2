@@ -52,7 +52,7 @@ const founders: TeamMember[] = [
 
 const mentors: TeamMember[] = [
   {
-    name: "DR. ASHA ELIZABETH DANIEL",
+    name: "DR. ASHA ELIZABETH",
     role: "MENTOR",
     image: "/images/team-faisal.png",
     linkedin: "#",
@@ -64,6 +64,31 @@ const mentors: TeamMember[] = [
     image: "/images/team-romal.png",
     linkedin: "#",
     details: ["Faculty, CUSAT"],
+  },
+];
+
+// --- NEW DATA ARRAY FOR TEAM ---
+const teamMembers: TeamMember[] = [
+  {
+    name: "TEAM MEMBER 1",
+    role: "DEVELOPER",
+    image: "/images/team-placeholder.png", // Replace with actual image path
+    linkedin: "#",
+    details: ["Expertise in Full Stack", "React & Node.js specialist"],
+  },
+  {
+    name: "TEAM MEMBER 2",
+    role: "DESIGNER",
+    image: "/images/team-placeholder.png", // Replace with actual image path
+    linkedin: "#",
+    details: ["UI/UX Design", "Product Prototyping"],
+  },
+  {
+    name: "TEAM MEMBER 3",
+    role: "ENGINEER",
+    image: "/images/team-placeholder.png", // Replace with actual image path
+    linkedin: "#",
+    details: ["Robotics Engineer", "Embedded Systems"],
   },
 ];
 
@@ -196,6 +221,21 @@ function TeamSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
             {mentors.map((member, index) => (
               <TeamCard key={`mentor-${index}`} member={member} />
+            ))}
+          </div>
+        </div>
+
+        {/* --- NEW SECTION: TEAM --- */}
+        <div className="mb-16 sm:mb-20 md:mb-24">
+          <h2
+            className="text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12 leading-[10.667px]"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
+            TEAM
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center lg:justify-items-start">
+            {teamMembers.map((member, index) => (
+              <TeamCard key={`team-${index}`} member={member} />
             ))}
           </div>
         </div>
