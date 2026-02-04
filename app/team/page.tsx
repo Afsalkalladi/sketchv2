@@ -14,7 +14,7 @@ const founders: TeamMember[] = [
   {
     name: "MUHAMMED FAISAL P K",
     role: "CEO",
-    image: "/images/team/team-faisal.png",
+    image: "/images/team/faisal.png",
     linkedin: "https://www.linkedin.com/in/muhammed-faisal-p-k-183376259/",
     details: [
       "5+ years in robotics & automation",
@@ -26,7 +26,7 @@ const founders: TeamMember[] = [
   {
     name: "ROMAL JOSBIN",
     role: "COO",
-    image: "/images/team/team-romal.png",
+    image: "/images/team/romal.png",
     linkedin: "https://www.linkedin.com/in/romal-josbin/",
     details: [
       "Project management & team leadership",
@@ -38,7 +38,7 @@ const founders: TeamMember[] = [
   {
     name: "MUHAMMED SIYAD P",
     role: "CO-FOUNDER",
-    image: "/images/team/team-siyad.png",
+    image: "/images/team/siyad.png",
     linkedin: "https://www.linkedin.com/in/muhammedsiyadp/",
     details: [
       "Robotics Software Engineer",
@@ -54,14 +54,14 @@ const mentors: TeamMember[] = [
   {
     name: "DR. ASHA ELIZABETH",
     role: "MENTOR",
-    image: "/images/team/team-ashamam.png",
+    image: "/images/team/ashamam.png",
     linkedin: "#",
     details: ["Retired Professor, CUSAT"],
   },
   {
     name: "PROF. SHEENA K.M",
     role: "MENTOR",
-    image: "/images/team/team-sheenamam.png",
+    image: "/images/team/sheenamiss.png",
     linkedin: "#",
     details: ["Faculty, CUSAT"],
   },
@@ -72,28 +72,28 @@ const teamMembers: TeamMember[] = [
   {
     name: "MUHAMMED SAJEEM",
     role: "EMBEDDED ENGINEER",
-    image: "/images/team/team-sajeem.png", // Replace with actual image path
+    image: "/images/team/sajeem.png", // Replace with actual image path
     linkedin: "#",
     details: ["Expertise in Full Stack", "React & Node.js specialist"],
   },
   {
     name: "AFSAL K",
     role: "ROBOTICS ENGINEER",
-    image: "/images/team/team-afsal.png", // Replace with actual image path
+    image: "/images/team/afsalkalladi.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/afsalkalladi/",
     details: ["UI/UX Design", "Product Prototyping"],
   },
   {
     name: "ASHIND V T",
     role: "ROBOTICS ENGINEER",
-    image: "/images/team/team-ashind.png", // Replace with actual image path
+    image: "/images/team/ashind.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/ashind-vt-2a8119261/",
     details: ["Robotics Engineer", "Embedded Systems"],
   },
   {
     name: "MOHSIN NASIR",
     role: "ROBOTICS ENGINEER",
-    image: "/images/team/team-Photo.png", // Replace with actual image path
+    image: "/images/team/muhsin.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/mohsin-nasir/",
     details: ["Technical Specialist", "Innovation Lead"],
   },
