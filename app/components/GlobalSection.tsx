@@ -12,8 +12,6 @@ const PARTNERS = [
 
 export default function GlobalSection() {
   return (
-    // CHANGE 1: Added h-[100dvh] alongside h-screen.
-    // 'dvh' (dynamic viewport height) accounts for mobile browser address bars shrinking/expanding.
     <section className="bg-black relative overflow-hidden h-screen h-[100dvh] min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
 
       {/* CSS Animation Styles */}
@@ -27,20 +25,18 @@ export default function GlobalSection() {
         }
       `}</style>
 
-      {/* --- Background Gradients & Map --- */}
+      {/* --- Background Gradients --- */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%)",
+          background: "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%)",
           zIndex: 0,
         }}
       />
       <div
         className="absolute right-0 top-0 bottom-0 w-full opacity-70 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
+          background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
         }}
       />
 
@@ -48,7 +44,7 @@ export default function GlobalSection() {
       <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-30 sm:opacity-50 md:opacity-100 mix-blend-screen pointer-events-none">
         <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-70">
           <Image
-            src="/images/world-map-gray.png"
+            src="/images/maped.png"
             alt="World map showing global presence"
             fill
             className="object-contain"
@@ -57,7 +53,6 @@ export default function GlobalSection() {
       </div>
 
       {/* --- Main Content Container --- */}
-      {/* CHANGE 2: Increased padding-bottom (pb-12 -> pb-20) to push content up from the bottom edge */}
       <div className="w-full relative z-10 flex-grow flex flex-col pb-20 sm:py-16 md:py-20">
 
         {/* --- TOP: LOGOS (DESKTOP ONLY) --- */}
@@ -106,8 +101,6 @@ export default function GlobalSection() {
             </p>
 
             {/* 3. Mobile Logos (Marquee below text) */}
-            {/* CHANGE 3: Reduced top margin (mt-10 -> mt-6). 
-                On short screens, a large gap pushes logos off-screen. We keep it tight on mobile, larger on desktop (md:mt-10). */}
             <div className="md:hidden w-full relative mt-6 md:mt-10 mb-2 overflow-hidden opacity-80">
               <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />

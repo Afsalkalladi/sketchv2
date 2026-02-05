@@ -76,22 +76,22 @@ export default function FutureSection() {
           </div>
 
           {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
-          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0">
+          <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0 overflow-hidden">
             {/* --- THE DOT PATTERN --- */}
             <div
               className="absolute pointer-events-none hidden sm:block"
               style={{
-                width: "800px",
-                height: "800px",
+                width: "600px",
+                height: "600px",
                 right: "-50px",
-                top: "-50px",
+                top: "50px",
                 backgroundImage:
                   "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
                 backgroundSize: "24px 24px",
                 maskImage:
-                  "radial-gradient(circle, black 40%, transparent 70%)",
+                  "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
                 WebkitMaskImage:
-                  "radial-gradient(circle, black 40%, transparent 70%)",
+                  "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
                 zIndex: 0,
               }}
             />
@@ -116,19 +116,12 @@ export default function FutureSection() {
                 fill
                 className="object-contain relative z-10"
               />
+              {/* Bottom gradient fade - contained within section */}
               <div
+                className="absolute bottom-0 left-[-20%] w-[140%] h-[60%] pointer-events-none z-20"
                 style={{
-                  position: "absolute",
-                  bottom: "-20%",
-                  left: "-20%",
-                  width: "140%",
-                  height: "100%",
-                  transform: "rotate(90deg)",
-                  transformOrigin: "center",
                   background:
-                    "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%)",
-                  zIndex: 20,
-                  pointerEvents: "none",
+                    "linear-gradient(to bottom, transparent 0%, black 100%)",
                 }}
               />
             </div>
