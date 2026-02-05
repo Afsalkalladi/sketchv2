@@ -182,11 +182,6 @@ export default function SolutionsPage() {
 
           {/* Mobile Cards Carousel - Positioned close to where text ends */}
           <div className="md:hidden flex-1 flex flex-col justify-center px-5 pb-8">
-            {/* What We Solve Heading for Mobile */}
-            <h3 className="font-unbounded font-light text-[28px] sm:text-[32px] leading-[1.1] tracking-[2px] sm:tracking-[3px] text-white mb-4">
-              <span className="block">WHAT WE</span>
-              <span className="block">SOLVE</span>
-            </h3>
             <div
               className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
