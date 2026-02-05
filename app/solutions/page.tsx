@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CapabilitiesSection from "../components/CapabilitiesSection";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -190,14 +191,21 @@ export default function SolutionsPage() {
         </section>
 
         {/* ========================================
-            SECTION 2: CORE CAPABILITIES
+            SECTION 2: WHAT WE SOLVE
+           ======================================== */}
+        <section className="h-dvh w-full snap-start snap-always">
+          <CapabilitiesSection />
+        </section>
+
+        {/* ========================================
+            SECTION 3: CORE CAPABILITIES
             - Removed "sticky" classes from the h3 title.
            ======================================== */}
         <section className="min-h-dvh w-full snap-start relative bg-black flex flex-col justify-start">
           <div className="w-full h-full px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32">
             <div className="w-full">
               {/* UPDATED: Removed sticky, top-20, z-40, mix-blend-difference */}
-              <h3 className="font-unbounded font-normal text-2xl lg:text-[26px] xl:text-[28px] 2xl:text-[32px] text-white mb-8 xl:mb-10 2xl:mb-16">
+              <h3 className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white mb-8 xl:mb-10 2xl:mb-16">
                 CORE CAPABILITIES
               </h3>
 
