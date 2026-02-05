@@ -135,7 +135,7 @@ export default function SolutionsPage() {
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
                 <h2
-                  className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[55px] laptop-sm:text-[75px] laptop-sm:leading-[1.1] xl:text-[60px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-3"
+                  className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] mb-3 lg:mb-4"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -182,6 +182,11 @@ export default function SolutionsPage() {
 
           {/* Mobile Cards Carousel - Positioned close to where text ends */}
           <div className="md:hidden flex-1 flex flex-col justify-center px-5 pb-8">
+            {/* What We Solve Heading for Mobile */}
+            <h3 className="font-unbounded font-light text-[28px] sm:text-[32px] leading-[1.1] tracking-[2px] sm:tracking-[3px] text-white mb-4">
+              <span className="block">WHAT WE</span>
+              <span className="block">SOLVE</span>
+            </h3>
             <div
               className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
