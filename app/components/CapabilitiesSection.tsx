@@ -7,13 +7,13 @@ const CAPABILITIES = [
     number: "01",
     title: "Automating Hazardous and Repetitive Work",
     description:
-      "Many essential tasks remain manual despite being repetitive or unsafe. We develop robotic systems that reduce human exposure while improving safety and operational consistency.",
+      "Many essential tasks remain manual despite being repetitive or unsafe. We develop robotic systems that reduce human exposure while improving safety.",
   },
   {
     number: "02",
     title: "Reliable Software–Hardware Integration",
     description:
-      "We engineer hardware that fully realizes the potential of advanced software, enabling precise sensing, in real-world environments.",
+      "We engineer hardware that fully realizes the potential of advanced software, enabling precise sensing in real-world environments.",
   },
   {
     number: "03",
@@ -29,15 +29,15 @@ const CAPABILITIES = [
   },
   {
     number: "05",
-    title: "Scaling Manual Processes with Minimal Disruption",
+    title: "Scaling Processes with Minimal Disruption",
     description:
-      "Many processes stay manual due to fear of disruption. We enable a smooth transition to scalable robotic systems without interrupting existing operations.",
+      "We enable a smooth transition to scalable robotic systems without interrupting your existing operations.",
   },
   {
     number: "06",
     title: "Designed for Real Operating Conditions",
     description:
-      "Our robots are built to function in dust, moisture, heat, and uneven environments outside controlled lab settings.",
+      "Our robots function in dust, moisture, heat, and uneven environments outside controlled lab settings.",
   },
 ];
 
@@ -45,14 +45,13 @@ export default function CapabilitiesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Update active index on scroll for mobile carousel
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
-      const cardWidth = container.offsetWidth * 0.75 + 16; // card width + gap
+      const cardWidth = container.offsetWidth * 0.75 + 16;
       const newIndex = Math.round(scrollLeft / cardWidth);
       setActiveIndex(Math.min(newIndex, CAPABILITIES.length - 1));
     };
@@ -62,121 +61,88 @@ export default function CapabilitiesSection() {
   }, []);
 
   return (
-    <section className="bg-black relative overflow-hidden min-h-screen h-[100dvh] flex flex-col snap-start snap-always">
+    <section className="bg-black relative overflow-hidden min-h-screen py-16 md:py-24 flex flex-col justify-center snap-start">
       {/* Background gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 60%)",
+          background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%)",
         }}
       />
 
-      <div className="w-full h-full pt-24 pb-8 md:py-20 relative z-10 flex flex-col justify-start md:justify-center">
-        {/* Section Header */}
-        <div className="mb-4 md:mb-12 px-5 md:px-10 lg:px-[60px]">
+      <div className="max-w-7xl mx-auto w-full relative z-10 px-6 md:px-10 lg:px-16">
+        {/* Section Header - Reduced tracking and tightened leading */}
+        <header className="mb-10 md:mb-16 max-w-2xl">
           <h2
-            className="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] font-light text-white leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
+            className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.1] tracking-tight"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
-            <span className="block">WHAT WE</span>
-            <span className="block font-normal">SOLVE</span>
+            <span className="block opacity-80">WHAT WE</span>
+            <span className="block font-medium">SOLVE</span>
           </h2>
-        </div>
+        </header>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden flex flex-col flex-grow">
+        <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-5 pb-4 flex-grow items-center"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-8"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {CAPABILITIES.map((capability, index) => (
               <div
                 key={index}
-                className="group relative flex-shrink-0 w-[75vw] p-5 border border-neutral-800 rounded-lg bg-black/50 backdrop-blur-sm snap-center flex flex-col justify-center min-h-[200px]"
+                className="flex-shrink-0 w-[80vw] p-6 border border-neutral-800 rounded-xl bg-neutral-900/30 backdrop-blur-sm snap-center"
               >
-                {/* Number */}
-                <span className="text-neutral-600 text-xs tracking-widest mb-3 block">
+                <span className="text-neutral-500 text-xs font-mono mb-4 block">
                   {capability.number}
                 </span>
-
-                {/* Title */}
                 <h3
-                  className="text-white text-sm font-normal leading-snug tracking-wide mb-3"
+                  className="text-white text-lg font-normal leading-tight mb-3"
                   style={{ fontFamily: "'Unbounded', sans-serif" }}
                 >
                   {capability.title}
                 </h3>
-
-                {/* Description */}
-                <p
-                  className="text-neutral-400 text-xs font-light leading-relaxed tracking-wide"
-                  style={{ fontFamily: "'Unbounded', sans-serif" }}
-                >
+                <p className="text-neutral-400 text-sm leading-relaxed font-light">
                   {capability.description}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 py-4">
+          {/* Indicators */}
+          <div className="flex justify-center gap-2">
             {CAPABILITIES.map((_, index) => (
-              <button
+              <div
                 key={index}
-                onClick={() => {
-                  const container = scrollRef.current;
-                  if (container) {
-                    const cardWidth = container.offsetWidth * 0.75 + 16;
-                    container.scrollTo({
-                      left: cardWidth * index,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === index ? "bg-white w-6" : "bg-neutral-600"
+                className={`h-1 transition-all duration-300 rounded-full ${
+                  activeIndex === index ? "bg-white w-8" : "bg-neutral-800 w-2"
                 }`}
-                aria-label={`Go to card ${index + 1}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-5 md:px-10 lg:px-[60px]">
+        {/* Desktop Grid - Reasonable Heading Sizes */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {CAPABILITIES.map((capability, index) => (
             <div
               key={index}
-              className="group relative p-5 md:p-6 border border-neutral-800 rounded-lg hover:border-neutral-600 transition-all duration-300 bg-black/50 backdrop-blur-sm"
+              className="group relative p-8 border border-neutral-900 rounded-2xl hover:border-neutral-700 transition-colors duration-300 bg-neutral-900/10"
             >
-              {/* Number */}
-              <span className="text-neutral-600 text-xs tracking-widest mb-3 block">
+              <span className="text-neutral-600 text-sm font-mono mb-6 block">
                 {capability.number}
               </span>
-
-              {/* Title */}
               <h3
-                className="text-white text-sm md:text-base font-normal leading-snug tracking-wide mb-3"
+                className="text-white text-xl font-normal leading-snug mb-4 group-hover:text-white transition-colors"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}
               >
                 {capability.title}
               </h3>
-
-              {/* Description */}
-              <p
-                className="text-neutral-400 text-xs md:text-sm font-light leading-relaxed tracking-wide"
-                style={{ fontFamily: "'Unbounded', sans-serif" }}
-              >
+              <p className="text-neutral-400 text-sm leading-relaxed font-light">
                 {capability.description}
               </p>
-
-              {/* Hover accent line */}
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-neutral-700 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           ))}
         </div>
