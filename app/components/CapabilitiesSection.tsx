@@ -93,9 +93,6 @@ export default function CapabilitiesSection() {
                 key={index}
                 className="flex-shrink-0 w-[80vw] p-5 border border-neutral-800 rounded-lg bg-neutral-900/30 backdrop-blur-sm snap-center"
               >
-                <span className="text-neutral-500 text-xs mb-3 block">
-                  {capability.number}
-                </span>
                 <h3
                   className="text-white text-lg font-normal leading-tight mb-3"
                   style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -129,9 +126,6 @@ export default function CapabilitiesSection() {
               key={index}
               className="group relative p-5 xl:p-6 border border-neutral-800 rounded-lg hover:border-neutral-600 transition-colors duration-300 bg-neutral-900/20 flex flex-col"
             >
-              <span className="text-neutral-500 text-xs mb-3 block">
-                {capability.number}
-              </span>
               <h3
                 className="text-white text-sm xl:text-base font-normal leading-snug mb-3"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}

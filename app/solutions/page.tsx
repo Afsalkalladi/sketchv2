@@ -198,7 +198,6 @@ export default function SolutionsPage() {
                   key={index}
                   className="flex-shrink-0 w-[70vw] p-4 border border-neutral-800 rounded-lg bg-neutral-900/40 backdrop-blur-sm snap-center"
                 >
-                  <span className="text-neutral-500 text-xs mb-2 block">{item.num}</span>
                   <h3 className="text-white text-sm font-normal leading-tight mb-2" style={{ fontFamily: "'Unbounded', sans-serif" }}>
                     {item.title}
                   </h3>
