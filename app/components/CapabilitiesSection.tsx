@@ -61,7 +61,7 @@ export default function CapabilitiesSection() {
   }, []);
 
   return (
-    <section className="bg-black relative overflow-hidden min-h-screen py-16 md:py-24 flex flex-col justify-center snap-start">
+    <section className="bg-black relative overflow-hidden h-[100dvh] py-12 md:py-16 flex flex-col snap-start snap-always">
       {/* Background gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -70,9 +70,9 @@ export default function CapabilitiesSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10 px-6 md:px-10 lg:px-16">
-        {/* Section Header - Reduced tracking and tightened leading */}
-        <header className="mb-10 md:mb-16 max-w-2xl">
+      <div className="max-w-7xl mx-auto w-full h-full relative z-10 px-6 md:px-10 lg:px-16 flex flex-col">
+        {/* Section Header - No bottom margin */}
+        <header className="mb-0 md:mb-8 max-w-2xl flex-shrink-0">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.1] tracking-tight"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -83,10 +83,10 @@ export default function CapabilitiesSection() {
         </header>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden">
+        <div className="md:hidden flex-1 flex flex-col">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-8"
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-8 pt-6"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {CAPABILITIES.map((capability, index) => (
@@ -111,7 +111,7 @@ export default function CapabilitiesSection() {
           </div>
 
           {/* Indicators */}
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-2 pb-4">
             {CAPABILITIES.map((_, index) => (
               <div
                 key={index}
@@ -123,26 +123,26 @@ export default function CapabilitiesSection() {
           </div>
         </div>
 
-        {/* Desktop Grid - Reasonable Heading Sizes */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Desktop Grid - All cards visible without scrolling */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 flex-1 content-center pb-8">
           {CAPABILITIES.map((capability, index) => (
             <div
               key={index}
-              className="group relative p-8 border border-neutral-900 rounded-2xl hover:border-neutral-700 transition-colors duration-300 bg-neutral-900/10"
+              className="group relative p-6 border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors duration-300 bg-neutral-900/20 backdrop-blur-sm flex flex-col"
             >
-              <span className="text-neutral-600 text-sm font-mono mb-6 block">
+              <span className="text-neutral-500 text-xs mb-3 block">
                 {capability.number}
               </span>
               <h3
-                className="text-white text-xl font-normal leading-snug mb-4 group-hover:text-white transition-colors"
+                className="text-white text-base font-normal leading-snug mb-3"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}
               >
                 {capability.title}
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed font-light">
+              <p className="text-neutral-400 text-xs leading-relaxed font-light flex-1">
                 {capability.description}
               </p>
-              <div className="absolute bottom-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-neutral-700 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="absolute bottom-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-neutral-600 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           ))}
         </div>

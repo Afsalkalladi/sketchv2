@@ -117,10 +117,10 @@ export default function SolutionsPage() {
             SECTION 1: HERO & INTRO
            ======================================== */}
         <section className="h-dvh w-full snap-start relative overflow-hidden bg-black flex flex-col justify-start shrink-0">
-          <div className="relative z-10 w-full px-5 md:px-10 lg:px-[60px] flex items-start lg:items-center pt-24 lg:pt-[120px] laptop-sm:pt-[180px] xl:pt-[140px] 2xl:pt-[180px]">
+          <div className="relative z-10 w-full px-5 md:px-10 lg:px-[60px] flex flex-col lg:flex-row items-start lg:items-center pt-28 lg:pt-[120px] laptop-sm:pt-[180px] xl:pt-[140px] 2xl:pt-[180px]">
 
             {/* Large Background Text */}
-            <div className="absolute left-4 top-25 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
+            <div className="absolute left-4 top-30 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
               <h1
                 className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
                 style={{
@@ -131,11 +131,11 @@ export default function SolutionsPage() {
               </h1>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full pt-8 lg:pt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 w-full pt-6 lg:pt-0">
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
                 <h2
-                  className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[55px] laptop-sm:text-[75px] laptop-sm:leading-[1.1] xl:text-[60px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-2"
+                  className="font-unbounded font-normal text-3xl md:text-4xl lg:text-[55px] laptop-sm:text-[75px] laptop-sm:leading-[1.1] xl:text-[60px] 2xl:text-[65.591px] lg:leading-[1.1] 2xl:leading-[53.818px] lg:tracking-[-0.5px] 2xl:tracking-[-0.6727px] mb-3"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -147,23 +147,14 @@ export default function SolutionsPage() {
                   SOLUTION
                 </h2>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[16px] leading-[1.6] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:mt-[80px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-6 lg:mt-8 xl:mt-12 2xl:mt-30">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[13px] leading-[1.7] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:mt-[80px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-4 lg:mt-8 xl:mt-12 2xl:mt-30">
                   <span>At </span>
-                  <span className="font-semibold text-[#efefef]">
-                    Sketch Robotics
-                  </span>
-                  <span>
-                    , we transform challenges into opportunities by designing and
-                    delivering end-to-end robotics and{" "}
-                  </span>
+                  <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
+                  <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
                   <span className="text-white">AI solutions</span>
                   <span>. Whether it's automating processes, building </span>
                   <span className="text-white">intelligent systems</span>
-                  <span>
-                    , or enabling next-generation human–machine interaction, we
-                    tailor our solutions to meet industry-specific needs with
-                    scalable, cost-effective, and{" "}
-                  </span>
+                  <span>, or enabling next-generation human–machine interaction, we tailor our solutions to meet industry-specific needs with scalable, cost-effective, and </span>
                   <span className="text-white">deployment-ready systems.</span>
                 </p>
               </div>
@@ -188,12 +179,40 @@ export default function SolutionsPage() {
               </div>
             </div>
           </div>
+
+          {/* Mobile Cards Carousel - Positioned close to where text ends */}
+          <div className="md:hidden flex-1 flex flex-col justify-center px-5 pb-8">
+            <div
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {[
+                { num: "01", title: "Automating Hazardous Work", desc: "Robotic systems that reduce human exposure while improving safety." },
+                { num: "02", title: "Software–Hardware Integration", desc: "Hardware that realizes the potential of advanced software." },
+                { num: "03", title: "Problem-Specific Solutions", desc: "Tailored robotic systems for real-world constraints." },
+                { num: "04", title: "Practical Automation", desc: "Intuitive interfaces and dependable on-site performance." },
+                { num: "05", title: "Minimal Disruption Scaling", desc: "Smooth transition to scalable robotic systems." },
+                { num: "06", title: "Real Operating Conditions", desc: "Built for dust, moisture, heat, and uneven environments." },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[70vw] p-4 border border-neutral-800 rounded-lg bg-neutral-900/40 backdrop-blur-sm snap-center"
+                >
+                  <span className="text-neutral-500 text-xs mb-2 block">{item.num}</span>
+                  <h3 className="text-white text-sm font-normal leading-tight mb-2" style={{ fontFamily: "'Unbounded', sans-serif" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-neutral-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* ========================================
-            SECTION 2: WHAT WE SOLVE
+            SECTION 2: WHAT WE SOLVE (Desktop only)
            ======================================== */}
-        <section className="h-dvh w-full snap-start snap-always">
+        <section className="hidden md:block h-dvh w-full snap-start snap-always">
           <CapabilitiesSection />
         </section>
 
