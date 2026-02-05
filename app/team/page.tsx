@@ -205,7 +205,7 @@ function TeamSection() {
         {/* Founders */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="hidden sm:block text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12 leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             FOUNDERS
@@ -220,7 +220,7 @@ function TeamSection() {
         {/* Mentors */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="hidden sm:block text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12 leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             OUR MENTORS
@@ -235,7 +235,7 @@ function TeamSection() {
         {/* --- NEW SECTION: TEAM --- */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="hidden sm:block text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12 leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             TEAM
