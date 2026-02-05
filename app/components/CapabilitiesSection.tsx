@@ -61,7 +61,7 @@ export default function CapabilitiesSection() {
   }, []);
 
   return (
-    <section className="bg-black relative overflow-hidden h-[100dvh] py-12 md:py-16 flex flex-col snap-start snap-always">
+    <section className="bg-black relative overflow-hidden h-[100dvh] flex flex-col snap-start snap-always">
       {/* Background gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -70,15 +70,14 @@ export default function CapabilitiesSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto w-full h-full relative z-10 px-6 md:px-10 lg:px-16 flex flex-col">
-        {/* Section Header - No bottom margin */}
-        <header className="mb-0 md:mb-8 max-w-2xl flex-shrink-0">
+      <div className="w-full h-full relative z-10 px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32 flex flex-col">
+        {/* Section Header - Matching Core Capabilities style */}
+        <header className="mb-8 xl:mb-10 2xl:mb-12 flex-shrink-0">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-[1.1] tracking-tight"
-            style={{ fontFamily: "'Unbounded', sans-serif" }}
+            className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white"
           >
-            <span className="block opacity-80">WHAT WE</span>
-            <span className="block font-medium">SOLVE</span>
+            <span className="block">WHAT WE</span>
+            <span className="block">SOLVE</span>
           </h2>
         </header>
 
@@ -86,15 +85,15 @@ export default function CapabilitiesSection() {
         <div className="md:hidden flex-1 flex flex-col">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-8 pt-6"
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-6"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {CAPABILITIES.map((capability, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[80vw] p-6 border border-neutral-800 rounded-xl bg-neutral-900/30 backdrop-blur-sm snap-center"
+                className="flex-shrink-0 w-[80vw] p-5 border border-neutral-800 rounded-lg bg-neutral-900/30 backdrop-blur-sm snap-center"
               >
-                <span className="text-neutral-500 text-xs font-mono mb-4 block">
+                <span className="text-neutral-500 text-xs mb-3 block">
                   {capability.number}
                 </span>
                 <h3
@@ -124,17 +123,17 @@ export default function CapabilitiesSection() {
         </div>
 
         {/* Desktop Grid - All cards visible without scrolling */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 flex-1 content-center pb-8">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8 2xl:gap-[36px] flex-1 content-start">
           {CAPABILITIES.map((capability, index) => (
             <div
               key={index}
-              className="group relative p-6 border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors duration-300 bg-neutral-900/20 backdrop-blur-sm flex flex-col"
+              className="group relative p-5 xl:p-6 border border-neutral-800 rounded-lg hover:border-neutral-600 transition-colors duration-300 bg-neutral-900/20 flex flex-col"
             >
               <span className="text-neutral-500 text-xs mb-3 block">
                 {capability.number}
               </span>
               <h3
-                className="text-white text-base font-normal leading-snug mb-3"
+                className="text-white text-sm xl:text-base font-normal leading-snug mb-3"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}
               >
                 {capability.title}
@@ -142,7 +141,7 @@ export default function CapabilitiesSection() {
               <p className="text-neutral-400 text-xs leading-relaxed font-light flex-1">
                 {capability.description}
               </p>
-              <div className="absolute bottom-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-neutral-600 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="absolute bottom-0 left-5 right-5 xl:left-6 xl:right-6 h-[1px] bg-gradient-to-r from-transparent via-neutral-600 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           ))}
         </div>
