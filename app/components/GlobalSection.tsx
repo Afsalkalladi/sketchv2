@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 const PARTNERS = [
   { name: "Kerala Startup Mission", src: "/images/trusted/keralastartupmission.svg" },
@@ -9,6 +11,123 @@ const PARTNERS = [
   { name: "Maker Village", src: "/images/trusted/makervillage.svg" },
   { name: "CUSAT", src: "/images/trusted/cusat.svg" },
 ];
+
+// Dotted World Map Component
+const DottedWorldMap = () => {
+  const [mapSvg, setMapSvg] = useState<string>('');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
+    const generateMap = async () => {
+      try {
+        // Try simpler configuration first
+        const { default: DottedMap } = await import('dotted-map');
+        
+        // Create the map with minimal settings
+        const map = new DottedMap({ 
+          height: 50, 
+          grid: 'diagonal'
+        });
+
+        // Add just a few key pins
+        map.addPin({
+          lat: 9.9312, // Kochi (CUSAT/Maker Village) - Main location
+          lng: 76.2673,
+          svgOptions: { color: '#ffffff', radius: 0.8 },
+        });
+
+        map.addPin({
+          lat: 40.7128, // New York
+          lng: -74.0060,
+          svgOptions: { color: '#ffffff', radius: 0.6 },
+        });
+
+        map.addPin({
+          lat: -33.8688, // Sydney
+          lng: 151.2093,
+          svgOptions: { color: '#ffffff', radius: 0.6 },
+        });
+
+        // Generate the SVG with minimal settings
+        const svgMap = map.getSVG({
+          radius: 0.18,
+          color: 'rgba(255,255,255,0.25)',
+          shape: 'circle',
+          backgroundColor: 'transparent',
+        });
+
+        setMapSvg(svgMap);
+      } catch (error) {
+        console.error('Error generating dotted map:', error);
+        // Create fallback custom SVG map
+        const fallbackSvg = `
+          <svg width="765" height="489" viewBox="0 0 765 489" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+                <circle cx="4" cy="4" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              </pattern>
+            </defs>
+            
+            <!-- World outline with dots -->
+            <g fill="rgba(255,255,255,0.25)">
+              <!-- India outline dots -->
+              <circle cx="500" cy="220" r="1.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="498" cy="225" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="502" cy="225" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="495" cy="230" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="505" cy="230" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="500" cy="235" r="1" fill="rgba(255,255,255,0.6)"/>
+              
+              <!-- USA outline dots -->
+              <circle cx="180" cy="180" r="1.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="170" cy="185" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="190" cy="185" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="175" cy="190" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="185" cy="190" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="160" cy="195" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="200" cy="195" r="1" fill="rgba(255,255,255,0.6)"/>
+              
+              <!-- Australia outline dots -->
+              <circle cx="650" cy="320" r="1.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="640" cy="325" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="660" cy="325" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="645" cy="330" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="655" cy="330" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="650" cy="335" r="1" fill="rgba(255,255,255,0.6)"/>
+              
+              <!-- Additional scattered dots for global effect -->
+              <circle cx="350" cy="150" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="280" cy="200" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="420" cy="180" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="550" cy="160" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="320" cy="280" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="450" cy="300" r="0.8" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="600" cy="250" r="0.8" fill="rgba(255,255,255,0.3)"/>
+            </g>
+          </svg>
+        `;
+        setMapSvg(fallbackSvg);
+      }
+    };
+
+    generateMap();
+  }, [isClient]);
+
+  if (!isClient || !mapSvg) return null;
+
+  return (
+    <div 
+      className="w-full h-full opacity-70"
+      dangerouslySetInnerHTML={{ __html: mapSvg }}
+    />
+  );
+};
 
 export default function GlobalSection() {
   return (
@@ -40,15 +159,10 @@ export default function GlobalSection() {
         }}
       />
 
-      {/* World Map Background */}
+      {/* Dotted World Map Background */}
       <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-30 sm:opacity-50 md:opacity-100 mix-blend-screen pointer-events-none">
         <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-70">
-          <Image
-            src="/images/maped.png"
-            alt="World map showing global presence"
-            fill
-            className="object-contain"
-          />
+          <DottedWorldMap />
         </div>
       </div>
 
