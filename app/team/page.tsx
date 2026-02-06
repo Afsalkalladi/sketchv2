@@ -53,14 +53,14 @@ const founders: TeamMember[] = [
 const mentors: TeamMember[] = [
   {
     name: "DR. ASHA ELIZABETH",
-    role: "MENTOR",
+    role: "Retired Professor, CUSAT",
     image: "/images/team/ashamam.png",
     linkedin: "#",
     details: ["Retired Professor, CUSAT"],
   },
   {
     name: "PROF. SHEENA K.M",
-    role: "MENTOR",
+    role: "Faculty, CUSAT",
     image: "/images/team/sheenamiss.png",
     linkedin: "#",
     details: ["Faculty, CUSAT"],
