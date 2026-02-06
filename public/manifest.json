@@ -1,0 +1,21 @@
+{
+  "name": "Sketch Robotics",
+  "short_name": "Sketch Robotics",
+  "description": "Building the future with the Make in India spirit. Solving real-world problems through innovative robotics and AI solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/images/colored-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/colored-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

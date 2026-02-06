@@ -4,10 +4,12 @@ import FutureSection from "./components/FutureSection";
 import GlobalSection from "./components/GlobalSection";
 import Achievements from "./components/Achievements";
 import Footer from "./components/Footer";
+import { HomePageJsonLd } from "./components/StructuredData";
 
 export default function HomePage() {
   return (
     <>
+      <HomePageJsonLd />
       <Navbar />
 
       {/* 1. h-dvh: Locks the container height to the viewport.
