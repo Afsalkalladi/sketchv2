@@ -188,18 +188,32 @@ function TeamSection() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20 relative z-10">
-        {/* Hero Title */}
-        <div className="mb-12 sm:mb-16 md:mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-[60px] relative z-10">
+        {/* Large Background Stroke Text */}
+        <div className="absolute left-4 top-28 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-0">
           <h1
-            className="text-3xl sm:text-4xl md:text-[65.591px] font-normal leading-tight md:leading-[53.818px] tracking-tight md:tracking-[-0.6727px] bg-gradient-to-r from-white from-[23%] to-white/0 to-[125%] bg-clip-text text-transparent mb-8 sm:mb-12"
+            className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320px] lg:leading-[1] 2xl:leading-[152px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5px] text-transparent origin-left scale-y-[0.85]"
             style={{
-              fontFamily: "'Unbounded', sans-serif",
+              WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
+            }}
+          >
+            TEAM
+          </h1>
+        </div>
+
+        {/* Hero Title */}
+        <div className="mb-12 sm:mb-16 md:mb-20 relative z-10">
+          <h2
+            className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
+            style={{
+              background: "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+              WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
             MEET OUR TEAM
-          </h1>
+          </h2>
         </div>
 
         {/* Founders */}
@@ -248,15 +262,7 @@ function TeamSection() {
         </div>
       </div>
 
-      {/* Large background text */}
-      <div
-        className="absolute top-32 left-0 opacity-5 pointer-events-none whitespace-nowrap overflow-hidden z-0"
-        style={{ fontFamily: "'Unbounded', sans-serif" }}
-      >
-        <p className="text-[150px] sm:text-[200px] md:text-[312.164px] font-normal leading-[256.135px] tracking-[-3.2017px] text-white">
-          TEAM
-        </p>
-      </div>
+
     </section>
   );
 }

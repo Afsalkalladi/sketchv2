@@ -33,7 +33,7 @@ export default function FutureSection() {
   return (
     <section
       id="solution"
-      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen snap-start"
+      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen h-[100dvh] snap-start"
     >
       <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">
@@ -102,9 +102,9 @@ export default function FutureSection() {
               className={`relative 
                 w-[280px] h-[350px] 
                 sm:w-[400px] sm:h-[500px] 
-                md:w-[585px] md:h-[732px] 
+                md:w-[500px] md:h-[620px] 
                 xl:w-[440px] xl:h-[550px] 
-                2xl:w-[585px] 2xl:h-[732px] 
+                2xl:w-[585px] 2xl:h-[680px] 
                 z-10 transition-all duration-1000 ${isVisible
                   ? "animate-slide-up"
                   : "opacity-0 translate-y-[100px]"

@@ -57,7 +57,7 @@ const DottedWorldMap = () => {
         // Generate the SVG with minimal settings
         const svgMap = map.getSVG({
           radius: 0.18,
-          color: 'rgba(255,255,255,0.25)',
+          color: 'rgba(255,255,255,0.40)', // Increased opacity
           shape: 'circle',
           backgroundColor: 'transparent',
         });
@@ -70,12 +70,12 @@ const DottedWorldMap = () => {
           <svg width="765" height="489" viewBox="0 0 765 489" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-                <circle cx="4" cy="4" r="0.8" fill="rgba(255,255,255,0.3)"/>
+                <circle cx="4" cy="4" r="0.8" fill="rgba(13, 35, 224, 0.45)"/>
               </pattern>
             </defs>
             
             <!-- World outline with dots -->
-            <g fill="rgba(255,255,255,0.25)">
+            <g fill="rgba(27, 168, 63, 0)">
               <!-- India outline dots -->
               <circle cx="500" cy="220" r="1.5" fill="#ffffff" opacity="0.8"/>
               <circle cx="498" cy="225" r="1" fill="rgba(255,255,255,0.6)"/>
@@ -160,8 +160,8 @@ export default function GlobalSection() {
       />
 
       {/* Dotted World Map Background */}
-      <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-30 sm:opacity-50 md:opacity-100 mix-blend-screen pointer-events-none">
-        <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-70">
+      <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-40 sm:opacity-60 md:opacity-100 pointer-events-none">
+        <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-90">
           <DottedWorldMap />
         </div>
       </div>

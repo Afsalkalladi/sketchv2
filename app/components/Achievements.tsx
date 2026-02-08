@@ -190,7 +190,7 @@ export default function Achievements() {
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
           {/* Main Active Card */}
-          <div className="relative w-[85vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[420px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+          <div className="relative w-[80vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[400px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
             <Image
               src={achievements[activeSlide].image}
               alt={achievements[activeSlide].title}
