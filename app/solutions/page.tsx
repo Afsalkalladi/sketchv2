@@ -135,7 +135,7 @@ export default function SolutionsPage() {
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
                 <h2
-                  className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] mb-2 lg:mb-4"
+                  className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] mb-2 lg:mb-4"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
                   SOLUTION
                 </h2>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[13px] leading-[1.7] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:mt-[40px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-3 lg:mt-6 xl:mt-8 2xl:mt-16">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[13px] leading-[1.7] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:mt-[40px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-3 lg:mt-6 xl:mt-8 2xl:mt-16 text-center lg:text-left mx-auto lg:mx-0">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
@@ -223,7 +223,7 @@ export default function SolutionsPage() {
           <div className="w-full h-full px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32">
             <div className="w-full">
               {/* UPDATED: Removed sticky, top-20, z-40, mix-blend-difference */}
-              <h3 className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white mb-6 xl:mb-8 2xl:mb-12">
+              <h3 className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[38px] lg:text-[38px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white mb-6 xl:mb-8 2xl:mb-12">
                 CORE CAPABILITIES
               </h3>
 

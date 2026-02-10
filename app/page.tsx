@@ -19,19 +19,19 @@ export default function HomePage() {
       <main className="h-dvh w-full overflow-y-auto snap-y snap-mandatory scroll-smooth bg-black text-white">
 
         {/* Wrap each component in a Section to define the "slide" size */}
-        <section className="h-dvh w-full snap-start snap-always">
+        <section className="h-dvh w-full snap-start snap-always overflow-hidden">
           <Hero />
         </section>
 
-        <section className="h-dvh w-full snap-start snap-always">
+        <section className="h-dvh w-full snap-start snap-always overflow-hidden">
           <FutureSection />
         </section>
 
-        <section className="h-dvh w-full snap-start snap-always">
+        <section className="h-dvh w-full snap-start snap-always overflow-hidden">
           <GlobalSection />
         </section>
 
-        <section className="h-dvh w-full snap-start snap-always">
+        <section className="h-dvh w-full snap-start snap-always overflow-hidden">
           <Achievements />
         </section>
 

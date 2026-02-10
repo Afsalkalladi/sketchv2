@@ -74,7 +74,7 @@ export default function CapabilitiesSection() {
         {/* Section Header - Matching Core Capabilities style */}
         <header className="mb-8 xl:mb-10 2xl:mb-12 flex-shrink-0">
           <h2
-            className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white"
+            className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[42px] lg:text-[38px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white"
           >
             <span className="block">WHAT WE</span>
             <span className="block">SOLVE</span>

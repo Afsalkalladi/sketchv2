@@ -131,7 +131,7 @@ const DottedWorldMap = () => {
 
 export default function GlobalSection() {
   return (
-    <section className="bg-black relative overflow-hidden h-screen h-[100dvh] min-h-[600px] sm:min-h-[700px] md:min-h-[882px] flex flex-col snap-start">
+    <section className="bg-black relative overflow-hidden h-full flex flex-col">
 
       {/* CSS Animation Styles */}
       <style jsx global>{`

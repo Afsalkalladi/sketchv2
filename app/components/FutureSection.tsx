@@ -33,7 +33,7 @@ export default function FutureSection() {
   return (
     <section
       id="solution"
-      className="bg-black py-16 sm:py-20 md:py-32 relative overflow-hidden min-h-[600px] md:min-h-[867px] h-screen h-[100dvh] snap-start"
+      className="bg-black py-16 sm:py-20 md:py-24 relative overflow-hidden h-full"
     >
       <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">

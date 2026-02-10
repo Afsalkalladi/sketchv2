@@ -155,7 +155,7 @@ export default function Achievements() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 min-h-[700px] h-screen snap-start flex flex-col justify-center">
+    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-28 h-full flex flex-col justify-center">
       {/* Background Effects */}
       <div
         className="absolute inset-0"
