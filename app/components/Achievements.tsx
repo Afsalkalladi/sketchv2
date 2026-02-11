@@ -70,7 +70,7 @@ const achievements: Achievement[] = [
     id: 10,
     title: "Times of India Feature - HBAJA",
     description: "Our COO, Romal Josbin, featured in The Times of India along with Team Tarusa Motorsport CUSAT, after leading the team to All India Rank 1 at SAE India HBAJA.",
-    image: "/images/achievements/achievement-10.webp",
+    image: "/images/achievements/achievement-10.png",
   },
   {
     id: 11,
