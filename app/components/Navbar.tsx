@@ -122,7 +122,7 @@ export default function Navbar() {
               Team
             </a>
             <a
-              href="#careers"
+              href="/careers"
               className="text-stone-300 text-xs font-normal leading-3 transition-colors hover:text-white"
               onClick={() => setOpen(false)}
             >
