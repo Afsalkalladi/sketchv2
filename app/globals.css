@@ -58,14 +58,9 @@ body {
   animation: slide-up 1s ease-out;
 }
 
-/* --- UPDATED: Standard Scroll Behavior --- */
+/* --- Scroll Behavior --- */
 html {
-  /* REMOVED: scroll-snap-type: y mandatory; */
-  /* REMOVED: scroll-padding-top: 0; */
-  /* REMOVED: overscroll-behavior: none; */
-
-  /* Kept strictly for smooth anchor links */
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* REMOVED: .snap-section class */

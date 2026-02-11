@@ -147,7 +147,7 @@ export default function SolutionsPage() {
                   SOLUTION
                 </h2>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.8125rem] leading-[1.7] md:text-base lg:text-[clamp(0.9rem,1.1vw,1.52rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-3 lg:mt-6 xl:mt-8 2xl:mt-16 text-center lg:text-left mx-auto lg:mx-0">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.8125rem] leading-[1.7] md:text-base lg:text-[clamp(0.9rem,1.1vw,1.52rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-5 lg:mt-8 xl:mt-10 2xl:mt-16 text-left mx-auto lg:mx-0">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>

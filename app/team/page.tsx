@@ -102,9 +102,9 @@ const teamMembers: TeamMember[] = [
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative group">
-      <div className="relative w-[6.25rem] sm:w-[clamp(14rem,18vw,20rem)] h-[8.75rem] sm:h-[clamp(20rem,26vw,29rem)] rounded-[0.375rem] sm:rounded-[0.625rem] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
+      <div className="relative w-[6.25rem] sm:w-[clamp(12rem,15vw,17rem)] h-[8.75rem] sm:h-[clamp(17rem,22vw,25rem)] rounded-[0.375rem] sm:rounded-[0.625rem] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[0.375rem] sm:rounded-[0.625rem] z-10 pointer-events-none" />
-        <div className="relative w-full h-[6.25rem] sm:h-[clamp(16rem,21vw,23.5rem)]">
+        <div className="relative w-full h-[6.25rem] sm:h-[clamp(13.5rem,17.5vw,20rem)]">
           <Image
             src={member.image}
             alt={member.name}
