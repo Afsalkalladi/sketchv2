@@ -49,13 +49,13 @@ const DottedWorldMap = () => {
     const vbParts = vbMatch ? vbMatch[1].split(/\s+/).map(Number) : [0, 0, 100, 50];
     const vbW = vbParts[2] || 100;
 
-    // Generate label SVG: line from dot going upper-left, text at end
+    // Generate label SVG: horizontal line from dot going left, text at end
     let labelsSvg = '';
     orangePins.forEach((pin, i) => {
       if (i >= labels.length) return;
       const lineLen = vbW * 0.055;
       const endX = pin.cx - lineLen;
-      const endY = pin.cy - lineLen * 0.35;
+      const endY = pin.cy;
       const fontSize = vbW * 0.016;
       labelsSvg += `<line x1="${pin.cx}" y1="${pin.cy}" x2="${endX}" y2="${endY}" stroke="#FF8800" stroke-width="${vbW * 0.002}" opacity="0.7"/>`;
       labelsSvg += `<text x="${endX - fontSize * 0.3}" y="${endY + fontSize * 0.35}" text-anchor="end" fill="#FF8800" font-size="${fontSize}" opacity="0.85" font-family="sans-serif" letter-spacing="0.3">${labels[i]}</text>`;
@@ -107,16 +107,16 @@ const DottedWorldMap = () => {
               <circle cx="175" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="185" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
               <!-- USA label from dot -->
-              <line x1="180" y1="180" x2="140" y2="165" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
-              <text x="137" y="167" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">USA</text>
+              <line x1="180" y1="180" x2="140" y2="180" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="137" y="183" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">USA</text>
 
               <!-- UAE dots -->
               <circle cx="475" cy="210" r="1.5" fill="#FF8800" opacity="0.9"/>
               <circle cx="473" cy="213" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="477" cy="213" r="1" fill="rgba(255,136,0,0.6)"/>
               <!-- UAE label from dot -->
-              <line x1="475" y1="210" x2="435" y2="195" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
-              <text x="432" y="197" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">UAE</text>
+              <line x1="475" y1="210" x2="435" y2="210" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="432" y="213" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">UAE</text>
 
               <!-- India dots -->
               <circle cx="500" cy="220" r="1.5" fill="#FF8800" opacity="0.8"/>
@@ -126,8 +126,8 @@ const DottedWorldMap = () => {
               <circle cx="505" cy="230" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="500" cy="235" r="1" fill="rgba(255,136,0,0.6)"/>
               <!-- India label from dot -->
-              <line x1="500" y1="220" x2="460" y2="205" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
-              <text x="457" y="207" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">INDIA</text>
+              <line x1="500" y1="220" x2="460" y2="220" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="457" y="223" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">INDIA</text>
 
               <!-- Australia dots -->
               <circle cx="650" cy="320" r="1.5" fill="#FF8800" opacity="0.8"/>
@@ -137,8 +137,8 @@ const DottedWorldMap = () => {
               <circle cx="655" cy="330" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="650" cy="335" r="1" fill="rgba(255,136,0,0.6)"/>
               <!-- Australia label from dot -->
-              <line x1="650" y1="320" x2="600" y2="305" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
-              <text x="597" y="307" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">AUSTRALIA</text>
+              <line x1="650" y1="320" x2="600" y2="320" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="597" y="323" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">AUSTRALIA</text>
 
               <!-- Scattered dots -->
               <circle cx="350" cy="150" r="0.8" fill="rgba(255,255,255,0.3)"/>
