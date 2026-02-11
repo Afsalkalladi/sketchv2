@@ -198,7 +198,7 @@ function CareersSection() {
         {/* Hero Title */}
         <div className="mb-8 sm:mb-12 md:mb-16 relative z-10">
           {/* Large Background Stroke Text - absolute, overlapping heading on all views */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.15] pointer-events-none select-none z-0">
             <h1
               className="font-unbounded font-normal whitespace-nowrap text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[clamp(11rem,16vw,20rem)] leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
               style={{

@@ -92,7 +92,7 @@ export default function FutureSection() {
                   "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
                 WebkitMaskImage:
                   "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
-                zIndex: 0,
+                zIndex: 25,
               }}
             />
             {/* --------------------------- */}

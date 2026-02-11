@@ -58,7 +58,7 @@ const DottedWorldMap = () => {
       const endY = pin.cy;
       const fontSize = vbW * 0.016;
       labelsSvg += `<line x1="${pin.cx}" y1="${pin.cy}" x2="${endX}" y2="${endY}" stroke="#FF8800" stroke-width="${vbW * 0.002}" opacity="0.7"/>`;
-      labelsSvg += `<text x="${endX - fontSize * 0.3}" y="${endY + fontSize * 0.35}" text-anchor="end" fill="#FF8800" font-size="${fontSize}" opacity="0.85" font-family="sans-serif" letter-spacing="0.3">${labels[i]}</text>`;
+      labelsSvg += `<text x="${endX - fontSize * 0.3}" y="${endY + fontSize * 0.35}" text-anchor="end" fill="#FF8800" font-size="${fontSize}" opacity="0.85" font-family="sans-serif" font-weight="bold" letter-spacing="0.3">${labels[i]}</text>`;
     });
 
     return svg.replace('</svg>', `${labelsSvg}</svg>`);

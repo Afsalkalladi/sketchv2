@@ -116,9 +116,9 @@ const teamMembers: TeamMember[] = [
 function TeamCard({ member, showLinkedin = true }: { member: TeamMember; showLinkedin?: boolean }) {
   return (
     <div className="relative group">
-      <div className="relative w-[6.25rem] sm:w-[clamp(12rem,15vw,17rem)] rounded-[0.375rem] sm:rounded-[0.625rem] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
+      <div className="relative w-[7rem] sm:w-[clamp(14rem,17vw,19rem)] rounded-[0.375rem] sm:rounded-[0.625rem] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[0.375rem] sm:rounded-[0.625rem] z-10 pointer-events-none" />
-        <div className="relative w-full h-[6.25rem] sm:h-[clamp(13.5rem,17.5vw,20rem)]">
+        <div className="relative w-full h-[7rem] sm:h-[clamp(16rem,20vw,23rem)]">
           <Image
             src={member.image}
             alt={member.name}
@@ -210,7 +210,7 @@ function TeamSection() {
         {/* Hero Title */}
         <div className="mb-12 sm:mb-16 md:mb-20 relative z-10">
           {/* Large Background Stroke Text - absolute, overlapping heading on all views */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.15] pointer-events-none select-none z-0">
             <h1
               className="font-unbounded font-normal whitespace-nowrap text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[clamp(11rem,16vw,20rem)] leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
               style={{
