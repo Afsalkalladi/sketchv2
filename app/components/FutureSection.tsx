@@ -77,22 +77,19 @@ export default function FutureSection() {
 
           {/* Right Column - Robotic Arm Image & Dots (Hidden on mobile) */}
           <div className="hidden md:flex justify-center md:justify-end relative mt-8 md:mt-0 self-end pb-0 overflow-hidden">
-            {/* --- THE DOT PATTERN --- */}
+            {/* --- THE DOT PATTERN (same as team page) --- */}
             <div
-              className="absolute pointer-events-none hidden sm:block"
+              className="absolute pointer-events-none hidden sm:block z-[15] opacity-80"
               style={{
-                width: "800px",
-                height: "800px",
-                right: "-50px",
-                top: "50px",
+                width: "37.5rem",
+                height: "37.5rem",
+                right: "-6.25rem",
+                bottom: "-3.125rem",
                 backgroundImage:
                   "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
                 backgroundSize: "24px 24px",
-                maskImage:
-                  "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 50% 45% at 50% 40%, black 30%, transparent 70%)",
-                zIndex: 25,
+                maskImage: "radial-gradient(circle, black 40%, transparent 70%)",
+                WebkitMaskImage: "radial-gradient(circle, black 40%, transparent 70%)",
               }}
             />
             {/* --------------------------- */}
@@ -105,7 +102,7 @@ export default function FutureSection() {
                 md:w-[31.25rem] md:h-[38.75rem] 
                 xl:w-[27.5rem] xl:h-[34.375rem] 
                 2xl:w-[36.5625rem] 2xl:h-[42.5rem] 
-                z-10 transition-all duration-1000 ${isVisible
+                z-20 transition-all duration-1000 ${isVisible
                   ? "animate-slide-up"
                   : "opacity-0 translate-y-[6.25rem]"
                 }`}
@@ -114,7 +111,7 @@ export default function FutureSection() {
                 src="/images/robotic-arm.svg"
                 alt="Robotic arm"
                 fill
-                className="object-contain relative z-10"
+                className="object-contain relative z-20"
               />
               {/* Bottom gradient fade - contained within section */}
               <div

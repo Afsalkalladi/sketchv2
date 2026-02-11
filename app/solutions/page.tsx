@@ -148,7 +148,7 @@ export default function SolutionsPage() {
                   </h2>
                 </div>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.7] md:text-[1.0625rem] lg:text-[clamp(1rem,1.2vw,1.6rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-10 lg:mt-14 xl:mt-16 2xl:mt-24 text-left mx-auto lg:mx-0 relative z-10">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.7] md:text-[1.0625rem] lg:text-[clamp(1rem,1.2vw,1.6rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(28rem,32vw,38rem)] mt-10 lg:mt-14 xl:mt-16 2xl:mt-24 text-left mx-auto lg:mx-0 relative z-10">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
@@ -162,7 +162,7 @@ export default function SolutionsPage() {
 
               {/* Right Column - Robot Image */}
               <div className="hidden lg:flex justify-end items-start mt-[clamp(1.25rem,2.5vw,3.75rem)] relative z-10">
-                <div className="relative w-[clamp(18rem,26vw,32.25rem)] h-[clamp(21rem,32vw,37.5rem)]">
+                <div className="relative w-[clamp(22rem,30vw,38rem)] h-[clamp(25rem,37vw,44rem)]">
                   <Image
                     src="/images/robot-image.png"
                     alt="Robot"

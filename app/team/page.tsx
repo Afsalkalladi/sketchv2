@@ -208,7 +208,7 @@ function TeamSection() {
 
       <div className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-10 lg:px-[3.75rem] relative z-10">
         {/* Hero Title */}
-        <div className="mb-12 sm:mb-16 md:mb-20 relative z-10">
+        <div className="mb-12 sm:mb-16 md:mb-20 pt-8 sm:pt-12 md:pt-16 lg:pt-20 relative z-10">
           {/* Large Background Stroke Text - absolute, overlapping heading on all views */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.20] pointer-events-none select-none z-0">
             <h1
