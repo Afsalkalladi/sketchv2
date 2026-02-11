@@ -54,14 +54,14 @@ const mentors: TeamMember[] = [
   {
     name: "DR. ASHA ELIZABETH",
     role: "Retired Professor, CUSAT",
-    image: "/images/team/ashamam.png",
+    image: "/images/team/ashamiss.png",
     linkedin: "#",
     details: ["Retired Professor, CUSAT"],
   },
   {
     name: "PROF. SHEENA K.M",
     role: "Faculty, CUSAT",
-    image: "/images/team/sheenamiss.png",
+    image: "/images/team/sheenamam.png",
     linkedin: "#",
     details: ["Faculty, CUSAT"],
   },
@@ -95,6 +95,20 @@ const teamMembers: TeamMember[] = [
     role: "ROBOTICS ENGINEER",
     image: "/images/team/muhsin.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/mohsin-nasir/",
+    details: ["Technical Specialist", "Innovation Lead"],
+  },
+  {
+    name: "VARUN M N",
+    role: "ROBOTICS ENGINEER",
+    image: "/images/team/varun.png", // Replace with actual image path
+    linkedin: "https://www.linkedin.com/in/mohsin-nasir/",
+    details: ["Technical Specialist", "Innovation Lead"],
+  },
+  {
+    name: "FADIL C BASHEER",
+    role: "ROBOTICS ENGINEER",
+    image: "/images/team/fadil.png", // Replace with actual image path
+    linkedin: "https://www.linkedin.com/in/fadilcbasheer/",
     details: ["Technical Specialist", "Innovation Lead"],
   },
 ];
