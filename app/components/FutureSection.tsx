@@ -81,8 +81,8 @@ export default function FutureSection() {
             <div
               className="absolute pointer-events-none hidden sm:block"
               style={{
-                width: "600px",
-                height: "600px",
+                width: "800px",
+                height: "800px",
                 right: "-50px",
                 top: "50px",
                 backgroundImage:

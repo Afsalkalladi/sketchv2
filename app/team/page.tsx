@@ -71,14 +71,14 @@ const mentors: TeamMember[] = [
 const teamMembers: TeamMember[] = [
   {
     name: "MUHAMMED SAJEEM",
-    role: "HARDWARE DESIGN ENGINEER",
+    role: "HARDWARE ENGINEER",
     image: "/images/team/sajeem.png", // Replace with actual image path
     linkedin: "#",
     details: ["Expertise in Full Stack", "React & Node.js specialist"],
   },
   {
     name: "AFSAL K",
-    role: "ROBOTICS ENGINEER",
+    role: "SOFTWARE ENGINEER",
     image: "/images/team/afsalkalladi.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/afsalkalladi/",
     details: ["UI/UX Design", "Product Prototyping"],
@@ -99,14 +99,14 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "VARUN M N",
-    role: "ROBOTICS ENGINEER",
+    role: "ELECTRICAL DESIGN ENGINEER",
     image: "/images/team/varun.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/varun-m-n-b277b0345/",
     details: ["Technical Specialist", "Innovation Lead"],
   },
   {
     name: "FADIL C BASHEER",
-    role: "ROBOTICS ENGINEER",
+    role: "STRATEGIC PARTNERSHIP MANAGER",
     image: "/images/team/fadil.png", // Replace with actual image path
     linkedin: "https://www.linkedin.com/in/fadilcbasheer/",
     details: ["Technical Specialist", "Innovation Lead"],
@@ -210,7 +210,7 @@ function TeamSection() {
         {/* Hero Title */}
         <div className="mb-12 sm:mb-16 md:mb-20 relative z-10">
           {/* Large Background Stroke Text - absolute, overlapping heading on all views */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.15] pointer-events-none select-none z-0">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.20] pointer-events-none select-none z-0">
             <h1
               className="font-unbounded font-normal whitespace-nowrap text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[clamp(11rem,16vw,20rem)] leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
               style={{
