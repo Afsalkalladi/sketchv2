@@ -62,10 +62,10 @@ function SolutionCard({
     <div
       className={`
         relative flex flex-col p-5 xl:p-6 2xl:p-8 
-        rounded-[20px] 2xl:rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] 
+        rounded-[1.25rem] 2xl:rounded-[1.875rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] 
         transition-all duration-300 ease-in-out
         ${isExpanded ? "h-auto" : "h-auto"} 
-        min-h-[190px] xl:min-h-[210px] 2xl:min-h-[250px]
+        min-h-[11.875rem] xl:min-h-[13.125rem] 2xl:min-h-[15.625rem]
       `}
       style={{
         background:
@@ -74,20 +74,20 @@ function SolutionCard({
             : "linear-gradient(248.8deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
       }}
     >
-      <p className="font-unbounded font-normal text-[14px] xl:text-[16px] 2xl:text-[19.2px] text-[rgba(255,255,255,0.4)] mb-2 xl:mb-4">
+      <p className="font-unbounded font-normal text-[0.875rem] xl:text-[1rem] 2xl:text-[1.2rem] text-[rgba(255,255,255,0.4)] mb-2 xl:mb-4">
         {solution.title}
       </p>
 
       {/* Description Area */}
       <div className="flex-grow mb-4">
-        <p className="font-unbounded font-light text-[13px] xl:text-[14px] 2xl:text-[16px] text-[rgba(255,255,255,0.7)] leading-relaxed">
+        <p className="font-unbounded font-light text-[0.8125rem] xl:text-[0.875rem] 2xl:text-[1rem] text-[rgba(255,255,255,0.7)] leading-relaxed">
           {isExpanded ? solution.fullDescription : solution.shortDescription}
         </p>
       </div>
 
       <button
         onClick={onToggle}
-        className="self-end h-[36px] w-[110px] xl:h-[44px] xl:w-[130px] 2xl:h-[56px] 2xl:w-[171px] rounded-[15px] 2xl:rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center font-unbounded text-[11px] xl:text-[12px] 2xl:text-[14px] text-white hover:bg-white/10 transition-all shrink-0"
+        className="self-end h-[2.25rem] w-[6.875rem] xl:h-[2.75rem] xl:w-[8.125rem] 2xl:h-[3.5rem] 2xl:w-[10.6875rem] rounded-[0.9375rem] 2xl:rounded-[1.25rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center font-unbounded text-[0.6875rem] xl:text-[0.75rem] 2xl:text-[0.875rem] text-white hover:bg-white/10 transition-all shrink-0"
         style={{
           background:
             "linear-gradient(230.26deg, rgba(16, 15, 15, 1) 163.03%, rgba(44, 44, 44, 1) 160.2%)",
@@ -117,12 +117,12 @@ export default function SolutionsPage() {
             SECTION 1: HERO & INTRO
            ======================================== */}
         <section className="h-dvh w-full snap-start relative overflow-hidden bg-black flex flex-col justify-start shrink-0">
-          <div className="relative z-10 w-full px-5 md:px-10 lg:px-[60px] flex flex-col lg:flex-row items-start lg:items-center pt-28 lg:pt-[120px] laptop-sm:pt-[180px] xl:pt-[140px] 2xl:pt-[180px]">
+          <div className="relative z-10 w-full px-5 md:px-10 lg:px-[3.75rem] flex flex-col lg:flex-row items-start lg:items-center pt-28 lg:pt-[clamp(7rem,9vw,11.25rem)]">
 
             {/* Large Background Text */}
-            <div className="absolute left-4 top-30 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-20">
+            <div className="absolute left-4 top-30 lg:top-[clamp(0.625rem,3.5vw,5rem)] opacity-20 pointer-events-none select-none z-20">
               <h1
-                className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320.745px] lg:leading-[1] 2xl:leading-[152.047px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5256px] text-transparent origin-left scale-y-[0.85]"
+                className="font-unbounded font-normal whitespace-nowrap text-[3.75rem] md:text-[5rem] lg:text-[clamp(11rem,16vw,20.05rem)] lg:leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
                 style={{
                   WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
                 }}
@@ -135,7 +135,7 @@ export default function SolutionsPage() {
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
                 <h2
-                  className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] mb-2 lg:mb-4"
+                  className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[clamp(2.5rem,3.5vw,3.75rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] mb-2 lg:mb-4"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
                   SOLUTION
                 </h2>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[13px] leading-[1.7] md:text-base lg:text-[15px] laptop-sm:text-[20px] laptop-sm:mt-[40px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] 2xl:leading-[33.363px] lg:tracking-[0.5px] max-w-[100%] lg:max-w-[420px] xl:max-w-[480px] 2xl:max-w-[497.62px] mt-3 lg:mt-6 xl:mt-8 2xl:mt-16 text-center lg:text-left mx-auto lg:mx-0">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.8125rem] leading-[1.7] md:text-base lg:text-[clamp(0.9rem,1.1vw,1.52rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-3 lg:mt-6 xl:mt-8 2xl:mt-16 text-center lg:text-left mx-auto lg:mx-0">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
@@ -160,8 +160,8 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column - Robot Image */}
-              <div className="hidden lg:flex justify-end items-start mt-[20px] laptop-sm:mt-[40px] xl:mt-[40px] 2xl:mt-[60px] relative z-10">
-                <div className="relative w-[300px] h-[350px] laptop-sm:w-[350px] laptop-sm:h-[420px] xl:w-[400px] xl:h-[480px] 2xl:w-[516px] 2xl:h-[600px]">
+              <div className="hidden lg:flex justify-end items-start mt-[clamp(1.25rem,2.5vw,3.75rem)] relative z-10">
+                <div className="relative w-[clamp(18rem,26vw,32.25rem)] h-[clamp(21rem,32vw,37.5rem)]">
                   <Image
                     src="/images/robot-image.png"
                     alt="Robot"
@@ -219,15 +219,15 @@ export default function SolutionsPage() {
             SECTION 3: CORE CAPABILITIES
             - Removed "sticky" classes from the h3 title.
            ======================================== */}
-        <section className="min-h-dvh w-full snap-start relative bg-black flex flex-col justify-start">
-          <div className="w-full h-full px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32">
+        <section className="w-full snap-start relative bg-black flex flex-col justify-start">
+          <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] pt-24 pb-12 xl:pt-28 2xl:pt-32">
             <div className="w-full">
               {/* UPDATED: Removed sticky, top-20, z-40, mix-blend-difference */}
-              <h3 className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[38px] lg:text-[38px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white mb-6 xl:mb-8 2xl:mb-12">
+              <h3 className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.375rem] lg:text-[clamp(2rem,2.5vw,3rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white mb-6 xl:mb-8 2xl:mb-12">
                 CORE CAPABILITIES
               </h3>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-8 2xl:gap-[36px] max-w-[936px] pb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-8 2xl:gap-[2.25rem] max-w-[58.5rem] pb-20">
                 {solutions.map((solution, index) => (
                   <SolutionCard
                     key={index}

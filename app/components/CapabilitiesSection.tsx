@@ -70,11 +70,11 @@ export default function CapabilitiesSection() {
         }}
       />
 
-      <div className="w-full h-full relative z-10 px-5 md:px-10 lg:px-[60px] pt-24 pb-12 xl:pt-28 2xl:pt-32 flex flex-col">
+      <div className="w-full h-full relative z-10 px-5 md:px-10 lg:px-[3.75rem] pt-24 pb-12 xl:pt-28 2xl:pt-32 flex flex-col">
         {/* Section Header - Matching Core Capabilities style */}
         <header className="mb-8 xl:mb-10 2xl:mb-12 flex-shrink-0">
           <h2
-            className="font-unbounded font-light text-[32px] sm:text-[36px] md:text-[42px] lg:text-[38px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white"
+            className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[clamp(2rem,2.5vw,3rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white"
           >
             <span className="block">WHAT WE</span>
             <span className="block">SOLVE</span>
@@ -120,7 +120,7 @@ export default function CapabilitiesSection() {
         </div>
 
         {/* Desktop Grid - All cards visible without scrolling */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8 2xl:gap-[36px] flex-1 content-start">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8 2xl:gap-[2.25rem] flex-1 content-start">
           {CAPABILITIES.map((capability, index) => (
             <div
               key={index}

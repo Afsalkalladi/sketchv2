@@ -137,7 +137,7 @@ export default function Achievements() {
   const SideCard = ({ index, onClick }: { index: number; onClick: () => void }) => (
     <div
       onClick={onClick}
-      className="hidden md:block relative w-[200px] lg:w-[280px] h-[300px] lg:h-[380px] rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90 bg-neutral-800"
+      className="hidden md:block relative w-[12.5rem] lg:w-[17.5rem] h-[18.75rem] lg:h-[23.75rem] rounded-[1.875rem] overflow-hidden cursor-pointer transition-all duration-500 ease-out opacity-40 hover:opacity-60 grayscale-[50%] blur-[1px] scale-90 bg-neutral-800"
     >
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
       <Image
@@ -166,10 +166,10 @@ export default function Achievements() {
       />
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)" }} />
 
-      <div className="w-full px-4 sm:px-10 lg:px-[60px] relative z-10">
+      <div className="w-full px-4 sm:px-10 lg:px-[3.75rem] relative z-10">
         <div className="text-center mb-8 sm:mb-16 pt-4 px-2">
           <h2
-            className="text-2xl sm:text-4xl md:text-[42px] lg:text-[54px] font-light uppercase tracking-[0.15em] sm:tracking-[0.24em] leading-tight text-white break-words"
+            className="text-2xl sm:text-4xl md:text-[2.625rem] lg:text-[3.375rem] font-light uppercase tracking-[0.15em] sm:tracking-[0.24em] leading-tight text-white break-words"
             style={{
               fontFamily: "'Unbounded', sans-serif",
               WebkitTextStroke: "0.5px rgba(255,255,255,0.12)",
@@ -190,7 +190,7 @@ export default function Achievements() {
           <SideCard index={getSlideIndex(-1)} onClick={prevSlide} />
 
           {/* Main Active Card */}
-          <div className="relative w-[80vw] sm:w-full max-w-[340px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[400px] sm:h-[450px] md:h-[500px] rounded-[24px] sm:rounded-[30px] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
+          <div className="relative w-[80vw] sm:w-full max-w-[21.25rem] sm:max-w-[25rem] md:max-w-[31.25rem] lg:max-w-[37.5rem] h-[25rem] sm:h-[28.125rem] md:h-[31.25rem] rounded-[1.5rem] sm:rounded-[1.875rem] border border-white/10 bg-neutral-800 shadow-[0_0_80px_0_rgba(255,255,255,0.10)] overflow-hidden z-20 transition-all duration-500">
             <Image
               src={achievements[activeSlide].image}
               alt={achievements[activeSlide].title}
@@ -216,13 +216,13 @@ export default function Achievements() {
                   }`}>
                     {achievements[activeSlide].title}
                   </h3>
-                  <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] text-white/70 whitespace-nowrap pt-1 shrink-0">
+                  <span className="text-[0.625rem] sm:text-xs font-medium tracking-[0.2em] text-white/70 whitespace-nowrap pt-1 shrink-0">
                     {isExpanded ? "LESS" : "MORE"}
                   </span>
                 </div>
                 <p
                   className={`text-xs sm:text-sm leading-relaxed transition-[max-height] duration-500 ease-in-out ${
-                    isExpanded ? "max-h-[320px] opacity-100" : "max-h-[48px] sm:max-h-[56px] opacity-80"
+                    isExpanded ? "max-h-[20rem] opacity-100" : "max-h-[3rem] sm:max-h-[3.5rem] opacity-80"
                   } overflow-hidden text-white/80 pr-2`}
                 >
                   {achievements[activeSlide].description}

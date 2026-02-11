@@ -161,7 +161,7 @@ export default function GlobalSection() {
 
       {/* Dotted World Map Background */}
       <div className="absolute right-0 top-[35%] md:top-1/2 -translate-y-1/2 opacity-40 sm:opacity-60 md:opacity-100 pointer-events-none">
-        <div className="relative w-[400px] h-[255px] sm:w-[600px] sm:h-[383px] md:w-[765px] md:h-[489px] opacity-90">
+        <div className="relative w-[25rem] h-[15.9375rem] sm:w-[37.5rem] sm:h-[23.9375rem] md:w-[47.8125rem] md:h-[30.5625rem] opacity-90">
           <DottedWorldMap />
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function GlobalSection() {
       <div className="w-full relative z-10 flex-grow flex flex-col pb-20 sm:py-16 md:py-20">
 
         {/* --- TOP: LOGOS (DESKTOP ONLY) --- */}
-        <div className="hidden md:grid w-full px-10 lg:px-[60px] grid-cols-5 gap-4 items-center opacity-80 mb-10 justify-items-start">
+        <div className="hidden md:grid w-full px-10 lg:px-[3.75rem] grid-cols-5 gap-4 items-center opacity-80 mb-10 justify-items-start">
           {PARTNERS.map((partner, index) => (
             <Image
               key={`desktop-${index}`}
@@ -185,11 +185,11 @@ export default function GlobalSection() {
         </div>
 
         {/* --- BOTTOM CONTENT --- */}
-        <div className="px-5 md:px-10 lg:px-[60px] flex-grow flex flex-col justify-end md:justify-center">
+        <div className="px-5 md:px-10 lg:px-[3.75rem] flex-grow flex flex-col justify-end md:justify-center">
           <div className="w-full max-w-3xl animate-slide-up">
 
             {/* 1. Heading */}
-            <h2 className="font-sans text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-white font-light">
+            <h2 className="font-sans text-[1.75rem] sm:text-[2rem] md:text-[2.375rem] lg:text-[3rem] leading-[1.1] sm:leading-[1.2] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white font-light">
               <div className="block md:hidden">
                 <span className="block whitespace-nowrap">
                   FROM <span className="font-normal">INDIA</span>

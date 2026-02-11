@@ -102,9 +102,9 @@ const teamMembers: TeamMember[] = [
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative group">
-      <div className="relative w-[100px] sm:w-[268px] h-[140px] sm:h-[393px] rounded-[6px] sm:rounded-[10px] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[6px] sm:rounded-[10px] z-10 pointer-events-none" />
-        <div className="relative w-full h-[100px] sm:h-[315px]">
+      <div className="relative w-[6.25rem] sm:w-[clamp(14rem,18vw,20rem)] h-[8.75rem] sm:h-[clamp(20rem,26vw,29rem)] rounded-[0.375rem] sm:rounded-[0.625rem] overflow-hidden border border-[#fafafa]/60 shadow-[0px_0px_20px_5px_rgba(255,255,255,0.10)] sm:shadow-[0px_0px_45.7px_15px_rgba(255,255,255,0.15)] bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(245,245,245,0.2)] to-[rgba(0,0,0,0)] rounded-[0.375rem] sm:rounded-[0.625rem] z-10 pointer-events-none" />
+        <div className="relative w-full h-[6.25rem] sm:h-[clamp(16rem,21vw,23.5rem)]">
           <Image
             src={member.image}
             alt={member.name}
@@ -114,13 +114,13 @@ function TeamCard({ member }: { member: TeamMember }) {
         </div>
         <div className="absolute bottom-2 sm:bottom-10 left-1.5 sm:left-4 z-20">
           <p
-            className="text-white text-[6px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px] mb-0.5 sm:mb-2"
+            className="text-white text-[0.375rem] sm:text-[0.8125rem] font-normal leading-tight sm:leading-[0.667rem] mb-0.5 sm:mb-2"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.name}
           </p>
           <p
-            className="text-[rgba(255,136,0,0.87)] text-[5px] sm:text-[13px] font-normal leading-tight sm:leading-[10.667px]"
+            className="text-[rgba(255,136,0,0.87)] text-[0.3125rem] sm:text-[0.8125rem] font-normal leading-tight sm:leading-[0.667rem]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             {member.role}
@@ -132,7 +132,7 @@ function TeamCard({ member }: { member: TeamMember }) {
           rel="noopener noreferrer"
           className="absolute bottom-2 sm:bottom-10 right-1 sm:right-4 z-30 opacity-60 hover:opacity-100 transition-opacity"
         >
-          <div className="w-[16px] sm:w-[43px] h-[16px] sm:h-[43px] bg-[rgba(48,48,48,0.85)] rounded-[2px] sm:rounded-[4px] flex items-center justify-center">
+          <div className="w-[1rem] sm:w-[2.6875rem] h-[1rem] sm:h-[2.6875rem] bg-[rgba(48,48,48,0.85)] rounded-[0.125rem] sm:rounded-[0.25rem] flex items-center justify-center">
             <Image
               src="/images/linkedin-icon.png"
               alt="LinkedIn"
@@ -167,32 +167,32 @@ function TeamSection() {
           className="absolute top-0 right-0 z-0 opacity-80"
           style={{
             ...dotPatternStyle,
-            width: "600px",
-            height: "600px",
-            right: "-100px",
-            top: "-50px",
+            width: "37.5rem",
+            height: "37.5rem",
+            right: "-6.25rem",
+            top: "-3.125rem",
           }}
         />
         <div
           className="absolute bottom-0 left-0 z-0 opacity-60"
           style={{
             ...dotPatternStyle,
-            width: "700px",
-            height: "700px",
-            left: "-150px",
-            bottom: "-100px",
+            width: "43.75rem",
+            height: "43.75rem",
+            left: "-9.375rem",
+            bottom: "-6.25rem",
           }}
         />
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] opacity-20 z-0">
+        <div className="absolute top-20 right-0 w-[31.25rem] h-[31.25rem] opacity-20 z-0">
           <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl" />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-[60px] relative z-10">
+      <div className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-10 lg:px-[3.75rem] relative z-10">
         {/* Large Background Stroke Text */}
-        <div className="absolute left-4 top-28 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-0">
+        <div className="absolute left-4 top-28 lg:top-[clamp(0.625rem,3.5vw,5rem)] opacity-20 pointer-events-none select-none z-0">
           <h1
-            className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320px] lg:leading-[1] 2xl:leading-[152px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5px] text-transparent origin-left scale-y-[0.85]"
+            className="font-unbounded font-normal whitespace-nowrap text-[3.75rem] md:text-[5rem] lg:text-[clamp(11rem,16vw,20rem)] lg:leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
             style={{
               WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
             }}
@@ -204,7 +204,7 @@ function TeamSection() {
         {/* Hero Title */}
         <div className="mb-12 sm:mb-16 md:mb-20 relative z-10">
           <h2
-            className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
+            className="font-unbounded font-light text-[1.75rem] sm:text-[2rem] md:text-[2.375rem] lg:text-[clamp(2.375rem,3.2vw,3.5rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem]"
             style={{
               background: "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",
@@ -219,7 +219,7 @@ function TeamSection() {
         {/* Founders */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[1.5rem] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[0.667rem]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             FOUNDERS
@@ -234,7 +234,7 @@ function TeamSection() {
         {/* Mentors */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[1.5rem] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[0.667rem]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             OUR MENTORS
@@ -249,7 +249,7 @@ function TeamSection() {
         {/* --- NEW SECTION: TEAM --- */}
         <div className="mb-8 sm:mb-20 md:mb-24">
           <h2
-            className="text-sm sm:text-xl md:text-[24px] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[10.667px]"
+            className="text-sm sm:text-xl md:text-[1.5rem] font-normal text-white mb-3 sm:mb-10 md:mb-12 leading-tight sm:leading-[0.667rem]"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             TEAM

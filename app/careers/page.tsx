@@ -64,7 +64,7 @@ const whyWorkWithUs = [
 function JobCard({ job }: { job: JobOpening }) {
   return (
     <div
-      className="relative flex flex-col p-5 sm:p-6 md:p-8 rounded-[20px] md:rounded-[30px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 ease-in-out hover:shadow-[0px_0px_30px_0px_rgba(255,255,255,0.1)] border border-white/5 hover:border-white/10"
+      className="relative flex flex-col p-5 sm:p-6 md:p-8 rounded-[1.25rem] md:rounded-[1.875rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 ease-in-out hover:shadow-[0px_0px_30px_0px_rgba(255,255,255,0.1)] border border-white/5 hover:border-white/10"
       style={{
         background:
           "linear-gradient(248.77deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
@@ -73,7 +73,7 @@ function JobCard({ job }: { job: JobOpening }) {
       {/* Job Title with Apply Link */}
       <div className="flex items-start justify-between gap-4 mb-4">
         <h3
-          className="font-normal text-base sm:text-lg md:text-[20px] text-white/90"
+          className="font-normal text-base sm:text-lg md:text-[1.25rem] text-white/90"
           style={{ fontFamily: "'Unbounded', sans-serif" }}
         >
           {job.title}
@@ -91,7 +91,7 @@ function JobCard({ job }: { job: JobOpening }) {
 
       {/* Description */}
       <p
-        className="font-light text-sm sm:text-[15px] text-white/60 leading-relaxed mb-6 flex-grow"
+        className="font-light text-sm sm:text-[0.9375rem] text-white/60 leading-relaxed mb-6 flex-grow"
         style={{ fontFamily: "'Unbounded', sans-serif" }}
       >
         {job.description}
@@ -112,7 +112,7 @@ function JobCard({ job }: { job: JobOpening }) {
           href={job.applyLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-[40px] sm:h-[48px] px-5 sm:px-8 rounded-[15px] sm:rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center text-xs sm:text-sm text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/20"
+          className="h-[2.5rem] sm:h-[3rem] px-5 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center text-xs sm:text-sm text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/20"
           style={{
             fontFamily: "'Unbounded', sans-serif",
             background:
@@ -133,7 +133,7 @@ function WhyWorkCard({
 }) {
   const IconComponent = item.icon;
   return (
-    <div className="flex flex-col items-start p-5 sm:p-6 rounded-[20px] border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+    <div className="flex flex-col items-start p-5 sm:p-6 rounded-[1.25rem] border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[rgba(255,136,0,0.1)] border border-[rgba(255,136,0,0.2)] flex items-center justify-center mb-4">
         <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-[rgba(255,136,0,0.87)]" />
       </div>
@@ -173,32 +173,32 @@ function CareersSection() {
           className="absolute top-0 right-0 z-0 opacity-80"
           style={{
             ...dotPatternStyle,
-            width: "600px",
-            height: "600px",
-            right: "-100px",
-            top: "-50px",
+            width: "37.5rem",
+            height: "37.5rem",
+            right: "-6.25rem",
+            top: "-3.125rem",
           }}
         />
         <div
           className="absolute bottom-0 left-0 z-0 opacity-60"
           style={{
             ...dotPatternStyle,
-            width: "700px",
-            height: "700px",
-            left: "-150px",
-            bottom: "-100px",
+            width: "43.75rem",
+            height: "43.75rem",
+            left: "-9.375rem",
+            bottom: "-6.25rem",
           }}
         />
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] opacity-20 z-0">
+        <div className="absolute top-20 right-0 w-[31.25rem] h-[31.25rem] opacity-20 z-0">
           <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl" />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-[60px] relative z-10">
+      <div className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-10 lg:px-[3.75rem] relative z-10">
         {/* Large Background Stroke Text */}
-        <div className="absolute left-4 top-28 lg:top-10 laptop-sm:top-[40px] xl:top-[60px] 2xl:top-[80px] opacity-20 pointer-events-none select-none z-0">
+        <div className="absolute left-4 top-28 lg:top-[clamp(0.625rem,3.5vw,5rem)] opacity-20 pointer-events-none select-none z-0">
           <h1
-            className="font-unbounded font-normal whitespace-nowrap text-[60px] md:text-[80px] lg:text-[180px] laptop-sm:text-[220px] xl:text-[240px] 2xl:text-[320px] lg:leading-[1] 2xl:leading-[152px] tracking-tighter lg:tracking-[-2px] 2xl:tracking-[-3.5px] text-transparent origin-left scale-y-[0.85]"
+            className="font-unbounded font-normal whitespace-nowrap text-[3.75rem] md:text-[5rem] lg:text-[clamp(11rem,16vw,20rem)] lg:leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
             style={{
               WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
             }}
@@ -210,7 +210,7 @@ function CareersSection() {
         {/* Hero Title */}
         <div className="mb-8 sm:mb-12 md:mb-16 relative z-10">
           <h2
-            className="font-unbounded font-light text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] leading-[1.1] tracking-[2px] sm:tracking-[3px] md:tracking-[4px] mb-3 lg:mb-4"
+            className="font-unbounded font-light text-[1.75rem] sm:text-[2rem] md:text-[2.375rem] lg:text-[clamp(2.375rem,3.2vw,3.5rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] mb-3 lg:mb-4"
             style={{
               background: "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",
@@ -221,7 +221,7 @@ function CareersSection() {
             CAREERS
           </h2>
           <p
-            className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[13px] leading-[1.7] md:text-base lg:text-[15px] xl:text-[16px] 2xl:text-[24.264px] lg:leading-[1.4] max-w-2xl mt-3 lg:mt-6"
+            className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.8125rem] leading-[1.7] md:text-base lg:text-[clamp(0.9rem,1.1vw,1.52rem)] lg:leading-[1.4] max-w-2xl mt-3 lg:mt-6"
           >
             Join our dynamic team of innovators shaping the future of robotics
             and automation.
@@ -231,7 +231,7 @@ function CareersSection() {
         {/* Open Positions */}
         <div className="mb-16 sm:mb-20 md:mb-24">
           <h2
-            className="text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12"
+            className="text-xl sm:text-2xl md:text-[1.5rem] font-normal text-white mb-8 sm:mb-10 md:mb-12"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             OPEN POSITIONS
@@ -246,7 +246,7 @@ function CareersSection() {
         {/* Why Work With Us */}
         <div className="mb-16 sm:mb-20 md:mb-24">
           <h2
-            className="text-xl sm:text-2xl md:text-[24px] font-normal text-white mb-8 sm:mb-10 md:mb-12"
+            className="text-xl sm:text-2xl md:text-[1.5rem] font-normal text-white mb-8 sm:mb-10 md:mb-12"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             WHY WORK WITH US?

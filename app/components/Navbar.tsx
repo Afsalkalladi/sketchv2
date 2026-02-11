@@ -13,7 +13,7 @@ export default function Navbar() {
           "linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.10) 100%)",
       }}
     >
-      <div className="flex h-full w-full items-center justify-between px-5 md:px-10 lg:px-[60px]">
+        <div className="flex h-full w-full items-center justify-between px-5 md:px-10 lg:px-[3.75rem]">
         {/* Brand / Logo */}
         <div className="flex items-center">
           <a href="/" aria-label="Go to homepage">
@@ -63,7 +63,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="mailto:sketchrobotics@gmail.com"
-            className="h-7 w-28 flex items-center justify-center rounded-full bg-gray-800/80 text-center text-stone-300 text-[9.78px] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80"
+            className="h-7 w-28 flex items-center justify-center rounded-full bg-gray-800/80 text-center text-stone-300 text-[0.611rem] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >
             CONNECT US

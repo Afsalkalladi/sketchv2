@@ -35,12 +35,12 @@ export default function FutureSection() {
       id="solution"
       className="bg-black py-16 sm:py-20 md:py-24 relative overflow-hidden h-full"
     >
-      <div className="w-full h-full px-5 md:px-10 lg:px-[60px] relative z-10 flex flex-col justify-center">
+      <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] relative z-10 flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full">
           {/* Left Column - Text */}
           <div className="pt-4 sm:pt-6 md:pt-8 self-center">
             <h2
-              className="text-[32px] sm:text-[36px] md:text-[42px] lg:text-[54px] font-light text-white leading-[1.1] sm:leading-[1.2] tracking-[2px] sm:tracking-[3px] md:tracking-[4px]"
+              className="text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[3.375rem] font-light text-white leading-[1.1] sm:leading-[1.2] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <span className="block">FUTURE</span>
@@ -48,7 +48,7 @@ export default function FutureSection() {
             </h2>
 
             <div
-              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base xl:text-sm 2xl:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[610px]"
+              className="mt-6 sm:mt-8 md:mt-10 text-neutral-400 text-sm sm:text-base xl:text-sm 2xl:text-base font-light leading-6 tracking-wide sm:tracking-widest max-w-[38.125rem]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
               <p>
@@ -100,14 +100,14 @@ export default function FutureSection() {
             <div
               ref={imageRef}
               className={`relative 
-                w-[280px] h-[350px] 
-                sm:w-[400px] sm:h-[500px] 
-                md:w-[500px] md:h-[620px] 
-                xl:w-[440px] xl:h-[550px] 
-                2xl:w-[585px] 2xl:h-[680px] 
+                w-[17.5rem] h-[21.875rem] 
+                sm:w-[25rem] sm:h-[31.25rem] 
+                md:w-[31.25rem] md:h-[38.75rem] 
+                xl:w-[27.5rem] xl:h-[34.375rem] 
+                2xl:w-[36.5625rem] 2xl:h-[42.5rem] 
                 z-10 transition-all duration-1000 ${isVisible
                   ? "animate-slide-up"
-                  : "opacity-0 translate-y-[100px]"
+                  : "opacity-0 translate-y-[6.25rem]"
                 }`}
             >
               <Image
