@@ -119,35 +119,36 @@ export default function SolutionsPage() {
         <section className="h-dvh w-full snap-start relative overflow-hidden bg-black flex flex-col justify-start shrink-0">
           <div className="relative z-10 w-full px-5 md:px-10 lg:px-[3.75rem] flex flex-col lg:flex-row items-start lg:items-center pt-28 lg:pt-[clamp(7rem,9vw,11.25rem)]">
 
-            {/* Large Background Text */}
-            <div className="absolute left-4 top-30 lg:top-[clamp(0.625rem,3.5vw,5rem)] opacity-20 pointer-events-none select-none z-20">
-              <h1
-                className="font-unbounded font-normal whitespace-nowrap text-[3.75rem] md:text-[5rem] lg:text-[clamp(11rem,16vw,20.05rem)] lg:leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
-                style={{
-                  WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
-                }}
-              >
-                SOLUTION
-              </h1>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 w-full pt-6 lg:pt-0">
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
-                <h2
-                  className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[clamp(2.5rem,3.5vw,3.75rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] mb-2 lg:mb-4"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  SOLUTION
-                </h2>
+                {/* Heading wrapper with stroke behind */}
+                <div className="relative mb-2 lg:mb-4">
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0">
+                    <h1
+                      className="font-unbounded font-normal whitespace-nowrap text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[clamp(11rem,16vw,20.05rem)] leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
+                      style={{
+                        WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.4)",
+                      }}
+                    >
+                      SOLUTION
+                    </h1>
+                  </div>
+                  <h2
+                    className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[clamp(2.5rem,3.5vw,3.75rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] relative z-10"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    SOLUTION
+                  </h2>
+                </div>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.7] md:text-[1.0625rem] lg:text-[clamp(1rem,1.2vw,1.6rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-8 lg:mt-12 xl:mt-14 2xl:mt-20 text-left mx-auto lg:mx-0">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.7] md:text-[1.0625rem] lg:text-[clamp(1rem,1.2vw,1.6rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(24rem,26vw,31.1rem)] mt-10 lg:mt-14 xl:mt-16 2xl:mt-24 text-left mx-auto lg:mx-0 relative z-10">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>

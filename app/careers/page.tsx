@@ -195,22 +195,21 @@ function CareersSection() {
       </div>
 
       <div className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-10 lg:px-[3.75rem] relative z-10">
-        {/* Large Background Stroke Text */}
-        <div className="absolute left-4 top-28 lg:top-[clamp(0.625rem,3.5vw,5rem)] opacity-20 pointer-events-none select-none z-0">
-          <h1
-            className="font-unbounded font-normal whitespace-nowrap text-[3.75rem] md:text-[5rem] lg:text-[clamp(11rem,16vw,20rem)] lg:leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
-            style={{
-              WebkitTextStroke: "2px rgba(255, 255, 255, 0.3)",
-            }}
-          >
-            CAREERS
-          </h1>
-        </div>
-
         {/* Hero Title */}
         <div className="mb-8 sm:mb-12 md:mb-16 relative z-10">
+          {/* Large Background Stroke Text - absolute, overlapping heading on all views */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0">
+            <h1
+              className="font-unbounded font-normal whitespace-nowrap text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[clamp(11rem,16vw,20rem)] leading-[1] tracking-tighter lg:tracking-[-0.125rem] text-transparent origin-left scale-y-[0.85]"
+              style={{
+                WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.4)",
+              }}
+            >
+              CAREERS
+            </h1>
+          </div>
           <h2
-            className="font-unbounded font-light text-[1.75rem] sm:text-[2rem] md:text-[2.375rem] lg:text-[clamp(2.375rem,3.2vw,3.5rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] mb-3 lg:mb-4"
+            className="font-unbounded font-light text-[1.75rem] sm:text-[2rem] md:text-[2.375rem] lg:text-[clamp(2.375rem,3.2vw,3.5rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] mb-3 lg:mb-4 relative z-10"
             style={{
               background: "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",

@@ -21,87 +21,126 @@ const DottedWorldMap = () => {
     setIsClient(true);
   }, []);
 
+  // Inject SVG labels by finding the orange pin circles in the SVG
+  const addLabelsToSvg = (svg: string, labels: string[]): string => {
+    // Find all circles with orange fill
+    const orangePins: Array<{cx: number; cy: number}> = [];
+    const circleMatches = [...svg.matchAll(/<circle[^>]*>/gi)];
+    for (const m of circleMatches) {
+      const circle = m[0];
+      if (/#ff8800/i.test(circle)) {
+        const cxMatch = circle.match(/cx="([^"]*)"/);
+        const cyMatch = circle.match(/cy="([^"]*)"/);
+        if (cxMatch && cyMatch) {
+          const cx = parseFloat(cxMatch[1]);
+          const cy = parseFloat(cyMatch[1]);
+          // Deduplicate nearby circles (same pin)
+          if (!orangePins.some(p => Math.abs(p.cx - cx) < 1 && Math.abs(p.cy - cy) < 1)) {
+            orangePins.push({ cx, cy });
+          }
+        }
+      }
+    }
+    // Sort left to right (by cx) to match labels sorted by longitude
+    orangePins.sort((a, b) => a.cx - b.cx);
+
+    // Get viewBox width for proportional sizing
+    const vbMatch = svg.match(/viewBox="([^"]*)"/);
+    const vbParts = vbMatch ? vbMatch[1].split(/\s+/).map(Number) : [0, 0, 100, 50];
+    const vbW = vbParts[2] || 100;
+
+    // Generate label SVG: line from dot going upper-left, text at end
+    let labelsSvg = '';
+    orangePins.forEach((pin, i) => {
+      if (i >= labels.length) return;
+      const lineLen = vbW * 0.055;
+      const endX = pin.cx - lineLen;
+      const endY = pin.cy - lineLen * 0.35;
+      const fontSize = vbW * 0.016;
+      labelsSvg += `<line x1="${pin.cx}" y1="${pin.cy}" x2="${endX}" y2="${endY}" stroke="#FF8800" stroke-width="${vbW * 0.002}" opacity="0.7"/>`;
+      labelsSvg += `<text x="${endX - fontSize * 0.3}" y="${endY + fontSize * 0.35}" text-anchor="end" fill="#FF8800" font-size="${fontSize}" opacity="0.85" font-family="sans-serif" letter-spacing="0.3">${labels[i]}</text>`;
+    });
+
+    return svg.replace('</svg>', `${labelsSvg}</svg>`);
+  };
+
   useEffect(() => {
     if (!isClient) return;
 
+    // Labels sorted by longitude (left to right on map) to match sorted pin positions
+    const pinLabels = ['USA', 'UAE', 'INDIA', 'AUSTRALIA'];
+
     const generateMap = async () => {
       try {
-        // Try simpler configuration first
         const { default: DottedMap } = await import('dotted-map');
-        
-        // Create the map with minimal settings
-        const map = new DottedMap({ 
-          height: 50, 
-          grid: 'diagonal'
-        });
+        const map = new DottedMap({ height: 50, grid: 'diagonal' });
 
-        // Add just a few key pins
-        map.addPin({
-          lat: 9.9312, // Kochi (CUSAT/Maker Village) - Main location
-          lng: 76.2673,
-          svgOptions: { color: '#FF8800', radius: 0.8 },
-        });
+        map.addPin({ lat: 9.9312, lng: 76.2673, svgOptions: { color: '#FF8800', radius: 0.8 } });
+        map.addPin({ lat: 40.7128, lng: -74.0060, svgOptions: { color: '#FF8800', radius: 0.6 } });
+        map.addPin({ lat: -33.8688, lng: 151.2093, svgOptions: { color: '#FF8800', radius: 0.6 } });
+        map.addPin({ lat: 24.4539, lng: 54.3773, svgOptions: { color: '#FF8800', radius: 0.7 } });
 
-        map.addPin({
-          lat: 40.7128, // New York
-          lng: -74.0060,
-          svgOptions: { color: '#FF8800', radius: 0.6 },
-        });
-
-        map.addPin({
-          lat: -33.8688, // Sydney
-          lng: 151.2093,
-          svgOptions: { color: '#FF8800', radius: 0.6 },
-        });
-
-        // Generate the SVG with minimal settings
-        const svgMap = map.getSVG({
+        let svgMap = map.getSVG({
           radius: 0.18,
-          color: 'rgba(255,255,255,0.40)', // Increased opacity
+          color: 'rgba(255,255,255,0.40)',
           shape: 'circle',
           backgroundColor: 'transparent',
         });
 
+        svgMap = addLabelsToSvg(svgMap, pinLabels);
         setMapSvg(svgMap);
       } catch (error) {
         console.error('Error generating dotted map:', error);
-        // Create fallback custom SVG map
+        // Fallback SVG with labels drawn from the dot positions
         const fallbackSvg = `
           <svg width="765" height="489" viewBox="0 0 765 489" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-                <circle cx="4" cy="4" r="0.8" fill="rgba(13, 35, 224, 0.45)"/>
+                <circle cx="4" cy="4" r="0.8" fill="rgba(13,35,224,0.45)"/>
               </pattern>
             </defs>
-            
-            <!-- World outline with dots -->
-            <g fill="rgba(27, 168, 63, 0)">
-              <!-- India outline dots -->
+            <g>
+              <!-- USA dots -->
+              <circle cx="180" cy="180" r="1.5" fill="#FF8800" opacity="0.8"/>
+              <circle cx="170" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="190" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="175" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="185" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
+              <!-- USA label from dot -->
+              <line x1="180" y1="180" x2="140" y2="165" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="137" y="167" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">USA</text>
+
+              <!-- UAE dots -->
+              <circle cx="475" cy="210" r="1.5" fill="#FF8800" opacity="0.9"/>
+              <circle cx="473" cy="213" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="477" cy="213" r="1" fill="rgba(255,136,0,0.6)"/>
+              <!-- UAE label from dot -->
+              <line x1="475" y1="210" x2="435" y2="195" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="432" y="197" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">UAE</text>
+
+              <!-- India dots -->
               <circle cx="500" cy="220" r="1.5" fill="#FF8800" opacity="0.8"/>
               <circle cx="498" cy="225" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="502" cy="225" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="495" cy="230" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="505" cy="230" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="500" cy="235" r="1" fill="rgba(255,136,0,0.6)"/>
-              
-              <!-- USA outline dots -->
-              <circle cx="180" cy="180" r="1.5" fill="#FF8800" opacity="0.8"/>
-              <circle cx="170" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
-              <circle cx="190" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
-              <circle cx="175" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
-              <circle cx="185" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
-              <circle cx="160" cy="195" r="1" fill="rgba(255,136,0,0.6)"/>
-              <circle cx="200" cy="195" r="1" fill="rgba(255,136,0,0.6)"/>
-              
-              <!-- Australia outline dots -->
+              <!-- India label from dot -->
+              <line x1="500" y1="220" x2="460" y2="205" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="457" y="207" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">INDIA</text>
+
+              <!-- Australia dots -->
               <circle cx="650" cy="320" r="1.5" fill="#FF8800" opacity="0.8"/>
               <circle cx="640" cy="325" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="660" cy="325" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="645" cy="330" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="655" cy="330" r="1" fill="rgba(255,136,0,0.6)"/>
               <circle cx="650" cy="335" r="1" fill="rgba(255,136,0,0.6)"/>
-              
-              <!-- Additional scattered dots for global effect -->
+              <!-- Australia label from dot -->
+              <line x1="650" y1="320" x2="600" y2="305" stroke="#FF8800" stroke-width="0.8" opacity="0.7"/>
+              <text x="597" y="307" text-anchor="end" fill="#FF8800" font-size="9" opacity="0.85" font-family="sans-serif" letter-spacing="0.5">AUSTRALIA</text>
+
+              <!-- Scattered dots -->
               <circle cx="350" cy="150" r="0.8" fill="rgba(255,255,255,0.3)"/>
               <circle cx="280" cy="200" r="0.8" fill="rgba(255,255,255,0.3)"/>
               <circle cx="420" cy="180" r="0.8" fill="rgba(255,255,255,0.3)"/>
