@@ -39,19 +39,19 @@ const DottedWorldMap = () => {
         map.addPin({
           lat: 9.9312, // Kochi (CUSAT/Maker Village) - Main location
           lng: 76.2673,
-          svgOptions: { color: '#ffffff', radius: 0.8 },
+          svgOptions: { color: '#FF8800', radius: 0.8 },
         });
 
         map.addPin({
           lat: 40.7128, // New York
           lng: -74.0060,
-          svgOptions: { color: '#ffffff', radius: 0.6 },
+          svgOptions: { color: '#FF8800', radius: 0.6 },
         });
 
         map.addPin({
           lat: -33.8688, // Sydney
           lng: 151.2093,
-          svgOptions: { color: '#ffffff', radius: 0.6 },
+          svgOptions: { color: '#FF8800', radius: 0.6 },
         });
 
         // Generate the SVG with minimal settings
@@ -77,29 +77,29 @@ const DottedWorldMap = () => {
             <!-- World outline with dots -->
             <g fill="rgba(27, 168, 63, 0)">
               <!-- India outline dots -->
-              <circle cx="500" cy="220" r="1.5" fill="#ffffff" opacity="0.8"/>
-              <circle cx="498" cy="225" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="502" cy="225" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="495" cy="230" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="505" cy="230" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="500" cy="235" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="500" cy="220" r="1.5" fill="#FF8800" opacity="0.8"/>
+              <circle cx="498" cy="225" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="502" cy="225" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="495" cy="230" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="505" cy="230" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="500" cy="235" r="1" fill="rgba(255,136,0,0.6)"/>
               
               <!-- USA outline dots -->
-              <circle cx="180" cy="180" r="1.5" fill="#ffffff" opacity="0.8"/>
-              <circle cx="170" cy="185" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="190" cy="185" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="175" cy="190" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="185" cy="190" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="160" cy="195" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="200" cy="195" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="180" cy="180" r="1.5" fill="#FF8800" opacity="0.8"/>
+              <circle cx="170" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="190" cy="185" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="175" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="185" cy="190" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="160" cy="195" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="200" cy="195" r="1" fill="rgba(255,136,0,0.6)"/>
               
               <!-- Australia outline dots -->
-              <circle cx="650" cy="320" r="1.5" fill="#ffffff" opacity="0.8"/>
-              <circle cx="640" cy="325" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="660" cy="325" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="645" cy="330" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="655" cy="330" r="1" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="650" cy="335" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="650" cy="320" r="1.5" fill="#FF8800" opacity="0.8"/>
+              <circle cx="640" cy="325" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="660" cy="325" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="645" cy="330" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="655" cy="330" r="1" fill="rgba(255,136,0,0.6)"/>
+              <circle cx="650" cy="335" r="1" fill="rgba(255,136,0,0.6)"/>
               
               <!-- Additional scattered dots for global effect -->
               <circle cx="350" cy="150" r="0.8" fill="rgba(255,255,255,0.3)"/>

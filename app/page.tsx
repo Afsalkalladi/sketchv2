@@ -16,7 +16,7 @@ export default function HomePage() {
         2. overflow-y-auto: Moves the scrollbar inside this element.
         3. snap-y snap-mandatory: Activates the magnet.
       */}
-      <main className="h-dvh w-full overflow-y-auto snap-y snap-mandatory scroll-smooth bg-black text-white">
+      <main className="h-dvh w-full overflow-y-auto snap-y snap-mandatory bg-black text-white" style={{ scrollBehavior: 'smooth' }}>
 
         {/* Wrap each component in a Section to define the "slide" size */}
         <section className="h-dvh w-full snap-start snap-always overflow-hidden">

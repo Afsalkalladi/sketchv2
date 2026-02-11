@@ -63,6 +63,19 @@ html {
   scroll-behavior: auto;
 }
 
+/* Smooth snap scrolling for homepage sections */
+main[style*="scroll-behavior"] {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure snap sections transition smoothly */
+@supports (scroll-snap-type: y mandatory) {
+  .snap-start {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
 /* REMOVED: .snap-section class */
 /* Since you are now using Tailwind classes (snap-start) directly in page.tsx, 
    you do not need this global class anymore. */
