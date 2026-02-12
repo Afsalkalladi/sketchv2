@@ -119,7 +119,7 @@ export default function SolutionsPage() {
         <section className="h-dvh w-full snap-start relative overflow-hidden bg-black flex flex-col justify-start shrink-0">
           <div className="relative z-10 w-full px-5 md:px-10 lg:px-[3.75rem] flex flex-col lg:flex-row items-start lg:items-center pt-28 lg:pt-[clamp(7rem,9vw,11.25rem)]">
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 w-full pt-6 lg:pt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-[clamp(1.5rem,2.5vw,3rem)] w-full pt-6 lg:pt-0">
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-start relative z-30">
                 {/* Heading wrapper with stroke behind */}
@@ -148,15 +148,20 @@ export default function SolutionsPage() {
                   </h2>
                 </div>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.7] md:text-[1.0625rem] lg:text-[clamp(1rem,1.2vw,1.6rem)] lg:leading-[1.4] lg:tracking-[0.03rem] max-w-[100%] lg:max-w-[clamp(28rem,32vw,38rem)] mt-10 lg:mt-14 xl:mt-16 2xl:mt-24 text-left mx-auto lg:mx-0 relative z-10">
+                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.75rem] leading-[1.8] md:text-[0.875rem] lg:text-[clamp(0.75rem,0.95vw,1.15rem)] lg:leading-[1.65] lg:tracking-[0.02rem] max-w-[100%] lg:max-w-none mt-8 lg:mt-10 xl:mt-12 2xl:mt-16 text-left mx-auto lg:mx-0 relative z-10">
                   <span>At </span>
                   <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
                   <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
                   <span className="text-white">AI solutions</span>
-                  <span>. Whether it's automating processes, building </span>
+                  <span>. Whether it&apos;s automating processes, building </span>
                   <span className="text-white">intelligent systems</span>
                   <span>, or enabling next-generation human–machine interaction, we tailor our solutions to meet industry-specific needs with scalable, cost-effective, and </span>
                   <span className="text-white">deployment-ready systems.</span>
+                  <span> From concept and prototyping to integration and real-world deployment, we combine </span>
+                  <span className="text-white">advanced engineering</span>
+                  <span> with practical innovation to ensure reliability, performance, and </span>
+                  <span className="text-white">long-term value</span>
+                  <span> for our partners across diverse industries.</span>
                 </p>
               </div>
 
