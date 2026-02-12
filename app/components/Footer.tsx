@@ -8,8 +8,8 @@ export default function Footer() {
         {/* Main Content - Grid shifted to push content right */}
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 mb-[clamp(2rem,3vw,3.5rem)]">
           
-          {/* Left Column: Brand Name & Description */}
-          <div className="flex flex-col justify-start">
+          {/* Left Column: Brand Name & Description - Hidden on mobile */}
+          <div className="hidden md:flex flex-col justify-start">
             <h2
               className="text-[clamp(1.5rem,2.2vw,2.5rem)] font-normal leading-[1.1] tracking-tight text-white mb-[clamp(1rem,1.5vw,1.5rem)]"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -29,8 +29,8 @@ export default function Footer() {
 
           {/* Right Column: Anchored to the Right */}
           <div className="flex flex-col md:items-start md:ml-auto w-full max-w-xl">
-            {/* Quick Links Group */}
-            <div className="w-full">
+            {/* Quick Links Group - Hidden on mobile */}
+            <div className="hidden md:block w-full">
               <h3
                 className="text-[clamp(0.8rem,0.95vw,1.1rem)] font-bold uppercase tracking-[0.15em] text-white mb-6"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}
@@ -56,10 +56,10 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Middle Divider - Starts from text, gap on the right */}
-            <div className="w-[95%] h-px bg-white/15 my-10" />
+            {/* Middle Divider - Starts from text, gap on the right - Hidden on mobile */}
+            <div className="hidden md:block w-[95%] h-px bg-white/15 my-10" />
 
-            {/* Contact Info Group */}
+            {/* Contact Info Group - Always visible, mobile number and email in single row */}
             <div className="w-full">
               <h3
                 className="text-[clamp(0.8rem,0.95vw,1.1rem)] font-bold uppercase tracking-[0.15em] text-white mb-6"
@@ -67,7 +67,7 @@ export default function Footer() {
               >
                 Contact Info
               </h3>
-              <div className="flex flex-col sm:flex-row gap-x-12 gap-y-4">
+              <div className="flex flex-row gap-x-8 gap-y-4 flex-wrap">
                 <a
                   href="mailto:sketchrobotics@gmail.com"
                   className="text-[clamp(0.75rem,0.85vw,0.95rem)] font-light text-neutral-400 hover:text-white transition-colors"
