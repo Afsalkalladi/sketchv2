@@ -199,8 +199,8 @@ export default function GlobalSection() {
       />
 
       {/* Dotted World Map Background */}
-      <div className="absolute right-0 top-[45%] md:top-[55%] -translate-y-1/2 opacity-40 sm:opacity-60 md:opacity-100 pointer-events-none">
-        <div className="relative w-[25rem] h-[15.9375rem] sm:w-[37.5rem] sm:h-[23.9375rem] md:w-[47.8125rem] md:h-[30.5625rem] opacity-90">
+      <div className="absolute right-0 top-[45%] md:top-[50%] -translate-y-1/2 opacity-40 sm:opacity-60 md:opacity-100 pointer-events-none">
+        <div className="relative w-[clamp(25rem,70vw,32rem)] h-[clamp(16rem,45vw,20.5rem)] sm:w-[clamp(37.5rem,75vw,45rem)] sm:h-[clamp(24rem,48vw,28.75rem)] md:w-[clamp(48rem,62vw,58rem)] md:h-[clamp(30.5rem,40vw,37rem)] lg:w-[clamp(52rem,58vw,62rem)] lg:h-[clamp(33rem,37vw,39.5rem)] opacity-90">
           <DottedWorldMap />
         </div>
       </div>

@@ -148,21 +148,25 @@ export default function SolutionsPage() {
                   </h2>
                 </div>
 
-                <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.75rem] leading-[1.8] md:text-[0.875rem] lg:text-[clamp(0.75rem,0.95vw,1.15rem)] lg:leading-[1.65] lg:tracking-[0.02rem] max-w-[100%] lg:max-w-none mt-8 lg:mt-10 xl:mt-12 2xl:mt-16 text-left mx-auto lg:mx-0 relative z-10">
-                  <span>At </span>
-                  <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
-                  <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
-                  <span className="text-white">AI solutions</span>
-                  <span>. Whether it&apos;s automating processes, building </span>
-                  <span className="text-white">intelligent systems</span>
-                  <span>, or enabling next-generation human–machine interaction, we tailor our solutions to meet industry-specific needs with scalable, cost-effective, and </span>
-                  <span className="text-white">deployment-ready systems.</span>
-                  <span> From concept and prototyping to integration and real-world deployment, we combine </span>
-                  <span className="text-white">advanced engineering</span>
-                  <span> with practical innovation to ensure reliability, performance, and </span>
-                  <span className="text-white">long-term value</span>
-                  <span> for our partners across diverse industries.</span>
-                </p>
+                <div className="mt-8 lg:mt-10 xl:mt-12 2xl:mt-16 max-w-[100%] lg:max-w-[clamp(28rem,35vw,40rem)] text-left mx-auto lg:mx-0 relative z-10">
+                  <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.8] md:text-[1rem] lg:text-[clamp(0.85rem,1.05vw,1.25rem)] lg:leading-[1.7] lg:tracking-[0.02rem]">
+                    <span>At </span>
+                    <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
+                    <span>, we transform challenges into opportunities by designing and delivering end-to-end robotics and </span>
+                    <span className="text-white">AI solutions</span>
+                    <span>. Whether it&apos;s automating processes, building </span>
+                    <span className="text-white">intelligent systems</span>
+                    <span>, or enabling next-generation human–machine interaction, we tailor our solutions to meet industry-specific needs with scalable, cost-effective, and </span>
+                    <span className="text-white">deployment-ready systems.</span>
+                  </p>
+                  <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.8] md:text-[1rem] lg:text-[clamp(0.85rem,1.05vw,1.25rem)] lg:leading-[1.7] lg:tracking-[0.02rem] mt-4 lg:mt-[clamp(0.75rem,1vw,1.5rem)]">
+                    <span>From concept and prototyping to integration and real-world deployment, we combine </span>
+                    <span className="text-white">advanced engineering</span>
+                    <span> with practical innovation to ensure reliability, performance, and </span>
+                    <span className="text-white">long-term value</span>
+                    <span> for our partners across diverse industries.</span>
+                  </p>
+                </div>
               </div>
 
               {/* Right Column - Robot Image */}
@@ -225,15 +229,31 @@ export default function SolutionsPage() {
             SECTION 3: CORE CAPABILITIES
             - Removed "sticky" classes from the h3 title.
            ======================================== */}
-        <section className="w-full snap-start relative bg-black flex flex-col justify-start">
-          <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] pt-24 pb-12 xl:pt-28 2xl:pt-32">
+        <section className="w-full snap-start relative bg-black flex flex-col justify-start overflow-hidden">
+          {/* Dot pattern - bottom right */}
+          <div
+            className="absolute pointer-events-none hidden md:block z-[5] opacity-85"
+            style={{
+              width: "clamp(32rem, 45vw, 55rem)",
+              height: "clamp(32rem, 45vw, 55rem)",
+              right: "clamp(-6rem, -4vw, -2rem)",
+              bottom: "clamp(-6rem, -4vw, -2rem)",
+              backgroundImage:
+                "radial-gradient(circle, rgba(255, 255, 255, 0.25) 1.5px, transparent 2px)",
+              backgroundSize: "clamp(1.25rem, 1.5vw, 1.75rem) clamp(1.25rem, 1.5vw, 1.75rem)",
+              maskImage: "radial-gradient(circle, black 30%, transparent 70%)",
+              WebkitMaskImage: "radial-gradient(circle, black 30%, transparent 70%)",
+            }}
+          />
+
+          <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] pt-24 pb-12 xl:pt-28 2xl:pt-32 relative z-10">
             <div className="w-full">
               {/* UPDATED: Removed sticky, top-20, z-40, mix-blend-difference */}
               <h3 className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.375rem] lg:text-[clamp(2rem,2.5vw,3rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white mb-6 xl:mb-8 2xl:mb-12">
                 CORE CAPABILITIES
               </h3>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-8 2xl:gap-[2.25rem] max-w-[58.5rem] pb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-8 2xl:gap-[2.25rem] max-w-[clamp(58.5rem,75vw,72rem)] pb-20">
                 {solutions.map((solution, index) => (
                   <SolutionCard
                     key={index}

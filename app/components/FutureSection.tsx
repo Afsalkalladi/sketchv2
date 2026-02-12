@@ -81,10 +81,10 @@ export default function FutureSection() {
             <div
               className="absolute pointer-events-none hidden sm:block z-[15] opacity-80"
               style={{
-                width: "37.5rem",
-                height: "37.5rem",
+                width: "clamp(40rem, 50vw, 55rem)",
+                height: "clamp(40rem, 50vw, 55rem)",
                 right: "-6.25rem",
-                bottom: "-3.125rem",
+                bottom: "-8rem",
                 backgroundImage:
                   "radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px)",
                 backgroundSize: "24px 24px",
