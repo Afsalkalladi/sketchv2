@@ -73,7 +73,7 @@ const teamMembers: TeamMember[] = [
     name: "MUHAMMED SAJEEM",
     role: "HARDWARE ENGINEER",
     image: "/images/team/sajeem.png", // Replace with actual image path
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/muhammed-sajeem-2428b3278/",
     details: ["Expertise in Full Stack", "React & Node.js specialist"],
   },
   {
