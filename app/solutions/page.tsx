@@ -148,7 +148,7 @@ export default function SolutionsPage() {
                   </h2>
                 </div>
 
-                <div className="mt-8 lg:mt-10 xl:mt-12 2xl:mt-16 max-w-[100%] lg:max-w-[clamp(28rem,35vw,40rem)] text-left mx-auto lg:mx-0 relative z-10">
+                <div className="mt-8 lg:mt-10 xl:mt-12 2xl:mt-16 max-w-[100%] lg:max-w-[clamp(32rem,42vw,48rem)] text-left mx-auto lg:mx-0 relative z-10">
                   <p className="font-unbounded font-normal text-[#a7a7a7] opacity-60 text-[0.875rem] leading-[1.8] md:text-[1rem] lg:text-[clamp(0.85rem,1.05vw,1.25rem)] lg:leading-[1.7] lg:tracking-[0.02rem]">
                     <span>At </span>
                     <span className="font-semibold text-[#efefef]">Sketch Robotics</span>
@@ -190,38 +190,13 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          {/* Mobile Cards Carousel - Positioned close to where text ends */}
-          <div className="md:hidden flex-1 flex flex-col justify-center px-5 pb-8">
-            <div
-              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {[
-                { num: "01", title: "Automating Hazardous Work", desc: "Robotic systems that reduce human exposure while improving safety." },
-                { num: "02", title: "Software–Hardware Integration", desc: "Hardware that realizes the potential of advanced software." },
-                { num: "03", title: "Problem-Specific Solutions", desc: "Tailored robotic systems for real-world constraints." },
-                { num: "04", title: "Practical Automation", desc: "Intuitive interfaces and dependable on-site performance." },
-                { num: "05", title: "Minimal Disruption Scaling", desc: "Smooth transition to scalable robotic systems." },
-                { num: "06", title: "Real Operating Conditions", desc: "Built for dust, moisture, heat, and uneven environments." },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-[70vw] p-4 border border-neutral-800 rounded-lg bg-neutral-900/40 backdrop-blur-sm snap-center"
-                >
-                  <h3 className="text-white text-sm font-normal leading-tight mb-2" style={{ fontFamily: "'Unbounded', sans-serif" }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-neutral-400 text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </section>
 
         {/* ========================================
-            SECTION 2: WHAT WE SOLVE (Desktop only)
+            SECTION 2: WHAT WE SOLVE
            ======================================== */}
-        <section className="hidden md:block h-dvh w-full snap-start snap-always">
+        <section className="h-dvh w-full snap-start snap-always">
           <CapabilitiesSection />
         </section>
 
@@ -246,10 +221,10 @@ export default function SolutionsPage() {
             }}
           />
 
-          <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] pt-24 pb-12 xl:pt-28 2xl:pt-32 relative z-10">
+          <div className="w-full h-full px-5 md:px-10 lg:px-[3.75rem] pt-28 lg:pt-[clamp(7rem,9vw,11.25rem)] pb-12 xl:pb-16 2xl:pb-20 relative z-10">
             <div className="w-full">
               {/* UPDATED: Removed sticky, top-20, z-40, mix-blend-difference */}
-              <h3 className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.375rem] lg:text-[clamp(2rem,2.5vw,3rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white mb-6 xl:mb-8 2xl:mb-12">
+              <h3 className="font-unbounded font-light text-[2rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[clamp(2.5rem,3.5vw,3.75rem)] leading-[1.1] tracking-[0.125rem] sm:tracking-[0.1875rem] md:tracking-[0.25rem] text-white mb-6 xl:mb-8 2xl:mb-12">
                 CORE CAPABILITIES
               </h3>
 
