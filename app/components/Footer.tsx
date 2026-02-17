@@ -76,11 +76,11 @@ export default function Footer() {
                   sketchrobotics@gmail.com
                 </a>
                 <a
-                  href="tel:+918100336622"
+                  href="tel:+918157858569"
                   className="text-[clamp(0.75rem,0.85vw,0.95rem)] font-light text-neutral-400 hover:text-white transition-colors"
                   style={{ fontFamily: "'Unbounded', sans-serif" }}
                 >
-                  +91 8100336622
+                  +91 8157858569
                 </a>
               </div>
             </div>
