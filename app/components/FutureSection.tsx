@@ -58,9 +58,9 @@ export default function FutureSection() {
                 problems.
               </p>
               <p className="mt-4">
-                Founded by a passionate team from CUSAT, we focus on turning
+                Founded by a passionate team from CUSAT, we focus on shaping
                 bold ideas into real-world solutions that simplify lives and
-                enhance productivity. With this vision, we are committed to
+                enhance productivity. With, we are envisaged to
                 positioning India as a benchmark in the global robotics
                 revolution.
               </p>
