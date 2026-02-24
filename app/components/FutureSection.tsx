@@ -60,7 +60,7 @@ export default function FutureSection() {
               <p className="mt-4">
                 Founded by a passionate team from CUSAT, we focus on shaping
                 bold ideas into real-world solutions that simplify lives and
-                enhance productivity.We envision positioning India as a benchmark in the global robotics revolution.
+                enhance productivity. We envision positioning India as a benchmark in the global robotics revolution.
               </p>
             </div>
 
