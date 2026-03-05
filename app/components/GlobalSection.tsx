@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const PARTNERS = [
-  // { name: "Kerala Startup Mission", src: "/images/trusted/keralastartupmission.svg" },
+  { name: "Kerala Startup Mission", src: "/images/trusted/keralastartupmission.svg" },
   { name: "Rizins", src: "/images/trusted/rizins.svg" },
   { name: "DPIIT", src: "/images/trusted/dpiit.svg" },
   { name: "Maker Village", src: "/images/trusted/makervillage.svg" },
