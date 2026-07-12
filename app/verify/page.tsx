@@ -48,16 +48,17 @@ function formatDate(value: string): string {
 
 async function lookupCertificate(id: string): Promise<CertRecord | null> {
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_ANON_KEY;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key || !UUID_RE.test(id)) return null;
 
   try {
+    // New Supabase keys (sb_publishable_…) go on the `apikey` header only.
+    // They must NOT be sent as `Authorization: Bearer …` — that gets rejected.
     const res = await fetch(`${url}/rest/v1/rpc/verify_certificate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: key,
-        Authorization: `Bearer ${key}`,
       },
       body: JSON.stringify({ p_token: id }),
       cache: "no-store",
