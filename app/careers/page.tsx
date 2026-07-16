@@ -1,44 +1,8 @@
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { MapPin, ExternalLink, Briefcase, Users, Zap } from "lucide-react";
-
-interface JobOpening {
-  title: string;
-  description: string;
-  location: string;
-  applyLink: string;
-}
-
-const jobOpenings: JobOpening[] = [
-  {
-    title: "ROBOTICS HARDWARE ENGINEER",
-    description:
-      "Design and develop robust robotic hardware systems that power intelligent automation solutions. Collaborate closely with software and mechanical teams to bring concepts to life.",
-    location: "Remote / Kochi",
-    applyLink: "https://forms.gle/BUsoG7yHXKt92E5YA",
-  },
-  {
-    title: "ROBOTICS SOFTWARE ENGINEER",
-    description:
-      "Develop and optimize software architecture for autonomous systems, control algorithms, and robotics applications. Work alongside hardware and mechanical engineers to create integrated solutions.",
-    location: "Remote / Kochi",
-    applyLink: "https://forms.gle/BUsoG7yHXKt92E5YA",
-  },
-  {
-    title: "MECHANICAL ENGINEER (ROBOTICS)",
-    description:
-      "Lead the mechanical design and prototyping of various mechanical systems. Collaborate with hardware and software teams to ensure seamless integration and functionality.",
-    location: "Remote / Kochi",
-    applyLink: "https://forms.gle/BUsoG7yHXKt92E5YA",
-  },
-  {
-    title: "MEDIA AND MARKETING SPECIALIST",
-    description:
-      "Drive brand growth by creating and executing marketing campaigns, managing social media, and coordinating outreach efforts. Work closely with engineering and business teams to communicate our innovations effectively.",
-    location: "Remote / Kochi",
-    applyLink: "https://forms.gle/BUsoG7yHXKt92E5YA",
-  },
-];
+import { MapPin, ExternalLink, Briefcase, Users, Zap, Lock } from "lucide-react";
+import { jobOpenings, type JobOpening } from "./jobs";
 
 const whyWorkWithUs = [
   {
@@ -62,9 +26,16 @@ const whyWorkWithUs = [
 ];
 
 function JobCard({ job }: { job: JobOpening }) {
+  const isClosed = job.status === "closed";
+  const detailHref = job.sections ? `/careers/${job.slug}` : undefined;
+
   return (
     <div
-      className="relative flex flex-col p-5 sm:p-6 md:p-8 rounded-[1.25rem] md:rounded-[1.875rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 ease-in-out hover:shadow-[0px_0px_30px_0px_rgba(255,255,255,0.1)] border border-white/5 hover:border-white/10"
+      className={`relative flex flex-col p-5 sm:p-6 md:p-8 rounded-[1.25rem] md:rounded-[1.875rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 ease-in-out border border-white/5 ${
+        isClosed
+          ? "opacity-60"
+          : "hover:shadow-[0px_0px_30px_0px_rgba(255,255,255,0.1)] hover:border-white/10"
+      }`}
       style={{
         background:
           "linear-gradient(248.77deg, rgba(16, 15, 15, 1) 3.053%, rgba(44, 44, 44, 1) 158.22%)",
@@ -78,15 +49,32 @@ function JobCard({ job }: { job: JobOpening }) {
         >
           {job.title}
         </h3>
-        <a
-          href={job.applyLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[rgba(255,136,0,0.15)] hover:bg-[rgba(255,136,0,0.3)] border border-[rgba(255,136,0,0.3)] flex items-center justify-center transition-all duration-300 group"
-          aria-label={`Apply for ${job.title}`}
-        >
-          <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-[rgba(255,136,0,0.87)] group-hover:scale-110 transition-transform" />
-        </a>
+        {isClosed ? (
+          <div
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center"
+            aria-label={`${job.title} — position closed`}
+          >
+            <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-white/40" />
+          </div>
+        ) : detailHref ? (
+          <Link
+            href={detailHref}
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[rgba(255,136,0,0.15)] hover:bg-[rgba(255,136,0,0.3)] border border-[rgba(255,136,0,0.3)] flex items-center justify-center transition-all duration-300 group"
+            aria-label={`Apply for ${job.title}`}
+          >
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-[rgba(255,136,0,0.87)] group-hover:scale-110 transition-transform" />
+          </Link>
+        ) : (
+          <a
+            href={job.applyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[rgba(255,136,0,0.15)] hover:bg-[rgba(255,136,0,0.3)] border border-[rgba(255,136,0,0.3)] flex items-center justify-center transition-all duration-300 group"
+            aria-label={`Apply for ${job.title}`}
+          >
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-[rgba(255,136,0,0.87)] group-hover:scale-110 transition-transform" />
+          </a>
+        )}
       </div>
 
       {/* Description */}
@@ -108,19 +96,40 @@ function JobCard({ job }: { job: JobOpening }) {
             {job.location}
           </span>
         </div>
-        <a
-          href={job.applyLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-[2.5rem] sm:h-[3rem] px-5 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center text-xs sm:text-sm text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/20"
-          style={{
-            fontFamily: "'Unbounded', sans-serif",
-            background:
-              "linear-gradient(230.26deg, rgba(16, 15, 15, 1) 163.03%, rgba(44, 44, 44, 1) 160.2%)",
-          }}
-        >
-          APPLY NOW
-        </a>
+        {isClosed ? (
+          <span
+            className="h-[2.5rem] sm:h-[3rem] px-5 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] flex items-center justify-center text-xs sm:text-sm text-white/40 border border-white/10 bg-white/[0.03] tracking-wider cursor-not-allowed select-none"
+            style={{ fontFamily: "'Unbounded', sans-serif" }}
+          >
+            CLOSED
+          </span>
+        ) : detailHref ? (
+          <Link
+            href={detailHref}
+            className="h-[2.5rem] sm:h-[3rem] px-5 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center text-xs sm:text-sm text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/20"
+            style={{
+              fontFamily: "'Unbounded', sans-serif",
+              background:
+                "linear-gradient(230.26deg, rgba(16, 15, 15, 1) 163.03%, rgba(44, 44, 44, 1) 160.2%)",
+            }}
+          >
+            APPLY NOW
+          </Link>
+        ) : (
+          <a
+            href={job.applyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-[2.5rem] sm:h-[3rem] px-5 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center text-xs sm:text-sm text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/20"
+            style={{
+              fontFamily: "'Unbounded', sans-serif",
+              background:
+                "linear-gradient(230.26deg, rgba(16, 15, 15, 1) 163.03%, rgba(44, 44, 44, 1) 160.2%)",
+            }}
+          >
+            APPLY NOW
+          </a>
+        )}
       </div>
     </div>
   );
@@ -236,8 +245,8 @@ function CareersSection() {
             OPEN POSITIONS
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            {jobOpenings.map((job, index) => (
-              <JobCard key={`job-${index}`} job={job} />
+            {jobOpenings.map((job) => (
+              <JobCard key={job.slug} job={job} />
             ))}
           </div>
         </div>
