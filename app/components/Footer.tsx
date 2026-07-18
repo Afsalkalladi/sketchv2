@@ -69,11 +69,11 @@ export default function Footer() {
               </h3>
               <div className="flex flex-row gap-x-8 gap-y-4 flex-wrap">
                 <a
-                  href="mailto:sketchrobotics@gmail.com"
+                  href="mailto:contact@sketchrobotics.in"
                   className="text-[clamp(0.75rem,0.85vw,0.95rem)] font-light text-neutral-400 hover:text-white transition-colors"
                   style={{ fontFamily: "'Unbounded', sans-serif" }}
                 >
-                  sketchrobotics@gmail.com
+                  contact@sketchrobotics.in
                 </a>
                 <a
                   href="tel:+918157858569"

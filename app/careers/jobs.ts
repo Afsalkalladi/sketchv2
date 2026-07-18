@@ -77,10 +77,9 @@ export const jobOpenings: JobOpening[] = [
         ],
       },
       {
-        heading: "How to Apply",
+        heading: "Questions?",
         paragraphs: [
-          "Send your resume and portfolio to careers@sketchrobotics.in with the subject: Application – Mechanical Design Engineer.",
-          "Candidates are encouraged to include a portfolio showcasing CAD work, design projects, or hardware built. For early-career candidates, a strong academic or personal project is equally welcome.",
+          "If you have any problems or doubts, mail us at careers@sketchrobotics.in.",
         ],
       },
     ],
