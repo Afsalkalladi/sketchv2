@@ -26,15 +26,10 @@ export const jobOpenings: JobOpening[] = [
       "Develop mechanical systems for our robotics and automation products, taking designs from initial concept through to a manufacturable, production-ready state.",
     location: "Hybrid / Kochi",
     status: "open",
+    applyLink: "https://forms.gle/9WwB9n2BEsZnMBxq9",
     applyEmail: "careers@sketchrobotics.in",
     applySubject: "Application – Mechanical Design Engineer",
     sections: [
-      {
-        heading: "About Sketch Robotics",
-        paragraphs: [
-          "Sketch Robotics Pvt. Ltd. is a deep-tech startup emerging from the Cochin University of Science and Technology (CUSAT), incubated at Maker Village, IIITM Kerala. The company transforms complex industrial problems into deployable solutions engineered for real-world applications. Our core focus is automating repetitive and hazardous tasks through precision automation machines engineered in India and built for global markets.",
-        ],
-      },
       {
         heading: "About the Role",
         paragraphs: [

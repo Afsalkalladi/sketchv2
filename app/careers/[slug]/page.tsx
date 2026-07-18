@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { MapPin, ArrowLeft, Mail } from "lucide-react";
+import { MapPin, ArrowLeft, ExternalLink } from "lucide-react";
 import { getJobBySlug, jobOpenings } from "../jobs";
 
 export function generateStaticParams() {
@@ -38,9 +38,6 @@ export default async function JobDetailPage({
     notFound();
   }
 
-  const mailtoHref = `mailto:${job.applyEmail}?subject=${encodeURIComponent(
-    job.applySubject ?? `Application – ${job.title}`
-  )}`;
 
   return (
     <div className="min-h-screen bg-black">
@@ -149,15 +146,17 @@ export default async function JobDetailPage({
                 className="font-light text-xs sm:text-sm text-white/60 leading-relaxed"
                 style={{ fontFamily: "'Unbounded', sans-serif" }}
               >
-                Send your resume and portfolio to {job.applyEmail}
+                Submit your resume and portfolio through our application form.
               </p>
             </div>
             <a
-              href={mailtoHref}
+              href={job.applyLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="shrink-0 h-[2.75rem] sm:h-[3rem] px-6 sm:px-8 rounded-[0.9375rem] sm:rounded-[1.25rem] bg-[rgba(255,136,0,0.15)] hover:bg-[rgba(255,136,0,0.3)] border border-[rgba(255,136,0,0.3)] flex items-center justify-center gap-2 text-xs sm:text-sm text-[rgba(255,136,0,0.87)] transition-all duration-300"
               style={{ fontFamily: "'Unbounded', sans-serif" }}
             >
-              <Mail className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" />
               APPLY NOW
             </a>
           </div>
