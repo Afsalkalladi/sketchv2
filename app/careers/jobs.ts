@@ -26,7 +26,7 @@ export const jobOpenings: JobOpening[] = [
       "Develop mechanical systems for our robotics and automation products, taking designs from initial concept through to a manufacturable, production-ready state.",
     location: "Hybrid / Kochi",
     status: "open",
-    applyLink: "https://forms.gle/9WwB9n2BEsZnMBxq9",
+    applyLink: "https://zfrmz.in/gCR7MejgpFKIU95R84Kk",
     applyEmail: "careers@sketchrobotics.in",
     applySubject: "Application – Mechanical Design Engineer",
     sections: [
