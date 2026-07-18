@@ -79,7 +79,7 @@ export const jobOpenings: JobOpening[] = [
       {
         heading: "Questions?",
         paragraphs: [
-          "If you have any problems or doubts, mail us at careers@sketchrobotics.in.",
+          "If you have any problems or doubts, mail us at careers@sketchrobotics.in",
         ],
       },
     ],
