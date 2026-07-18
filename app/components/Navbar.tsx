@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Right CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="mailto:sketchrobotics@gmail.com"
+            href="mailto:contact@sketchrobotics.in"
             className="h-7 w-28 flex items-center justify-center rounded-full bg-gray-800/80 text-center text-stone-300 text-[0.611rem] font-semibold uppercase leading-3 tracking-wide transition-colors hover:bg-gray-700/80"
             style={{ fontFamily: "'Unbounded', sans-serif" }}
           >

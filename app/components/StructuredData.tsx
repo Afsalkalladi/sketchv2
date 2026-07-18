@@ -22,7 +22,7 @@ export function OrganizationJsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-8157858569",
-      email: "sketchrobotics@gmail.com",
+      email: "contact@sketchrobotics.in",
       contactType: "customer service",
     },
     sameAs: [
