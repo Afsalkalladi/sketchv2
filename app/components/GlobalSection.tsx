@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 const PARTNERS = [
@@ -88,12 +88,23 @@ const DottedWorldMap = () => {
         });
 
         svgMap = addLabelsToSvg(svgMap, pinLabels);
+        // Strip fixed dimensions and let the SVG scale to its container,
+        // keeping its intrinsic aspect ratio centered (via viewBox)
+        svgMap = svgMap.replace(
+          /<svg([^>]*)>/i,
+          (_match, attrs: string) => {
+            const cleaned = attrs
+              .replace(/\s(width|height)="[^"]*"/gi, '')
+              .replace(/\spreserveAspectRatio="[^"]*"/gi, '');
+            return `<svg${cleaned} width="100%" height="100%" preserveAspectRatio="xMidYMid meet">`;
+          }
+        );
         setMapSvg(svgMap);
       } catch (error) {
         console.error('Error generating dotted map:', error);
         // Fallback SVG with labels drawn from the dot positions
         const fallbackSvg = `
-          <svg width="765" height="489" viewBox="0 0 765 489" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="0 0 765 489" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
                 <circle cx="4" cy="4" r="0.8" fill="rgba(13,35,224,0.45)"/>
@@ -169,8 +180,30 @@ const DottedWorldMap = () => {
 };
 
 export default function GlobalSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-black relative overflow-hidden h-full flex flex-col">
+    <section ref={sectionRef} className="bg-black relative overflow-hidden h-full flex flex-col">
 
       {/* CSS Animation Styles */}
       <style jsx global>{`
@@ -199,8 +232,16 @@ export default function GlobalSection() {
       />
 
       {/* Dotted World Map Background */}
-      <div className="absolute right-0 top-[45%] md:top-[50%] -translate-y-1/2 opacity-40 sm:opacity-60 md:opacity-100 pointer-events-none">
-        <div className="relative w-[clamp(25rem,70vw,32rem)] h-[clamp(16rem,45vw,20.5rem)] sm:w-[clamp(37.5rem,75vw,45rem)] sm:h-[clamp(24rem,48vw,28.75rem)] md:w-[clamp(48rem,62vw,58rem)] md:h-[clamp(30.5rem,40vw,37rem)] lg:w-[clamp(52rem,58vw,62rem)] lg:h-[clamp(33rem,37vw,39.5rem)] opacity-90">
+      {/* Mobile/tablet-portrait: centered in the empty space ABOVE the
+          bottom-anchored text. md+: right-anchored, vertically centered.
+          Slides up + fades in when the section scrolls into view
+          (same pattern as the robotic arm in FutureSection). */}
+      <div className="absolute inset-x-0 top-[4%] bottom-[36%] md:inset-y-0 md:left-auto md:right-0 flex items-center justify-center md:justify-end opacity-60 md:opacity-100 pointer-events-none">
+        <div
+          className={`w-[min(94vw,34rem)] sm:w-[min(86vw,46rem)] md:w-[min(64vw,58rem)] lg:w-[min(60vw,64rem)] aspect-[8/5] transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-24"
+          }`}
+        >
           <DottedWorldMap />
         </div>
       </div>
