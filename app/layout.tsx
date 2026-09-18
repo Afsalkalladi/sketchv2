@@ -104,15 +104,17 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      // Declared before the bitmaps so browsers that understand SVG favicons
+      // (Chrome, Edge, Firefox) pick the vector and render it crisply at any
+      // display density. The rest fall through to the sized PNGs below.
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-48x48.png", sizes: "48x48", type: "image/png" },
     ],
     apple: [
       { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { rel: "android-chrome", url: "/favicon/android-chrome-192x192.png" },
     ],
   },
   category: "technology",
